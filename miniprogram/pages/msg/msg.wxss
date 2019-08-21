@@ -1,0 +1,66 @@
+.ta-box {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+  margin-bottom: 8rpx;
+  padding: 10rpx;
+  background: #fff;
+}
+
+.ta-box textarea {
+  width: 100%;
+  background: #fff;
+  padding: 10rpx;
+}
+
+.ta-box input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: 10rpx;
+}
+
+.ta-tips {
+  color: #aaa;
+  padding: 10rpx;
+}
+
+.em-tips {
+  color: #f66;
+}
+
+.ft-24 {
+  font-size: 24rpx;
+}
+
+.item {
+  padding: 10rpx;
+  margin-top: 10rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.item view {
+  margin-bottom: 10rpx;
+}
+
+.item .like {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.item .like text {
+  color: #f66;
+  font-size: 50rpx;
+}
+
+.item .title {
+}
+
+.item .sub-title {
+}

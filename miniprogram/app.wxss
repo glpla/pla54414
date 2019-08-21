@@ -1,0 +1,90 @@
+@import '/style/guide.wxss';
+
+page, view, navitator, video, swiper, swiper-item, scroll-view, textarea {
+  box-sizing: border-box;
+}
+
+page {
+  color: #999;
+  font-size: 32rpx;
+  padding: 15rpx;
+  background: #fcfcfc;
+}
+
+swiper {
+  width: 100%;
+}
+
+swiper-item {
+  width: 100%;
+}
+
+image {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  margin-top: 20rpx;
+}
+
+.title {
+  margin-top: 20rpx;
+}
+
+.sub-title {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.tips {
+  margin-top: 40rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  border-bottom: 1px solid #eee;
+  padding-left: 10rpx;
+  font-weight: 700;
+  color: rgb(60, 219, 240);
+  border-left: 4px solid rgb(53, 189, 207);
+}
+
+.info-box {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.info-box view {
+  flex: 1;
+}
+
+.btn-wrap {
+  width: 100%;
+  padding: 10rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  font-size: 32rpx;
+  background: #179cd1;
+  /* background: #4dd; */
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.bottom-tips {
+  margin: 40rpx 0 120rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #aaa;
+}

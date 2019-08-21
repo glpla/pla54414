@@ -1,0 +1,31 @@
+<view>
+  <view class='wrap'>
+    <view class='ta-tips'>称呼
+      <text class='ft-24'>(最多8个字)</text>
+    </view>
+    <input class='ta-box' placeholder="留下您高大上的称呼吧" auto-focus maxlength='8' bindinput='onNameInput' placeholder-style='color:#aaa;' />
+  </view>
+  <view class='wrap'>
+    <view class='ta-tips'>内容
+      <text class='ft-24'>(你还可以输入<text class='em-tips'>{{len}} </text>个字)</text>
+    </view>
+    <textarea class='ta-box' placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-style='color:#aaa' />
+  </view>
+  <button class='btn' bindtap="onSbumit" disabled="{{!msg.length>0 || !name.length>0}}">提交</button>
+  <button class='btn' bindtap="onQuery">查看其他留言
+    <text class="'ft-24'">(最新20条)</text> </button>
+
+  <block wx:for='{{records}}' wx:key=''>
+    <view class='item'>
+      <view>{{item.name}}</view>
+      <view>{{item.msg}}</view>
+      <view class='ft-24'>{{item.time}}</view>
+      <view class='like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
+        <view>{{item.like}}</view>
+        <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>
+        <text wx:else class='iconfont iconintegral'></text>
+      </view>
+    </view>
+  </block>
+
+</view>

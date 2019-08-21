@@ -1,0 +1,76 @@
+<view class=''>
+  <swiper autoplay duration="1000" interval="3000">
+    <swiper-item>
+      <image src="http://b244.photo.store.qq.com/psb?/V11zZTwc0TDgXk/X6XSTuOzEkwG1TBLmaqGWWjb43*B0DoClz0V.NTwaPc!/b/dPQAAAAAAAAA&bo=OASgBTgEoAURCT4!&rf=viewer_4" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://b309.photo.store.qq.com/psb?/V11zZTwc03e2Fs/n.R85dIPGGPZ2IHyatrUmWEp1I497ulN330*VJl7EUk!/b/dDUBAAAAAAAA&bo=QAZVCDAMQBARCUk!&rf=viewer_4" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://b340.photo.store.qq.com/psb?/V11zZTwc0TDgXk/8FYPsJ4UohIIcgg6N1x7rIlBJt3kKOOc.milbODTLus!/b/dFQBAAAAAAAA&bo=QAZVCJAJwAwRCXA!&rf=viewer_4" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://b191.photo.store.qq.com/psb?/V11zZTwc03e2Fs/CRN36cw3CH9ZmMEfEnZzmqJdgipizKaSmIDzZY175m4!/b/dL8AAAAAAAAA&bo=QAZVCDAMQBARKWk!&rf=viewer_4" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://b193.photo.store.qq.com/psb?/V11zZTwc0TDgXk/Fdu.5eupY4xwiGfTSehV8YayqxLcB2sPZr1Xv5guH.8!/b/dMEAAAAAAAAA&bo=QAZVCJAJwAwRCXA!&rf=viewer_4" mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+  <view class='tips'>基本情况
+    <text class='iconfont icongerenxinxi'></text>
+  </view>
+  <view class='info-box'>
+    <view class='title'>大树</view>
+    <view class='title'>硕士</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>男</view>
+    <view class='title'>13707735481</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>桂林 . 广西</view>
+    <view class='title'>1942194789@qq.com</view>
+  </view>
+  <view class='tips'>专业技能
+    <text class='iconfont iconzhuanyegaoxiao'></text>
+  </view>
+  <view class='info-box'>
+    <view class='title'>HTML+CSS3</view>
+    <view class='title'>Vue.js</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>Bootstrap</view>
+    <view class='title'>flash</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>PHP</view>
+    <view class='title'>MySql</view>
+  </view>
+  <view class='tips'>求职意向
+    <text class='iconfont icongongzuotai'></text>
+  </view>
+  <view class='info-box'>
+    <view class='title'>前端</view>
+    <view class='title'>微信小程序</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>讲师</view>
+    <view class='title'>策划</view>
+  </view>
+  <view class='tips'>兴趣爱好
+    <text class='iconfont iconganxingqu'></text>
+  </view>
+  <view class='info-box'>
+    <view class='title'>追美剧 看电影</view>
+    <view class='title'>徒步 跑步</view>
+  </view>
+  <view class='info-box'>
+    <view class='title'>包饺子</view>
+    <view class='title'>游泳</view>
+  </view>
+  <view class='bottom-tips'>不好意思，没有更多啦!</view>
+  <view class='btn-wrap'>
+    <button class='btn' bindtap="onMsg">有兴趣就给我留言吧</button>
+  </view>
+
+</view>
