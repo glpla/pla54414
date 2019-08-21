@@ -17,9 +17,11 @@
 
   <block wx:for='{{records}}' wx:key=''>
     <view class='item'>
-      <view>{{item.name}}</view>
+      <view class='title'>{{item.name}}</view>
       <view>{{item.msg}}</view>
       <view class='ft-24'>{{item.time}}</view>
+      <view class='sn-bg'></view>
+      <view class='sn-title'>{{index+1}}</view>
       <view class='like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
         <view>{{item.like}}</view>
         <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>

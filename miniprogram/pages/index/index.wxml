@@ -1,5 +1,5 @@
 <view class=''>
-  <swiper autoplay duration="1000" interval="3000">
+  <swiper autoplay duration="1000" interval="3000" circular>
     <swiper-item>
       <image src="http://b244.photo.store.qq.com/psb?/V11zZTwc0TDgXk/X6XSTuOzEkwG1TBLmaqGWWjb43*B0DoClz0V.NTwaPc!/b/dPQAAAAAAAAA&bo=OASgBTgEoAURCT4!&rf=viewer_4" mode='aspectFill'></image>
     </swiper-item>
