@@ -34,6 +34,10 @@ image {
   margin-top: 20rpx;
 }
 
+.ft-24 {
+  font-size: 24rpx;
+}
+
 .title {
   margin-top: 20rpx;
 }
@@ -87,4 +91,27 @@ image {
   text-align: center;
   font-size: 24rpx;
   color: #aaa;
+}
+
+/* testing */
+
+.test-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.test {
+  width: 200rpx;
+  height: 100rpx;
+  background: #f06;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+
+.temp {
+  width: 200rpx;
+  height: 100rpx;
+  background: #f06;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
 }
