@@ -1,42 +1,84 @@
-.ta-box {
-  width: 100%;
-  border: 1px solid #eee;
-  border-radius: 10rpx;
-  margin-bottom: 8rpx;
-  padding: 10rpx;
-  background: #fff;
-}
-
-.ta-box textarea {
-  width: 100%;
-  background: #fff;
+.form-wrap {
   padding: 10rpx;
 }
 
-.ta-box input {
-  display: block;
+.form-txt {
+  padding: 10rpx;
+}
+
+.form-em-txt {
+  color: #f40;
+}
+
+.form-input {
   box-sizing: border-box;
   width: 100%;
   background: #fff;
-  padding: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 20rpx;
+  font-size: 0.8rem;
+  border-radius: 10rpx;
 }
 
-.ta-tips {
-  color: #aaa;
-  padding: 10rpx;
+.form-ta {
+  width: 100%;
+  line-height: 40rpx;
+  background: #fff;
+  padding: 20rpx;
+  font-size: 0.8rem;
+  border-radius: 10rpx;
 }
 
-.em-tips {
-  color: #f66;
+.form-btn {
+  background: #179cd1;
+  color: #fff;
+  margin-top: 10rpx;
+  font-size: 0.8rem;
+  border-radius: 10rpx;
+}
+
+.wrap-history {
+  position: relative;
+  text-align: center;
+  width: 340rpx;
+  line-height: 60rpx;
+  margin: 20rpx auto 0;
+  background: #eee;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+
+.wrap-history::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -30rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background: radial-gradient(farthest-corner circle at 0rpx 0px, transparent 70%, #eee 30%);
+}
+
+.wrap-history::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -30rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background: radial-gradient(farthest-corner circle at 30rpx 0px, transparent 70%, #eee 30%);
+}
+
+.item-wrap {
+  padding: 0 10rpx;
 }
 
 .item {
-  padding: 10rpx;
-  margin-bottom: 10rpx;
-  border: 1px solid #ddd;
+  margin-bottom: 20rpx;
   border-radius: 10rpx;
   position: relative;
   overflow: hidden;
+  background: #eee;
 }
 
 .item view {
@@ -98,37 +140,4 @@
   top: 0;
   padding: 0rpx 10rpx;
   color: #fff;
-}
-
-.wrap-history {
-  display: flex;
-  width: 340rpx;
-  line-height: 60rpx;
-  margin-top: 20rpx;
-  justify-content: center;
-  align-items:baseline;
-  background: #eee;
-  border-top-left-radius: 40rpx;
-  border-top-right-radius: 40rpx;
-  position: relative;
-}
-
-.wrap-history::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -30rpx;
-  width: 30rpx;
-  height: 30rpx;
-  background: radial-gradient(farthest-corner circle at 0rpx 0px, transparent 70%, #eee 30%);
-}
-
-.wrap-history::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: -30rpx;
-  width: 30rpx;
-  height: 30rpx;
-  background: radial-gradient(farthest-corner circle at 30rpx 0px, transparent 70%, #eee 30%);
 }

@@ -1,48 +1,49 @@
 <view>
-  <view class='wrap'>
-    <view class='ta-tips'>称呼
-      <text class='ft-24'>(最多8个字)</text>
+  <view class='form-wrap'>
+    <view class='form-txt'>称呼
+      <text class='form-sub-txt'>(最多8个字)</text>
     </view>
-    <input class='ta-box' placeholder="留下您高大上的称呼吧" auto-focus maxlength='8' bindinput='onNameInput' placeholder-style='color:#aaa;' />
+    <input class='form-input' placeholder="留下您高大上的称呼吧" auto-focus maxlength='8' bindinput='onNameInput' placeholder-style='color:#aaa;' />
   </view>
-  <view class='wrap'>
-    <view class='ta-tips'>内容
-      <text class='ft-24'>(还可以输入<text class='em-tips'>{{len}} </text>个字)</text>
+  <view class='form-wrap'>
+    <view class='form-txt'>内容
+      <text class='form-sub-txt'>(还可以输入<text class='form-em-txt'>{{len}} </text>个字)</text>
     </view>
-    <textarea class='ta-box' placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-style='color:#aaa' />
+    <textarea class='form-ta' placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-style='color:#aaa' />
   </view>
-  <button class='btn' bindtap="onSbumit" disabled="{{!msg.length>0 || !name.length>0}}">提交</button>
-  <!-- <button class='btn' bindtap="onQuery">query</button> -->
-
-  <view class='container'>
-    <view class="wrap-history">
-      <text>历史留言</text>
-      <text class='ft-24'>(最新20条)</text>
-    </view>
+  <view class='form-wrap'>
+    <button class='form-btn' bindtap="onSubmit">提交</button>
   </view>
 
-  <block wx:for='{{records}}' wx:key=''>
-    <view class='item'>
-      <view class='cont-box'>
-        <text class="head">用户：</text>
-        <text class="cont">{{item.name}}</text>
+  <view class="wrap-history">
+    <text>历史留言</text>
+    <text class='form-sub-txt'>(最新20条)</text>
+  </view>
+
+  <view class='item-wrap'>
+    <block wx:for='{{records}}' wx:key=''>
+      <view class='item'>
+        <view class='cont-box'>
+          <text class="head">用户：</text>
+          <text class="cont">{{item.name}}</text>
+        </view>
+        <view class='cont-box'>
+          <text class="head">内容：</text>
+          <text class="cont">{{item.msg}}</text>
+        </view>
+        <view class='cont-box'>
+          <text class="head">日期：</text>
+          <text class="cont">{{item.time}}</text>
+        </view>
+        <view class='sn-bg'></view>
+        <view class='sn-title'>{{index+1}}</view>
+        <view class='like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
+          <view>{{item.like}}</view>
+          <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>
+          <text wx:else class='iconfont iconintegral'></text>
+        </view>
       </view>
-      <view class='cont-box'>
-        <text class="head">内容：</text>
-        <text class="cont">{{item.msg}}</text>
-      </view>
-      <view class='cont-box'>
-        <text class="head">日期：</text>
-        <text class="cont">{{item.time}}</text>
-      </view>
-      <view class='sn-bg'></view>
-      <view class='sn-title'>{{index+1}}</view>
-      <view class='like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
-        <view>{{item.like}}</view>
-        <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>
-        <text wx:else class='iconfont iconintegral'></text>
-      </view>
-    </view>
-  </block>
+    </block>
+  </view>
 
 </view>

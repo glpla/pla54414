@@ -4,13 +4,15 @@ import {
 import {
   config
 } from '../../utils/config.js'
+const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
     name: "",
     msg: "",
     len: 60,
-    records: []
+    records: [],
+    isEdit: true
   },
   onNameInput(e) {
     this.setData({
@@ -26,9 +28,24 @@ Page({
       len
     })
   },
-  onSbumit() {
+  onSubmit() {
+    if (!app.globalData.isEdit) {
+      wx.showToast({
+        title: '请稍后再试',
+        icon: "none"
+      })
+      return
+    }
+    if (this.data.msg.length == 0 || this.data.name.length == 0) {
+      wx.showToast({
+        title: '内容为空,请重试',
+        icon: "none"
+      })
+      return
+    }
+
     wx.showToast({
-      title: '数据提交中',
+      title: '数据提交中...',
       icon: "loading"
     })
     db.collection('pla54414').add({
@@ -44,6 +61,10 @@ Page({
           title: '提交成功，等待审核',
           icon: "none"
         })
+        app.globalData.isEdit = false;
+        this.setTimeOut(() => {
+          app.globalData.isEdit = true;
+        }, 5 * 60 * 1000)
       }).catch(err => {
         console.log(err)
       })
@@ -90,7 +111,7 @@ Page({
       },
       success: res => {
         wx.showToast({
-          title: '点赞成功',
+          title: '点赞成功,谢谢支持',
           icon: "none"
         })
       },
