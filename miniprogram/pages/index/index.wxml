@@ -1,5 +1,5 @@
 <view class=''>
-  <swiper autoplay duration="1000" interval="3000" circular>
+  <swiper autoplay duration="1000" interval="3000" circular indicator-dots indicator-color='rgba(255,255,255,0.6)' indicator-active-color='#fff'>
     <swiper-item wx:for='{{imgs}}' wx:key='item.id'>
       <image src="{{item.url}}"></image>
     </swiper-item>

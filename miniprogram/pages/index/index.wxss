@@ -36,6 +36,7 @@ image {
 }
 
 .title {
+  font-size: 0.8rem;
   padding: 10rpx;
   color: #999;
 }
@@ -66,6 +67,7 @@ image {
 }
 
 .left .item-title {
+  font-size: 0.8rem;
   margin-top: 10rpx;
 }
 
@@ -130,7 +132,7 @@ image {
 }
 
 .bottom-tips {
-  margin: 20rpx 0 120rpx;
+  margin: 20rpx 0 140rpx;
   text-align: center;
   font-size: 0.6rem;
   color: #aaa;

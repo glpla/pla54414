@@ -7,5 +7,13 @@ page, view, navitator, video, swiper, swiper-item, scroll-view, textarea {
 page {
   color: #666;
   background: #f6f6f6;
-  font-size: 0.8rem;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  padding: 0 15rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

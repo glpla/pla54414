@@ -4,20 +4,16 @@ import {
 import {
   config
 } from '../../utils/config.js'
+
 const app = getApp()
 const db = wx.cloud.database()
+
 Page({
   data: {
-    name: "",
     msg: "",
     len: 60,
     records: [],
     isEdit: true
-  },
-  onNameInput(e) {
-    this.setData({
-      name: e.detail.value
-    })
   },
   onMsgInput(e) {
     let msg = e.detail.value,
@@ -36,7 +32,7 @@ Page({
       })
       return
     }
-    if (this.data.msg.length == 0 || this.data.name.length == 0) {
+    if (this.data.msg.length == 0) {
       wx.showToast({
         title: '内容为空,请重试',
         icon: "none"
@@ -51,8 +47,10 @@ Page({
     db.collection('pla54414').add({
         data: {
           time: formatTime(new Date()),
-          name: this.data.name,
+          userInfo: app.globalData.userInfo,
           msg: this.data.msg,
+          city: app.globalData.city,
+          province: app.globalData.province,
           like: 0
         }
       })
@@ -119,6 +117,6 @@ Page({
     })
   },
   onLoad: function(options) {
-    this.onQuery()
+    this.onQuery();
   }
 })

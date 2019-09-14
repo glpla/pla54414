@@ -1,11 +1,5 @@
 <view>
   <view class='form-wrap'>
-    <view class='form-txt'>称呼
-      <text class='form-sub-txt'>(最多8个字)</text>
-    </view>
-    <input class='form-input' placeholder="留下您高大上的称呼吧" auto-focus maxlength='8' bindinput='onNameInput' placeholder-style='color:#aaa;' />
-  </view>
-  <view class='form-wrap'>
     <view class='form-txt'>内容
       <text class='form-sub-txt'>(还可以输入<text class='form-em-txt'>{{len}} </text>个字)</text>
     </view>
@@ -14,30 +8,37 @@
   <view class='form-wrap'>
     <button class='form-btn' bindtap="onSubmit">提交</button>
   </view>
-
-  <view class="wrap-history">
-    <text>历史留言</text>
-    <text class='form-sub-txt'>(最新20条)</text>
+  <view class='wave'>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
+    <view class='wave-item'></view>
   </view>
-
+  <view class='tips'>(历史留言仅显示最近20条记录)</view>
   <view class='item-wrap'>
     <block wx:for='{{records}}' wx:key=''>
       <view class='item'>
-        <view class='cont-box'>
-          <text class="head">用户：</text>
-          <text class="cont">{{item.name}}</text>
+        <view class='user-info'>
+          <image class='img' src='{{item.userInfo.avatarUrl}}' mode='widthFix'></image>
+          <view class='nickName'>{{item.userInfo.nickName}}</view>
         </view>
-        <view class='cont-box'>
-          <text class="head">内容：</text>
-          <text class="cont">{{item.msg}}</text>
+        <view class='user-msg'>
+          <view class="time">{{item.time}} 发布于 {{item.city}}</view>
+          <view class="msg">{{item.msg}}</view>
         </view>
-        <view class='cont-box'>
-          <text class="head">日期：</text>
-          <text class="cont">{{item.time}}</text>
-        </view>
-        <view class='sn-bg'></view>
-        <view class='sn-title'>{{index+1}}</view>
-        <view class='like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
+        <view class='user-like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
           <view>{{item.like}}</view>
           <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>
           <text wx:else class='iconfont iconintegral'></text>

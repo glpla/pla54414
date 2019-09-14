@@ -1,0 +1,12 @@
+<view class='wrap'>
+  <!-- <image src='../../images/logo.jpg' mode="widthFix"></image> -->
+  <!-- <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">进入大树的小站</button> -->
+  <!-- <view>本小程序仅供个人撸码使用</view> -->
+  <view class='loading'>
+    <view class='text'>
+      <view>仅供撸码</view>
+      <view>点击进入</view>
+    </view>
+  </view>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="onGetUserInfo"></button>
+</view>

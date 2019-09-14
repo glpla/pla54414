@@ -1,6 +1,5 @@
+const app = getApp()
 Page({
-
-
   data: {
     imgs: [{
       id: 100,
@@ -27,40 +26,26 @@ Page({
     })
   },
   onLoad: function(options) {
-
+    console.log(app.globalData.userInfo, app.globalData.city, app.globalData.province)
   },
 
 
-  onReady: function() {
-
-  },
+  onReady: function() {},
 
 
-  onShow: function() {
-
-  },
+  onShow: function() {},
 
 
-  onHide: function() {
-
-  },
+  onHide: function() {},
 
 
-  onUnload: function() {
-
-  },
+  onUnload: function() {},
 
 
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function() {},
 
-  },
-
-  onReachBottom: function() {
-
-  },
+  onReachBottom: function() {},
 
 
-  onShareAppMessage: function() {
-
-  }
+  onShareAppMessage: function() {}
 })
