@@ -4,20 +4,6 @@
       <image src="{{item.url}}"></image>
     </swiper-item>
   </swiper>
-  <view class='item-wrap'>
-    <view class='left'>
-      <text class='iconfont iconuser1 text'></text>
-      <text class='item-title'>个人信息</text>
-    </view>
-    <view class='right'>
-      <view class='title'>大树</view>
-      <view class='title'>08.22</view>
-      <view class='title'>桂林 . 广西</view>
-      <view class='title'>工科硕士</view>
-      <view class='title'>13707735481</view>
-      <view class='title'>1942194789@qq.com</view>
-    </view>
-  </view>
 
   <view class='item-wrap'>
     <view class='left'>
@@ -65,6 +51,37 @@
           <view class='per30'>Apache</view>
         </view>
       </view>
+    </view>
+  </view>
+
+  <view class='item-wrap'>
+    <view class='left'>
+      <text class='iconfont iconuser1 text'></text>
+      <text class='item-title'>个人信息</text>
+    </view>
+    <view class='right'>
+      <view class='title'>大树</view>
+      <view class='title'>08.22</view>
+      <view class='title'>桂林 . 广西</view>
+      <view class='title'>工科硕士</view>
+      <view class='title'>13707735481</view>
+      <view class='title'>1942194789@qq.com</view>
+    </view>
+  </view>
+
+  <view class='item-wrap'>
+    <view class='left'>
+      <text class='iconfont icongongsiquanbushengchandingdanguanli text'></text>
+      <text class='item-title'>工作经历</text>
+    </view>
+    <view class='right'>
+      <view class='title'>部职别:</view>
+      <view class='title sub-title'>-无线室</view>
+      <view class='title sub-title'>-电源室</view>
+      <view class='title sub-title'>-通信室</view>
+      <view class='title sub-title'>-侦察系</view>
+      <view class='title'>岗位:</view>
+      <view class='title sub-title'>-通信装备培训、研发</view>
     </view>
   </view>
 

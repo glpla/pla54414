@@ -198,5 +198,5 @@
 
 .item .user-like text {
   color: #f66;
-  font-size: 0.6rem;
+  font-size: 1.4rem;
 }

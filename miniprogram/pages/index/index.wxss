@@ -40,6 +40,9 @@ image {
   padding: 10rpx;
   color: #999;
 }
+.sub-title {
+  text-indent: 1rem;
+}
 
 .item-wrap {
   width: 96%;
