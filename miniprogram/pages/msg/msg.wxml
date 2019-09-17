@@ -31,7 +31,8 @@
     <block wx:for='{{records}}' wx:key=''>
       <view class='item'>
         <view class='user-info'>
-          <image class='img' src='{{item.userInfo.avatarUrl}}' mode='widthFix'></image>
+          <image wx:if='{{item.userInfo.avatarUrl}}' class='img' src='{{item.userInfo.avatarUrl}}' mode='widthFix'></image>
+          <view class='blank-img' wx:else>无名氏</view>
           <view class='nickName'>{{item.userInfo.nickName}}</view>
         </view>
         <view class='user-msg'>
