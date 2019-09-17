@@ -4,6 +4,7 @@
   <!-- <view>本小程序仅供个人撸码使用</view> -->
   <view class='loading'>
     <view class='text'>
+      <view>持续更新</view>
       <view>仅供撸码</view>
       <view>点击进入</view>
     </view>

@@ -5,7 +5,7 @@ page, view, navitator, video, swiper, swiper-item, scroll-view, textarea {
 }
 
 page {
-  color: #666;
+  color: #333;
   background: #f6f6f6;
   font-size: 16px;
 }

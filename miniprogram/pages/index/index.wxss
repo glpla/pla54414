@@ -38,8 +38,8 @@ image {
 .title {
   font-size: 0.8rem;
   padding: 10rpx;
-  color: #999;
 }
+
 .sub-title {
   text-indent: 1rem;
 }
@@ -62,11 +62,12 @@ image {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #aaa;
 }
 
 .left .text {
   font-size: 3rem;
-  color: #999;
+  text-shadow: 0 8rpx 2rpx #666;
 }
 
 .left .item-title {
@@ -138,5 +139,5 @@ image {
   margin: 20rpx 0 140rpx;
   text-align: center;
   font-size: 0.6rem;
-  color: #aaa;
+  color: #999;
 }
