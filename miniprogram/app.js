@@ -18,7 +18,9 @@ App({
       isEdit: true,
       userInfo: {},
       logged: false,
-      openid: 'ofaJG4zF9VE6g206HAu-9zhajhck',
+      openid: '',
+      userid: 'ofaJG4zF9VE6g206HAu-9zhajhck',
+      self: false,
       city: null,
       province: null
     }

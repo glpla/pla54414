@@ -145,12 +145,12 @@
   position: relative;
   margin-top: 20rpx;
   border-radius: 10rpx;
-  overflow: hidden;
   background: #eee;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20rpx;
+  padding: 10rpx;
+  overflow: hidden;
 }
 
 .item .user-info {
@@ -181,6 +181,7 @@
   color: #aaa;
   text-align: center;
   margin-top: 20rpx;
+  font-size: 0.68rem;
 }
 
 .item .user-msg {
@@ -201,13 +202,42 @@
 
 .item .user-like {
   position: absolute;
-  right: 20rpx;
-  bottom: 20rpx;
+  right: 4rpx;
+  top: 4rpx;
   display: flex;
   align-items: center;
+}
+
+.item .user-like view {
+  color: #f66;
+  font-size: 0.68rem;
 }
 
 .item .user-like text {
   color: #f66;
   font-size: 1.4rem;
+}
+
+.item .del {
+  position: absolute;
+  left: -40rpx;
+  top: -40rpx;
+  width: 0rpx;
+  height: 0rpx;
+  border-top: 20px solid #f40;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid transparent;
+  transform: rotate(135deg);
+  z-index: 1;
+}
+
+.item .del-txt {
+  position: absolute;
+  top: -43rpx;
+  left: -12rpx;
+  color: #fff;
+  font-size: 0.6rem;
+  transform: rotate(180deg);
+  z-index: 99;
 }

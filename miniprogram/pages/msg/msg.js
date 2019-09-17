@@ -13,7 +13,8 @@ Page({
     msg: "",
     len: 60,
     records: [],
-    isEdit: true
+    isEdit: true,
+    isSelf: false
   },
   onMsgInput(e) {
     let msg = e.detail.value,
@@ -116,7 +117,33 @@ Page({
       fail: console.error
     })
   },
+  onDel(e) {
+    console.log(e.target.dataset.id);
+    let id = e.target.dataset.id;
+    const db = wx.cloud.database()
+    db.collection('pla54414').doc(id).remove({
+      success: res => {
+        wx.showToast({
+          title: '删除成功',
+        })
+        this.onQuery();
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '删除失败',
+        })
+        console.error('[数据库] [删除记录] 失败：', err)
+      }
+    })
+  },
   onLoad: function(options) {
     this.onQuery();
+    // console.log(app.globalData.openid);
+    // console.log(app.globalData.userid);
+    // console.log(app.globalData.self);
+    this.setData({
+      isSelf: app.globalData.self
+    })
   }
 })

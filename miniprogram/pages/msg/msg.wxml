@@ -44,6 +44,9 @@
           <text wx:if='{{item.like>0}}' class='iconfont iconintegral_fill'></text>
           <text wx:else class='iconfont iconintegral'></text>
         </view>
+        <view class='del' wx:if='{{isSelf}}' bindtap="onDel" data-id='{{item._id}}'>
+          <view class='del-txt'>del</view>
+        </view>
       </view>
     </block>
   </view>

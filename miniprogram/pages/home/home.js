@@ -17,13 +17,30 @@ Page({
   data: {},
 
   onGetUserInfo: function(e) {
-    console.log(e)
+    // console.log(e)
     if (!this.logged && e.detail.userInfo) {
       app.globalData.logged = true;
       app.globalData.userInfo = e.detail.userInfo;
-      wx.redirectTo({
-        url: '../index/index',
+
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {},
+        success: res => {
+          // console.log('res', res.result.openid);
+          app.globalData.openid = res.result.openid;
+          if (app.globalData.userid == app.globalData.openid) {
+            app.globalData.self = true;
+          }
+          console.log(app.globalData.self)
+
+          wx.redirectTo({
+            url: '../index/index',
+          })
+        },
+        fail: console.error
       })
+
+
     }
   },
   onLoad: function(options) {
@@ -34,7 +51,7 @@ Page({
           wx.getUserInfo({
             lang: "zh_CN",
             success: res => {
-              console.log(res.userInfo)
+              // console.log(res.userInfo);
               app.globalData.userInfo = res.userInfo;
             }
           })
