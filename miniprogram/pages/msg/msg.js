@@ -60,6 +60,7 @@ Page({
           title: '提交成功，等待审核',
           icon: "none"
         })
+        this.onQuery();
         app.globalData.isEdit = false;
         this.setTimeOut(() => {
           app.globalData.isEdit = true;
@@ -67,7 +68,6 @@ Page({
       }).catch(err => {
         console.log(err)
       })
-
   },
   onQuery() {
     wx.showToast({
@@ -118,8 +118,8 @@ Page({
     })
   },
   onDel(e) {
-    console.log(e.target.dataset.id);
-    let id = e.target.dataset.id;
+    console.log(e, e.currentTarget.dataset.id);
+    let id = e.currentTarget.dataset.id;
     const db = wx.cloud.database()
     db.collection('pla54414').doc(id).remove({
       success: res => {

@@ -158,6 +158,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10rpx;
 }
 
 .item .user-info .img {
@@ -177,11 +178,14 @@
 }
 
 .item .user-info .nickName {
-  width: 200rpx;
+  width: 140rpx;
   color: #aaa;
   text-align: center;
   margin-top: 20rpx;
   font-size: 0.68rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .item .user-msg {
