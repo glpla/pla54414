@@ -1,6 +1,12 @@
 const app = getApp()
+const bgm = wx.getBackgroundAudioManager();
+bgm.title = '此时此刻';
+bgm.epname = '此时此刻';
+bgm.singer = '许巍';
+bgm.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
 Page({
   data: {
+    isPlay: true,
     imgs: [{
       id: 100,
       url: 'http://m.qpic.cn/psb?/V11zZTwc1KBViZ/omvvSm9v*MzsZW2JEJt8b8gEuqSDrvBPolrlhYU.K5U!/b/dL8AAAAAAAAA&bo=OAQqAzgEKgMDaUw!&rf=viewer_4'
@@ -25,8 +31,37 @@ Page({
       url: '../msg/msg',
     })
   },
+  onPlay() {
+    if (this.data.isPlay) {
+      bgm.pause();
+      this.setData({
+        isPlay: false
+      })
+    } else {
+      bgm.play();
+      this.setData({
+        isPlay: true
+      })
+    }
+  },
   onLoad: function(options) {
-    console.log(app.globalData.userInfo, app.globalData.city, app.globalData.province)
+    // console.log(app.globalData.userInfo, app.globalData.city, app.globalData.province);
+    bgm.onEnded(() => {
+      bgm.play();
+      this.setData({
+        isPlay: true
+      })
+    })
+    bgm.onPlay(() => {
+      this.setData({
+        isPlay: true
+      })
+    })
+    bgm.onPause(() => {
+      this.setData({
+        isPlay: false
+      })
+    })
   },
 
 

@@ -113,6 +113,9 @@
       <view class='title'>发呆: ...</view>
     </view>
   </view>
+  <view class="music {{isPlay? 'rolling':''}}" bindtap="onPlay">
+    <text class='iconfont iconyinle'></text>
+  </view>
 
   <view class='bottom-tips'>不好意思，没有更多啦!</view>
   <view class='btn-wrap'>

@@ -1,3 +1,7 @@
+page {
+  background: #dcdcdc;
+}
+
 swiper {
   height: 562.5rpx;
 }
@@ -45,18 +49,16 @@ image {
 }
 
 .item-wrap {
-  width: 96%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eee;
-  margin: 20rpx auto;
-  border-radius: 10rpx;
-  padding: 10rpx;
+  background: #fff;
+  margin: 40rpx auto;
+  padding: 20rpx;
 }
 
 .item-wrap .left {
-  width: 200rpx;
+  width: 180rpx;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -67,7 +69,7 @@ image {
 
 .left .text {
   font-size: 3rem;
-  text-shadow: 0 8rpx 2rpx #666;
+  text-shadow: 0 4rpx 2rpx #666;
 }
 
 .left .item-title {
@@ -140,4 +142,28 @@ image {
   text-align: center;
   font-size: 0.6rem;
   color: #999;
+}
+
+.music {
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 99;
+}
+
+.rolling {
+  animation: rolling 4s linear infinite;
+}
+
+@keyframes rolling {
+  to {
+    transform: rotate(360deg);
+  }
 }
