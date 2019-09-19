@@ -55,6 +55,7 @@ image {
   background: #fff;
   margin: 40rpx auto;
   padding: 20rpx;
+  position: relative;
 }
 
 .item-wrap .left {
@@ -69,12 +70,13 @@ image {
 
 .left .text {
   font-size: 3rem;
-  text-shadow: 0 4rpx 2rpx #666;
+  text-shadow: 0 4rpx 1rpx #666;
 }
 
 .left .item-title {
   font-size: 0.8rem;
   margin-top: 10rpx;
+  letter-spacing: 0.1rem;
 }
 
 .item-wrap .right {
@@ -107,34 +109,6 @@ image {
   text-indent: 20rpx;
   color: #fff;
   background: #ffa500;
-}
-
-.per95 {
-  width: 95%;
-}
-
-.per80 {
-  width: 80%;
-}
-
-.per70 {
-  width: 70%;
-}
-
-.per60 {
-  width: 60%;
-}
-
-.per50 {
-  width: 50%;
-}
-
-.per40 {
-  width: 40%;
-}
-
-.per30 {
-  width: 30%;
 }
 
 .bottom-tips {

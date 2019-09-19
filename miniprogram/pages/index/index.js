@@ -4,6 +4,9 @@ bgm.title = '此时此刻';
 bgm.epname = '此时此刻';
 bgm.singer = '许巍';
 bgm.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
+
+const db = wx.cloud.database()
+
 Page({
   data: {
     isPlay: true,
@@ -23,9 +26,9 @@ Page({
     }, {
       id: 104,
       url: 'http://m.qpic.cn/psb?/V11zZTwc1KBViZ/yRI19i9mbPOmir5cNTRTsGu97A2caZyJ972WQ3H0jaU!/b/dFMBAAAAAAAA&bo=OAQqAzgEKgMDaUw!&rf=viewer_4'
-    }]
+    }],
+    info: []
   },
-
   onMsg() {
     wx.navigateTo({
       url: '../msg/msg',
@@ -45,6 +48,7 @@ Page({
     }
   },
   onLoad: function(options) {
+    this.onQuery();
     // console.log(app.globalData.userInfo, app.globalData.city, app.globalData.province);
     bgm.onEnded(() => {
       bgm.play();
@@ -63,24 +67,31 @@ Page({
       })
     })
   },
-
-
+  onQuery() {
+    wx.showToast({
+      title: '数据加载中',
+      icon: "loading"
+    })
+    db.collection('pla54414-info').get().then(res => {
+      console.log(res.data)
+      this.setData({
+        info: res.data
+      })
+      // console.log(this.data.records)
+      wx.hideToast();
+      wx.showToast({
+        title: '数据加载完毕',
+        icon: "none"
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  },
   onReady: function() {},
-
-
   onShow: function() {},
-
-
   onHide: function() {},
-
-
   onUnload: function() {},
-
-
   onPullDownRefresh: function() {},
-
   onReachBottom: function() {},
-
-
   onShareAppMessage: function() {}
 })
