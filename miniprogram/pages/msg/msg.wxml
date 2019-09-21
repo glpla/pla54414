@@ -1,12 +1,13 @@
 <view>
   <view class='form-wrap'>
-    <view class='form-txt'>内容
-      <text class='form-sub-txt'>(还可以输入<text class='form-em-txt'>{{len}} </text>个字)</text>
+    <view class='form-txt'>内容(还可以输入
+      <text class='form-em-txt'>{{len}}</text> 个字)
     </view>
     <textarea class='form-ta' placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-style='color:#aaa' />
   </view>
   <view class='form-wrap'>
     <button class='form-btn' bindtap="onSubmit">提交</button>
+    <button class='form-btn' open-type='contact'>联系在线客服</button>
   </view>
   <view class='wave'>
     <view class='wave-item'></view>
@@ -50,5 +51,4 @@
       </view>
     </block>
   </view>
-
 </view>

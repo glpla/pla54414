@@ -1,6 +1,3 @@
 <view class="mapWrapper">
-  <!-- 显示的指定map的宽高:或在wxss或这里 -->
-  <!-- bindcontroltap:点击控件时触发 -->
-  <!-- show-location显示带有方向的当前定位点 -->
-  <map id="map" class="map" longitude="{{long}}" latitude="{{lati}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" show-location></map>
+  game
 </view>

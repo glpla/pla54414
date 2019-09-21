@@ -7,8 +7,14 @@ bgm.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff8
 
 const db = wx.cloud.database()
 
+let QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+let qqmapsdk = new QQMapWX({
+  key: 'U6QBZ-ROQ3W-PFMRZ-O4VA5-LZOKQ-G7FZA'
+});
+
 Page({
   data: {
+    avatarUrl: './user-unlogin.png',
     isPlay: true,
     imgs: [{
       id: 100,
@@ -27,9 +33,53 @@ Page({
       id: 104,
       url: 'http://m.qpic.cn/psb?/V11zZTwc1KBViZ/yRI19i9mbPOmir5cNTRTsGu97A2caZyJ972WQ3H0jaU!/b/dFMBAAAAAAAA&bo=OAQqAzgEKgMDaUw!&rf=viewer_4'
     }],
-    info: []
+    info: [],
+    isShow: true
   },
-  onMsg() {
+  onGetUserInfo: function(e) {
+    console.log(e)
+    if (!this.logged && e.detail.userInfo) {
+      app.globalData.logged = true;
+      app.globalData.userInfo = e.detail.userInfo;
+      this.setData({
+        avatarUrl: e.detail.userInfo.avatarUrl
+      })
+
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {},
+        success: res => {
+          // console.log('res', res.result.openid);
+          app.globalData.openid = res.result.openid;
+          if (app.globalData.userid == app.globalData.openid) {
+            app.globalData.self = true;
+          }
+          console.log(app.globalData.self);
+        },
+        fail: console.error
+      })
+
+
+    }
+  },
+  checkLocation() {
+    qqmapsdk.geocoder({
+      address: "广西桂林七星区高新万达广场",
+      success(res) {
+        wx.openLocation({
+          latitude: res.result.location.lat,
+          longitude: res.result.location.lng
+        })
+      }
+    })
+
+  },
+  makeCall() {
+    wx.makePhoneCall({
+      phoneNumber: '13707735481'
+    })
+  },
+  toMsg() {
     wx.navigateTo({
       url: '../msg/msg',
     })
@@ -66,6 +116,43 @@ Page({
         isPlay: false
       })
     })
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            lang: "zh_CN",
+            success: res => {
+              app.globalData.userInfo = res.userInfo;
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl
+              })
+            }
+          })
+        }
+      }
+    })
+    wx.getLocation({
+      type: 'wgs84',
+      success: res => {
+        // 调用sdk接口
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: res => {
+            //获取当前地址成功
+            // console.log(res);
+            app.globalData.city = res.result.address_component.city;
+            app.globalData.province = res.result.address_component.province;
+          },
+          fail: res => {
+            console.log('获取当前地址失败');
+          }
+        });
+      },
+    })
   },
   onQuery() {
     wx.showToast({
@@ -77,7 +164,7 @@ Page({
       this.setData({
         info: res.data
       })
-      // console.log(this.data.records)
+      console.log(this.data.records)
       wx.hideToast();
       wx.showToast({
         title: '数据加载完毕',
@@ -93,5 +180,10 @@ Page({
   onUnload: function() {},
   onPullDownRefresh: function() {},
   onReachBottom: function() {},
-  onShareAppMessage: function() {}
+  onShareAppMessage: function() {
+    return {
+      title: 'bigTree online',
+      path: '/pages/index'
+    }
+  }
 })

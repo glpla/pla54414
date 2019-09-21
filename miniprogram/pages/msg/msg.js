@@ -35,7 +35,7 @@ Page({
     }
     if (this.data.msg.length == 0) {
       wx.showToast({
-        title: '内容为空,请重试',
+        title: '内容为空',
         icon: "none"
       })
       return
@@ -57,7 +57,7 @@ Page({
       })
       .then(res => {
         wx.showToast({
-          title: '提交成功，等待审核',
+          title: '提交成功',
           icon: "none"
         })
         this.onQuery();
@@ -71,7 +71,7 @@ Page({
   },
   onQuery() {
     wx.showToast({
-      title: '数据加载中',
+      title: '数据加载中...',
       icon: "loading"
     })
     db.collection('pla54414').orderBy('time', 'desc').get().then(res => {
@@ -110,7 +110,7 @@ Page({
       },
       success: res => {
         wx.showToast({
-          title: '点赞成功,谢谢支持',
+          title: '点赞成功',
           icon: "none"
         })
       },
@@ -145,5 +145,6 @@ Page({
     this.setData({
       isSelf: app.globalData.self
     })
+    console.log(app.globalData.self);
   }
 })

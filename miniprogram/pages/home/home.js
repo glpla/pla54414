@@ -31,11 +31,12 @@ Page({
           if (app.globalData.userid == app.globalData.openid) {
             app.globalData.self = true;
           }
-          console.log(app.globalData.self)
+          // console.log(app.globalData.self)
 
           wx.redirectTo({
             url: '../index/index',
           })
+
         },
         fail: console.error
       })

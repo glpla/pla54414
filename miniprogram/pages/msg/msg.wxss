@@ -3,11 +3,9 @@
 }
 
 .form-txt {
-  padding: 10rpx;
-}
-
-.form-sub-txt {
-  font-size: 0.6rem;
+  padding: 20rpx;
+  font-size: 0.8rem;
+  color: #aaa;
 }
 
 .form-em-txt {
@@ -24,7 +22,7 @@
 }
 
 .form-btn {
-  background: #179cd1;
+  background: #ffa500;
   color: #fff;
   margin-top: 10rpx;
   font-size: 0.8rem;
@@ -142,7 +140,7 @@
 .item {
   position: relative;
   margin-top: 20rpx;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   background: #eee;
   display: flex;
   flex-direction: row;
@@ -209,12 +207,12 @@
 }
 
 .item .user-like view {
-  color: #FF4500;
+  color: #f40;
   font-size: 0.68rem;
 }
 
 .item .user-like text {
-  color: #FF4500;
+  color: #f40;
   font-size: 1.4rem;
 }
 

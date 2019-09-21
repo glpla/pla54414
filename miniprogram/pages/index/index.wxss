@@ -44,8 +44,18 @@ image {
   padding: 10rpx;
 }
 
+.border-bottom {
+  border-bottom: 2rpx solid #eee;
+}
+
 .sub-title {
   text-indent: 1rem;
+}
+
+.location, .cell {
+  color: #e79600;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 
 .item-wrap {
@@ -53,7 +63,7 @@ image {
   justify-content: center;
   align-items: center;
   background: #fff;
-  margin: 40rpx auto;
+  margin: 40rpx auto 0;
   padding: 20rpx;
   position: relative;
 }
@@ -85,19 +95,11 @@ image {
   flex: 1;
 }
 
-.btn-wrap {
-  width: 100%;
-  padding: 20rpx;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: #f6f6f6;
-}
-
 .btn {
-  background: #179cd1;
+  background: #ffa500;
   color: #fff;
   font-size: 0.8rem;
+  margin: 10rpx;
 }
 
 .skill {
@@ -111,17 +113,11 @@ image {
   background: #ffa500;
 }
 
-.bottom-tips {
-  margin: 20rpx 0 140rpx;
-  text-align: center;
-  font-size: 0.6rem;
-  color: #999;
-}
-
 .music {
   position: absolute;
   left: 20rpx;
   top: 20rpx;
+  z-index: 99;
   width: 60rpx;
   height: 60rpx;
   line-height: 60rpx;
@@ -129,7 +125,6 @@ image {
   border-radius: 50%;
   color: #fff;
   background: rgba(255, 255, 255, 0.4);
-  z-index: 99;
 }
 
 .rolling {

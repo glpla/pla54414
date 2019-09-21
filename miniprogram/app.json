@@ -2,10 +2,10 @@
   "pages": [
     "pages/home/home",
     "pages/index/index",
+    "pages/msg/msg",
     "pages/product/product",
     "pages/game/game",
-    "pages/movie/movie",
-    "pages/msg/msg"
+    "pages/movie/movie"
   ],
   "window": {
     "backgroundColor": "#fdfdfd",

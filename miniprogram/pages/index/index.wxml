@@ -1,4 +1,7 @@
 <view class=''>
+  <view class="music {{isPlay? 'rolling':''}}" bindtap="onPlay">
+    <text class='iconfont iconyinle'></text>
+  </view>
   <swiper autoplay duration="1000" interval="3000" circular indicator-dots indicator-color='rgba(255,255,255,0.6)' indicator-active-color='#fff'>
     <swiper-item wx:for='{{imgs}}' wx:key='item.id'>
       <image src="{{item.url}}"></image>
@@ -22,10 +25,19 @@
   <view class='item-wrap'>
     <view class='left'>
       <text class='iconfont iconuser1 text'></text>
-      <text class='item-title'>{{info[1].title}}</text>
+      <text class='item-title'>个人信息</text>
     </view>
     <view class='right'>
-      <view class='title' wx:for='{{info[1].cont}}' wx:key='item'>{{item}}</view>
+      <view class='title border-bottom'>大树</view>
+      <view class='title border-bottom' bindtap='checkLocation'>桂林.七星万达
+        <text class='location'>(查看位置)</text>
+      </view>
+      <view class='title border-bottom'>08.22</view>
+      <view class='title border-bottom'>工科硕士</view>
+      <view class='title border-bottom' bindtap='makeCall'>13707735481
+        <text class='cell'>(点击拨打)</text>
+      </view>
+      <view class='title border-bottom'>1942194789@qq.com</view>
     </view>
   </view>
 
@@ -35,7 +47,7 @@
       <text class='item-title'>{{info[2].title}}</text>
     </view>
     <view class='right'>
-      <view class='title' wx:for='{{info[2].cont}}' wx:key='item'>{{item}}</view>
+      <view class='title border-bottom' wx:for='{{info[2].cont}}' wx:key='item'>{{item}}</view>
     </view>
   </view>
 
@@ -45,7 +57,7 @@
       <text class='item-title'>{{info[3].title}}</text>
     </view>
     <view class='right'>
-      <view class='title' wx:for='{{info[3].cont}}' wx:key='item'>{{item}}</view>
+      <view class='title border-bottom' wx:for='{{info[3].cont}}' wx:key='item'>{{item}}</view>
     </view>
   </view>
 
@@ -55,17 +67,8 @@
       <text class='item-title'>{{info[4].title}}</text>
     </view>
     <view class='right'>
-      <view class='title' wx:for='{{info[4].cont}}' wx:key='item'>{{item}}</view>
+      <view class='title border-bottom' wx:for='{{info[4].cont}}' wx:key='item'>{{item}}</view>
     </view>
   </view>
-
-  <view class="music {{isPlay? 'rolling':''}}" bindtap="onPlay">
-    <text class='iconfont iconyinle'></text>
-  </view>
-
-  <view class='bottom-tips'>不好意思，没有更多啦!</view>
-  <view class='btn-wrap'>
-    <button class='btn' bindtap="onMsg">有兴趣就给我留言吧</button>
-  </view>
-
+  <button class='btn' bindtap="toMsg">感兴趣就给我留言吧</button>
 </view>
