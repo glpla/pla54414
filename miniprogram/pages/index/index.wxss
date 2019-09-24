@@ -39,8 +39,7 @@ image {
   flex: 1;
 }
 
-.title {
-  font-size: 0.8rem;
+.title-wrap {
   padding: 10rpx;
 }
 
@@ -48,8 +47,13 @@ image {
   border-bottom: 2rpx solid #eee;
 }
 
+.title {
+  font-size: 0.8rem;
+}
+
 .sub-title {
-  text-indent: 1rem;
+  font-size: 0.68rem;
+  color: #666;
 }
 
 .location, .cell {

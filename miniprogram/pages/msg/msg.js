@@ -14,7 +14,18 @@ Page({
     len: 60,
     records: [],
     isEdit: true,
-    isSelf: false
+    isSelf: false,
+    showKeyboard: false
+  },
+  makeCall() {
+    wx.makePhoneCall({
+      phoneNumber: '13707735481'
+    })
+  },
+  onComment() {
+    this.setData({
+      showKeyboard: true
+    })
   },
   onMsgInput(e) {
     let msg = e.detail.value,

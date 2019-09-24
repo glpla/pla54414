@@ -7,7 +7,9 @@
   </view>
   <view class='form-wrap'>
     <button class='form-btn' bindtap="onSubmit">提交</button>
-    <button class='form-btn' open-type='contact'>联系在线客服</button>
+    <view class='tips'>(您还可以:)</view>
+    <button class='form-btn' open-type='contact'>联系客服</button>
+    <button class='form-btn' bindtap='makeCall'>拨打13707735481</button>
   </view>
   <view class='wave'>
     <view class='wave-item'></view>
@@ -31,14 +33,15 @@
   <view class='item-wrap'>
     <block wx:for='{{records}}' wx:key=''>
       <view class='item'>
-        <view class='user-info'>
-          <image wx:if='{{item.userInfo.avatarUrl}}' class='img' src='{{item.userInfo.avatarUrl}}' mode='widthFix'></image>
-          <view class='blank-img' wx:else>无名氏</view>
-          <view class='nickName'>{{item.userInfo.nickName}}</view>
+        <view class='user-info' style="background-image: url({{item.userInfo.avatarUrl}})">
         </view>
         <view class='user-msg'>
-          <view class="time">{{item.time}} 发布于 {{item.city}}</view>
-          <view class="msg">{{item.msg}}</view>
+          <view class='nick-name' wx:if='{{item.userInfo.nickName}}'>{{item.userInfo.nickName}}</view>
+          <view class='nick-name' wx:else>无名氏</view>
+          <view class='msg-wrap'>
+            <view class="time">({{item.time}} 发布于 {{item.city?item.city:"火星"}})</view>
+            <view class="msg">{{item.msg}}</view>
+          </view>
         </view>
         <view class='user-like' bindtap="onLike" data-idx='{{index}}' data-id='{{item._id}}'>
           <view>{{item.like}}</view>
