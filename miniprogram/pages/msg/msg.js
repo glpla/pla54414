@@ -15,16 +15,18 @@ Page({
     records: [],
     isEdit: true,
     isSelf: false,
-    showKeyboard: false
+    showKeyboard: false,
+    curUser: '',
+    curIndex: null,
+    isClick: false,
+    isLike: false,
+    isComment: false,
+    commentId: null,
+    commentIndex: null
   },
   makeCall() {
     wx.makePhoneCall({
       phoneNumber: '13707735481'
-    })
-  },
-  onComment() {
-    this.setData({
-      showKeyboard: true
     })
   },
   onMsgInput(e) {
@@ -34,6 +36,62 @@ Page({
     this.setData({
       msg,
       len
+    })
+  },
+  showOptions(e) {
+    console.log(e.currentTarget.dataset.idx);
+    if (this.data.isClick) {
+      this.setData({
+        curIndex: null,
+        isClick: false
+      })
+    } else {
+      let likes = e.currentTarget.dataset.likes,
+        isLike = likes.includes(this.data.curUser);
+      this.setData({
+        curIndex: e.currentTarget.dataset.idx,
+        isClick: true,
+        isComment: false,
+        isLike
+      })
+    }
+  },
+  likes(e) {
+    console.log('hi')
+    let idx = e.currentTarget.dataset.idx,
+      id = e.currentTarget.dataset.id,
+      likes = e.currentTarget.dataset.likes;
+    if (likes.includes(this.data.curUser)) {
+      console.log('你已点赞', likes);
+      let index = likes.findIndex(value => value == this.data.curUser);
+      likes.splice(index, 1);
+      console.log('你已点赞', likes);
+    } else {
+      console.log('你可以点赞')
+      likes.push(this.data.curUser)
+    }
+    wx.cloud.callFunction({
+      name: 'likes',
+      data: {
+        _id: id,
+        likes: likes
+      },
+      success: res => {
+        this.onQuery();
+        this.setData({
+          curIndex: null,
+          isClick: false
+        })
+      },
+      fail: console.error
+    })
+  },
+  res(e) {
+    let comment_id = e.currentTarget.dataset.comment_id,
+      id = e.currentTarget.dataset.id;
+    this.setData({
+      isComment: true,
+      isClick: false
     })
   },
   onSubmit() {
@@ -63,7 +121,8 @@ Page({
           msg: this.data.msg,
           city: app.globalData.city,
           province: app.globalData.province,
-          like: 0
+          like: 0,
+          likes: []
         }
       })
       .then(res => {
@@ -81,21 +140,21 @@ Page({
       })
   },
   onQuery() {
-    wx.showToast({
-      title: '数据加载中...',
-      icon: "loading"
-    })
+    // wx.showToast({
+    //   title: '数据加载中...',
+    //   icon: "loading"
+    // })
     db.collection('pla54414').orderBy('time', 'desc').get().then(res => {
       // console.log(res.data)
       this.setData({
         records: res.data
       })
       // console.log(this.data.records)
-      wx.hideToast();
-      wx.showToast({
-        title: '数据加载完毕',
-        icon: "none"
-      })
+      // wx.hideToast();
+      // wx.showToast({
+      //   title: '数据加载完毕',
+      //   icon: "none"
+      // })
     }).catch(err => {
       console.log(err)
     })
@@ -154,8 +213,9 @@ Page({
     // console.log(app.globalData.userid);
     // console.log(app.globalData.self);
     this.setData({
-      isSelf: app.globalData.self
+      isSelf: app.globalData.self,
+      curUser: app.globalData.userInfo.nickName
     })
-    console.log(app.globalData.self);
+    // console.log(app.globalData.userInfo.nickName);
   }
 })

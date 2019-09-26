@@ -1,0 +1,105 @@
+@import '/style/iconfont.wxss';
+
+.bar {
+  background: #ddd;
+  text-align: center;
+  padding: 20rpx;
+  color: #999;
+}
+
+.item-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 10rpx 10rpx #c7c7c7;
+  position: relative;
+}
+
+.item-wrap .left {
+  width: 180rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+}
+
+.tips {
+  margin-top: 20rpx;
+}
+
+.tips text {
+  font-weight: bold;
+  color: rgb(53, 189, 207);
+}
+
+.info-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.info-box view {
+  flex: 1;
+}
+
+.title-wrap {
+  padding: 10rpx;
+}
+
+.border-bottom {
+  border-bottom: 2rpx solid #eee;
+}
+
+.title {
+  font-size: 0.8rem;
+}
+
+.sub-title {
+  font-size: 0.68rem;
+  color: #666;
+}
+
+.location, .cell {
+  color: #e79600;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.left .text {
+  font-size: 3rem;
+  text-shadow: 0 4rpx 1rpx #666;
+}
+
+.left .item-title {
+  font-size: 0.8rem;
+  margin-top: 10rpx;
+  letter-spacing: 0.1rem;
+}
+
+.item-wrap .right {
+  padding-left: 8rpx;
+  text-align: left;
+  flex: 1;
+}
+
+.btn {
+  background: #ffa500;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 10rpx;
+}
+
+.skill {
+  width: 100%;
+  border: 1px solid #fac25a;
+}
+
+.skill view {
+  text-indent: 20rpx;
+  color: #fff;
+  background: #ffa500;
+}

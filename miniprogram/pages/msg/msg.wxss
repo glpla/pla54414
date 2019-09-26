@@ -1,5 +1,5 @@
 .form-wrap {
-  padding: 10rpx;
+  padding: 0 10rpx;
 }
 
 .form-txt {
@@ -130,22 +130,23 @@
   animation-delay: 1.6s;
 }
 
-.tips {
+.sub-tips {
   font-size: 0.6rem;
   text-align: center;
   padding: 20rpx;
 }
 
-.item {
+.item-wrap {
   position: relative;
-  margin-top: 20rpx;
-  border-radius: 20rpx;
-  background: #eee;
+  margin-top: 10rpx;
+  border-top: 2rpx solid #ddd;
+}
+
+.item {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 10rpx;
-  overflow: hidden;
 }
 
 .item .user-info {
@@ -168,17 +169,12 @@
   font-size: 0.8rem;
 }
 
-.item .user-msg .time {
-  font-size: 0.6rem;
-}
-
 .item .user-msg .msg {
   margin-top: 10rpx;
   font-size: 0.8rem;
-  color: #999;
 }
 
-.item .user-like {
+.like {
   position: absolute;
   right: 4rpx;
   top: 4rpx;
@@ -186,20 +182,131 @@
   align-items: center;
 }
 
-.item .user-like view {
+.like view {
   color: #f40;
   font-size: 0.68rem;
 }
 
-.item .user-like text {
+.like text {
   color: #f40;
   font-size: 1.4rem;
 }
 
-.item .del {
+.tips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.tips .time {
+  font-size: 0.6rem;
+}
+
+.tips .comment {
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap {
+  display: none;
+}
+
+.input-wrap.input-show {
+  display: block;
+}
+
+.input-wrap input {
+  width: 700rpx;
+  margin: 10rpx auto;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 10rpx;
+}
+
+.comment .btn {
+  width: 60rpx;
+  height: 40rpx;
+  background: #ddd;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment .btn>view {
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background: #999;
+  margin: 4rpx;
+}
+
+.comment .options {
+  position: relative;
+  width: 226rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  background: #666;
+  border-radius: 6rpx;
+  color: #fff;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  opacity: 0;
+}
+
+.comment .options::after {
+  content: '';
   position: absolute;
-  left: -40rpx;
-  top: -40rpx;
+  width: 12rpx;
+  height: 12rpx;
+  background: inherit;
+  right: -5rpx;
+  top: 50%;
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+.comment .options.cur {
+  opacity: 1;
+}
+
+.comment .options view {
+  padding: 0 14rpx;
+}
+
+.likes-wrap {
+  position: relative;
+  color: #333;
+  font-size: 0.68rem;
+  word-wrap: break-word;
+  background: #ddd;
+  padding: 10rpx;
+  margin-top: 20rpx;
+}
+
+.likes-wrap::before {
+  content: '';
+  position: absolute;
+  top: -10rpx;
+  left: 26rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+.likes-wrap text {
+  padding: 10rpx;
+}
+
+.item-wrap .del {
+  position: absolute;
+  left: -30rpx;
+  top: -30rpx;
   width: 0rpx;
   height: 0rpx;
   border-top: 20px solid #f40;
@@ -210,7 +317,7 @@
   z-index: 1;
 }
 
-.item .del-txt {
+.item-wrap .del-txt {
   position: absolute;
   top: -43rpx;
   left: -12rpx;

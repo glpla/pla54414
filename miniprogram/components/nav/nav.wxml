@@ -1,0 +1,34 @@
+<view class='nav-wrap'>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing- nav-icon'></text>
+    <text class='nav-desc'>美图</text>
+  </view>
+  <view class='nav-item' bindtap="toMsg">
+    <text class='iconfont icon-changyongtubiao-mianxing-5 nav-icon'></text>
+    <text class='nav-desc'>留言</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-7 nav-icon'></text>
+    <text class='nav-desc'>绿植</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-2 nav-icon'></text>
+    <text class='nav-desc'>日程</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-4 nav-icon'></text>
+    <text class='nav-desc'>办公</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-3 nav-icon'></text>
+    <text class='nav-desc'>收藏</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-1 nav-icon'></text>
+    <text class='nav-desc'>地图</text>
+  </view>
+  <view class='nav-item'>
+    <text class='iconfont icon-changyongtubiao-mianxing-6 nav-icon'></text>
+    <text class='nav-desc'>分类</text>
+  </view>
+</view>

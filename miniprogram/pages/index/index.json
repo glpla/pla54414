@@ -1,5 +1,8 @@
 {
   "usingComponents": {
+    "home-swiper": "../../components/swiper/swiper",
+    "resume": "../../components/resume/resume",
+    "home-nav": "../../components/nav/nav",
     "loader": "../../components/loader/loader"
   }
 }
