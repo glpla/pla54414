@@ -43,16 +43,17 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "msg",
 					"pathName": "pages/msg/msg",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/index/index",
+					"id": 2,
+					"name": "index",
 					"pathName": "pages/index/index",
+					"query": "",
 					"scene": null
 				}
 			]

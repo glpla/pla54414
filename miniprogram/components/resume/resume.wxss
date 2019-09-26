@@ -86,13 +86,6 @@
   flex: 1;
 }
 
-.btn {
-  background: #ffa500;
-  color: #fff;
-  font-size: 0.8rem;
-  margin: 10rpx;
-}
-
 .skill {
   width: 100%;
   border: 1px solid #fac25a;
@@ -102,4 +95,11 @@
   text-indent: 20rpx;
   color: #fff;
   background: #ffa500;
+}
+
+.btn {
+  background: #ffa500;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 10rpx;
 }

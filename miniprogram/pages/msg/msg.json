@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "欢迎留言",
-  "usingComponents": {}
+  "navigationBarTitleText": "留言板",
+  "usingComponents": {
+    "wave": "../../components/wave/wave",
+    "show-msg": "../../components/show-msg/show-msg"
+  }
 }

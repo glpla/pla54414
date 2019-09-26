@@ -1,0 +1,18 @@
+<view class='wave'>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+  <view class='wave-item'></view>
+</view>

@@ -13,6 +13,7 @@ Component({
   properties: {},
   data: {
     info: [],
+    isSelf: false
   },
   methods: {
     checkLocation() {
@@ -95,6 +96,9 @@ Component({
   lifetimes: {
     attached: function() {
       this.onQuery();
+      this.setData({
+        isSelf: app.globalData.self
+      })
     },
     detached: function() {}
   }

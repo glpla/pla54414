@@ -1,34 +1,34 @@
 <view class='nav-wrap'>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing- nav-icon'></text>
-    <text class='nav-desc'>美图</text>
+    <text class='iconfont iconchangyongtubiao-mianxing- nav-icon'></text>
+    <text class='nav-desc'>Picture</text>
   </view>
   <view class='nav-item' bindtap="toMsg">
-    <text class='iconfont icon-changyongtubiao-mianxing-5 nav-icon'></text>
-    <text class='nav-desc'>留言</text>
+    <text class='iconfont iconchangyongtubiao-mianxing-5 nav-icon'></text>
+    <text class='nav-desc'>Message</text>
   </view>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-7 nav-icon'></text>
-    <text class='nav-desc'>绿植</text>
+    <text class='iconfont iconjianshenfang nav-icon'></text>
+    <text class='nav-desc'>Gym</text>
   </view>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-2 nav-icon'></text>
-    <text class='nav-desc'>日程</text>
+    <text class='iconfont iconchangyongtubiao-mianxing-2 nav-icon'></text>
+    <text class='nav-desc'>Agenda</text>
   </view>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-4 nav-icon'></text>
-    <text class='nav-desc'>办公</text>
+    <text class='iconfont iconchangyongtubiao-mianxing-4 nav-icon'></text>
+    <text class='nav-desc'>Office</text>
   </view>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-3 nav-icon'></text>
-    <text class='nav-desc'>收藏</text>
+    <text class='iconfont iconchangyongtubiao-mianxing-3 nav-icon'></text>
+    <text class='nav-desc'>Favorite</text>
   </view>
   <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-1 nav-icon'></text>
-    <text class='nav-desc'>地图</text>
+    <text class='iconfont iconchangyongtubiao-mianxing-1 nav-icon'></text>
+    <text class='nav-desc'>Map</text>
   </view>
-  <view class='nav-item'>
-    <text class='iconfont icon-changyongtubiao-mianxing-6 nav-icon'></text>
-    <text class='nav-desc'>分类</text>
+  <view class='nav-item' bindtap="toProduct">
+    <text class='iconfont iconchangyongtubiao-mianxing-6 nav-icon'></text>
+    <text class='nav-desc'>Demo</text>
   </view>
 </view>

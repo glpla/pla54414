@@ -1,4 +1,4 @@
-@import '/style/home-nav.wxss';
+@import '/style/iconfont.wxss';
 
 .nav-wrap {
   display: flex;
@@ -13,19 +13,20 @@
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  letter-spacing: 10rpx;
   padding: 20rpx;
 }
 
 .nav-icon {
   font-size: 2.4rem;
+  color: #4cb2cb;
+  text-shadow: 0 0 4rpx #4cb2cb;  
 }
 
 .nav-desc {
   color: #666;
 }
 
-.nav-item:nth-child(1) {
+/* .nav-item:nth-child(1) {
   color: #4cb2cb;
 }
 
@@ -55,4 +56,4 @@
 
 .nav-item:nth-child(8) {
   color: #009b97;
-}
+} */

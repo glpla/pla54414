@@ -11,6 +11,11 @@ Component({
       wx.navigateTo({
         url: '../msg/msg',
       })
+    },
+    toProduct() {
+      wx.navigateTo({
+        url: '../product/product',
+      })
     }
   }
 })

@@ -32,7 +32,7 @@
 }
 
 .loading::after {
-  border-top: 20rpx solid #228B22;
+  border-top: 20rpx solid #228b22;
   transform: rotate(240deg);
 }
 
