@@ -25,12 +25,12 @@
         <view class='options {{index==curIndex?"cur":""}}'>
           <view bindtap="optionDel" data-idx='{{index}}' data-id='{{item._id}}' wx:if='{{isSelf}}'>
             <text class='iconfont icondelete'></text>
-            <text> 删除</text>
+            <text>删除</text>
           </view>
           <view bindtap="optionLike" data-idx='{{index}}' data-id='{{item._id}}' data-likes="{{item.likes}}">
             <text class='iconfont iconganxingqu'></text>
-            <text wx:if='{{isLiked}}'> 取消</text>
-            <text wx:else> 点赞</text>
+            <text wx:if='{{isLiked}}'>取消</text>
+            <text wx:else>点赞</text>
           </view>
           <view bindtap="optionRes" data-idx='{{index}}' data-id='{{item._id}}'>
             <text class='iconfont iconliuyan'></text>

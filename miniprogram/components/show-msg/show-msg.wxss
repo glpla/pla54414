@@ -7,7 +7,7 @@
 }
 
 .msg-box {
-  padding: 20rpx;
+  /* padding: 10rpx; */
 }
 
 .bar {
@@ -79,12 +79,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20rpx;
+  padding: 10rpx;
 }
 
 .tips .time {
   font-size: 0.6rem;
-  width: 300rpx;
+  max-width: 330rpx;
 }
 
 .tips .comment {
@@ -95,7 +95,7 @@
 .comment .options {
   position: relative;
   height: 60rpx;
-  margin-right: 20rpx;
+  margin-right: 10rpx;
   background: #666;
   border-radius: 6rpx;
   color: #fff;
@@ -151,7 +151,7 @@
   word-wrap: break-word;
   background: #ddd;
   padding: 10rpx;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
 }
 
 .likes-wrap::before {
