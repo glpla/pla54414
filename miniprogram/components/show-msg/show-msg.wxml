@@ -19,7 +19,7 @@
       <text wx:else class='iconfont iconintegral'></text>
     </view>
     <view class='tips'>
-      <view class="time">{{item.time}} 发布于 {{item.city?item.city:"火星"}}</view>
+      <view class="time ellipsis">{{item.time}} 发布于 {{item.city?item.city:"火星"}}</view>
 
       <view class='comment'>
         <view class='options {{index==curIndex?"cur":""}}'>

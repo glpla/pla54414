@@ -4,10 +4,10 @@
     <button class='form-btn' bindtap='makeCall'>拨打13707735481</button>
   </view>
   <view class='form-wrap'>
-    <view class='form-txt'>内容(还可以输入
-      <text class='form-em-txt'>{{len}}</text> 个字)
-    </view>
     <textarea class='form-ta' placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-style='color:#aaa' />
+  </view>
+  <view class='form-txt'>(还可输入
+    <text class='form-em-txt'>{{len}}</text> 个字)
   </view>
   <view class='form-wrap'>
     <button class='form-btn' bindtap="onSubmit">提交</button>

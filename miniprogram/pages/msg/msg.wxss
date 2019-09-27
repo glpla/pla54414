@@ -4,8 +4,9 @@
 
 .form-txt {
   padding: 20rpx;
-  font-size: 0.8rem;
+  font-size: 0.68rem;
   color: #aaa;
+  text-align: right;
 }
 
 .form-em-txt {

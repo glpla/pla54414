@@ -1,5 +1,11 @@
 @import '/style/iconfont.wxss';
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .msg-box {
   padding: 20rpx;
 }
@@ -9,12 +15,14 @@
   text-align: center;
   padding: 20rpx;
   color: #999;
+  font-size: 0.8rem;
 }
 
 .item-wrap {
   position: relative;
   margin-top: 10rpx;
-  border-top: 2rpx solid #ddd;
+  /* border-top: 2rpx solid #ddd; */
+  box-shadow: 0 10rpx 10rpx #c7c7c7;
 }
 
 .item {
@@ -71,33 +79,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20rpx;
+  padding: 20rpx;
 }
 
 .tips .time {
   font-size: 0.6rem;
+  width: 300rpx;
 }
 
 .tips .comment {
   display: flex;
   align-items: center;
-}
-
-.input-wrap {
-  display: none;
-}
-
-.input-wrap.input-show {
-  display: block;
-}
-
-.input-wrap input {
-  width: 700rpx;
-  margin: 10rpx auto;
-  border: 2rpx solid #ddd;
-  border-radius: 10rpx;
-  text-align: center;
-  padding: 10rpx;
 }
 
 .comment .options {
@@ -174,5 +166,22 @@
 }
 
 .likes-wrap text {
+  padding: 10rpx;
+}
+
+.input-wrap {
+  display: none;
+}
+
+.input-wrap.input-show {
+  display: block;
+}
+
+.input-wrap input {
+  width: 700rpx;
+  margin: 10rpx auto;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  text-align: center;
   padding: 10rpx;
 }
