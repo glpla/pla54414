@@ -1,3 +1,9 @@
+import {
+  formatTime
+} from '../../utils/util.js'
+import {
+  config
+} from '../../utils/config.js'
 const app = getApp();
 const db = wx.cloud.database();
 Component({
@@ -17,8 +23,10 @@ Component({
     }
   },
   data: {
+    curUser: '',
     inter: 0,
     curIndex: null,
+    optionId: null,
 
     isDel: false,
     isLike: false,
@@ -26,10 +34,11 @@ Component({
 
     isLiked: false,
 
-    isClick: false,
-    commentId: null,
-    commentIndex: null,
-    test: [1, 2, 3, 4, 5]
+    resMsg: '',
+
+
+    replyMsg: '',
+    replyId: null
   },
 
   methods: {
@@ -40,6 +49,7 @@ Component({
         isLiked = likes.includes(this.data.curUser);
       this.setData({
         curIndex: e.currentTarget.dataset.idx,
+        optionId: null,
         isLiked
       })
       this.data.inter = setTimeout(() => {
@@ -115,15 +125,124 @@ Component({
       // console.log(e.currentTarget.dataset);
       clearTimeout(this.data.inter);
       this.setData({
+        optionId: e.currentTarget.dataset.option,
+        isComment: true,
         curIndex: null
       })
     },
-    res(e) {
-      let comment_id = e.currentTarget.dataset.comment_id,
-        id = e.currentTarget.dataset.id;
+    onResInput(e) {
+      let resMsg = e.detail.value;
       this.setData({
-        isComment: true,
-        isClick: false
+        resMsg
+      })
+    },
+    onResSubmit(e) {
+      let id = e.currentTarget.dataset.idx,
+        comments = e.currentTarget.dataset.comments,
+        resMsg = this.data.resMsg,
+        user = app.globalData.userInfo.nickName,
+        cont = user + ': ' + resMsg,
+        time = formatTime(new Date()),
+        comment = {
+          cont,
+          time,
+          user
+        };
+      comments.unshift(comment);
+      console.log(comments);
+      this.setData({
+        resMsg: '',
+        optionId: null
+      })
+      wx.cloud.callFunction({
+        name: 'comments',
+        data: {
+          _id: id,
+          comments: comments
+        },
+        success: res => {
+          this.onQuery();
+          wx.showToast({
+            title: '评论成功',
+            icon: "none"
+          })
+        },
+        fail: console.error
+      })
+    },
+    onReply(e) {
+      let user = e.currentTarget.dataset.user,
+        id = e.currentTarget.dataset.idx,
+        replyId = e.currentTarget.dataset.reply_id;
+      // console.log(e.currentTarget.dataset, user, id, replyId);
+      this.setData({
+        replyId
+      })
+    },
+    onReplyInput(e) {
+      let replyMsg = e.detail.value;
+      this.setData({
+        replyMsg
+      })
+    },
+    onReplySubmit(e) {
+      let id = e.currentTarget.dataset.idx,
+        comments = e.currentTarget.dataset.comments,
+        tar = e.currentTarget.dataset.user,
+        replyMsg = this.data.replyMsg,
+        user = app.globalData.userInfo.nickName,
+        cont = user + ' 回复了 ' + tar + ': ' + replyMsg,
+        time = formatTime(new Date()),
+        comment = {
+          cont,
+          time,
+          user
+        };
+      comments.unshift(comment);
+      // console.log(comment);
+      this.setData({
+        replyId: null
+      })
+      wx.cloud.callFunction({
+        name: 'comments',
+        data: {
+          _id: id,
+          comments: comments
+        },
+        success: res => {
+          this.onQuery();
+          wx.showToast({
+            title: '回复成功',
+            icon: "none"
+          })
+        },
+        fail: console.error
+      })
+    },
+    onReplyDel(e) {
+      let id = e.currentTarget.dataset.idx,
+        comments = e.currentTarget.dataset.comments,
+        del = e.currentTarget.dataset.del;
+      // console.log(comments.length);
+      comments.splice(del, 1);
+      // console.log(comments.length);
+      this.setData({
+        replyId: null
+      })
+      wx.cloud.callFunction({
+        name: 'comments',
+        data: {
+          _id: id,
+          comments: comments
+        },
+        success: res => {
+          this.onQuery();
+          wx.showToast({
+            title: '删除成功',
+            icon: "none"
+          })
+        },
+        fail: console.error
       })
     },
     onLike(e) {
@@ -164,10 +283,25 @@ Component({
         console.log(err)
       })
     }
-
   },
   lifetimes: {
-    attached: function() {},
-    detached: function() {}
+    attached: function() {
+      this.setData({
+        curUser: app.globalData.userInfo.nickName
+      })
+    },
+    detached: function() {
+      this.setData({
+        curIndex: null,
+        optionId: null,
+        isDel: false,
+        isLike: false,
+        isComment: false,
+        isLiked: false,
+        resMsg: '',
+        replyMsg: '',
+        replyId: null
+      })
+    }
   }
 })

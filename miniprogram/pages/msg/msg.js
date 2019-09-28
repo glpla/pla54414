@@ -58,7 +58,8 @@ Page({
           city: app.globalData.city,
           province: app.globalData.province,
           like: 0,
-          likes: []
+          likes: [],
+          comments: []
         }
       })
       .then(res => {

@@ -12,6 +12,6 @@
   <view class='form-wrap'>
     <button class='form-btn' bindtap="onSubmit">提交</button>
   </view>
-  <wave></wave>
+  <!-- <wave></wave> -->
   <show-msg records='{{records}}' isSelf='{{isSelf}}' curUser='{{curUser}}'></show-msg>
 </view>

@@ -44,7 +44,7 @@ Component({
         icon: "loading"
       })
       db.collection('pla54414-info').get().then(res => {
-        console.log(res.data)
+        // console.log(res.data);
         this.setData({
           info: res.data
         })

@@ -13,7 +13,8 @@
 .bar {
   background: #ddd;
   text-align: center;
-  padding: 20rpx;
+  padding: 10rpx;
+  margin: 10rpx auto;
   color: #999;
   font-size: 0.8rem;
 }
@@ -149,7 +150,7 @@
   color: #333;
   font-size: 0.68rem;
   word-wrap: break-word;
-  background: #ddd;
+  background: #eee;
   padding: 10rpx;
   margin-top: 10rpx;
 }
@@ -169,19 +170,51 @@
   padding: 10rpx;
 }
 
-.input-wrap {
-  display: none;
-}
-
-.input-wrap.input-show {
-  display: block;
-}
-
-.input-wrap input {
-  width: 700rpx;
-  margin: 10rpx auto;
-  border: 2rpx solid #ddd;
-  border-radius: 10rpx;
-  text-align: center;
+.res-wrap {
+  width: 100%;
   padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.res-wrap .res-input {
+  box-sizing: border-box;
+  flex: 1;
+  border: 2rpx solid #ddd;
+  font-size: 0.8rem;
+  padding: 0 0.4rem;
+  height: 60rpx;
+  line-height: 60rpx;
+  outline: none;
+}
+
+.res-wrap .res-btn {
+  box-sizing: border-box;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #4cb2cb;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.comments-wrap {
+  padding: 10rpx;
+}
+
+.comments-item {
+  position: relative;
+  margin-top: 10rpx;
+  font-size: 0.68rem;
+}
+
+.comments-item .comment-del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #4cb2cb;
+  border-radius: 10rpx;
+  color: #fff;
+  padding: 0 10rpx;
 }

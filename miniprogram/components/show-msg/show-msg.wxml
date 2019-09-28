@@ -32,7 +32,7 @@
             <text wx:if='{{isLiked}}'>取消</text>
             <text wx:else>点赞</text>
           </view>
-          <view bindtap="optionRes" data-idx='{{index}}' data-id='{{item._id}}'>
+          <view bindtap="optionRes" data-idx='{{index}}' data-id='{{item._id}}' data-option='res{{index}}'>
             <text class='iconfont iconliuyan'></text>
             <text> 评论</text>
           </view>
@@ -44,20 +44,50 @@
       </view>
     </view>
 
-    <!-- <view class='input-wrap {{isComment && (index==curIndex)?"input-show":""}}' data-idx='{{index}}'>
-      <input focus="{{isComment && (index==curIndex)?true:false}}"></input>
-    </view> -->
+    <view class='res-wrap'>
+      <input class='res-input' focus="{{optionId==option.optionId(index)}}" wx:if="{{optionId==option.optionId(index)}}" bindinput='onResInput' placeholder="评论"></input>
+      <view class="res-btn" wx:if="{{optionId==option.optionId(index)}}" bindtap="onResSubmit" data-idx='{{item._id}}' data-comments="{{item.comments}}">提交</view>
+    </view>
 
     <view class='likes-wrap' wx:if='{{item.likes.length>0}}'>
       <text class='iconfont iconxin'></text> {{foo.join(item.likes)}}
-      <!-- <text wx:for='{{item.likes}}' wx:key='like' wx:for-item='like'>{{like}}</text> -->
     </view>
+    <view class='comments-wrap'>
+      <view class='comments-item' wx:for='{{item.comments}}' wx:key='{{item}}' wx:for-item='listItem' wx:for-index="listIndex">
+        <view data-user="{{listItem.user}}" data-reply_id="{{listIndex}}-{{item._id}}" data-idx='{{item._id}}' bindtap="onReply">{{listItem.cont}}</view>
+        <view wx:if="{{replyId==reply.replyId(listIndex,item._id)}}">
+          <view class='comment-del' wx:if='{{curUser==listItem.user}}' data-idx='{{item._id}}' data-del="listIndex" data-comments="{{item.comments}}" bindtap="onReplyDel">删除</view>
+          <view class='res-wrap' wx:else>
+            <input class='res-input' placeholder="回复 {{listItem.user}}" focus="{{replyId==reply.replyId(listIndex,item._id)}}" bindinput='onReplyInput'></input>
+            <view class="res-btn" data-idx='{{item._id}}' data-comments="{{item.comments}}" data-user='{{listItem.user}}' bindtap="onReplySubmit">提交</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
     <wxs module="foo">
       var join = function(val) {
         return val.join('，');
       }
       module.exports = {
         join: join
+      }
+    </wxs>
+    <wxs module="option">
+      var optionId = function(idx) {
+        return "res" + idx;
+      }
+      module.exports = {
+        optionId: optionId
+      }
+    </wxs>
+    <wxs module="reply">
+      var replyId = function(idx, id) {
+        return idx + "-" + id;
+      }
+      module.exports = {
+        replyId: replyId
       }
     </wxs>
   </view>

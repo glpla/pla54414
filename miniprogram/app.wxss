@@ -1,6 +1,6 @@
 @import '/style/iconfont.wxss';
 
-page, view, navitator, video, swiper, swiper-item, scroll-view, textarea {
+page, view, navitator, video, swiper, swiper-item, scroll-view, textarea, input {
   box-sizing: border-box;
 }
 
