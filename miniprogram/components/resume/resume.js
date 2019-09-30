@@ -58,40 +58,40 @@ Component({
         console.log(err)
       })
     },
-    getFile() {
-      wx.cloud.downloadFile({
-        fileID: 'cloud://glpla-54414.676c-glpla-54414-1259726622/resume.doc',
-        success: res => {
-          console.log('get ok');
-          console.log(res.tempFilePath);
-          const downFile = res.tempFilePath;
-          wx.openDocument({
-            filePath: downFile,
-          })
-        },
-        fail: console.error
-      })
-    },
-    upFile(e) {
-      wx.chooseMessageFile({
-        count: 1,
-        type: 'file',
-        success(res) {
-          // console.log(res.tempFiles[0].path);
-          const tempFilePaths = res.tempFiles[0].path;
-          wx.cloud.uploadFile({
-            cloudPath: 'resume.doc',
-            filePath: tempFilePaths,
-            success: res => {
-              console.log('上传成功', res)
-            }
-          })
-        },
-        fail(err) {
-          console.log(err);
-        }
-      })
-    }
+    // getFile() {
+    //   wx.cloud.downloadFile({
+    //     fileID: 'cloud://glpla-54414.676c-glpla-54414-1259726622/resume.doc',
+    //     success: res => {
+    //       console.log('get ok');
+    //       console.log(res.tempFilePath);
+    //       const downFile = res.tempFilePath;
+    //       wx.openDocument({
+    //         filePath: downFile,
+    //       })
+    //     },
+    //     fail: console.error
+    //   })
+    // },
+    // upFile(e) {
+    //   wx.chooseMessageFile({
+    //     count: 1,
+    //     type: 'file',
+    //     success(res) {
+    //       // console.log(res.tempFiles[0].path);
+    //       const tempFilePaths = res.tempFiles[0].path;
+    //       wx.cloud.uploadFile({
+    //         cloudPath: 'resume.doc',
+    //         filePath: tempFilePaths,
+    //         success: res => {
+    //           console.log('上传成功', res)
+    //         }
+    //       })
+    //     },
+    //     fail(err) {
+    //       console.log(err);
+    //     }
+    //   })
+    // }
   },
   lifetimes: {
     attached: function() {

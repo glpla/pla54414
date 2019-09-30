@@ -1,34 +1,34 @@
 <view class='nav-wrap'>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toPic">
     <text class='iconfont iconchangyongtubiao-mianxing- nav-icon'></text>
-    <text class='nav-desc'>Picture</text>
+    <text class='nav-desc'>美图</text>
   </view>
   <view class='nav-item' bindtap="toMsg">
     <text class='iconfont iconchangyongtubiao-mianxing-5 nav-icon'></text>
-    <text class='nav-desc'>Message</text>
+    <text class='nav-desc'>留言</text>
   </view>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toGym">
     <text class='iconfont iconjianshenfang nav-icon'></text>
-    <text class='nav-desc'>Gym</text>
+    <text class='nav-desc'>运动</text>
   </view>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toAgenda">
     <text class='iconfont iconchangyongtubiao-mianxing-2 nav-icon'></text>
-    <text class='nav-desc'>Agenda</text>
+    <text class='nav-desc'>日程</text>
   </view>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toOffice">
     <text class='iconfont iconchangyongtubiao-mianxing-4 nav-icon'></text>
-    <text class='nav-desc'>Office</text>
+    <text class='nav-desc'>办公</text>
   </view>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toLike">
     <text class='iconfont iconchangyongtubiao-mianxing-3 nav-icon'></text>
-    <text class='nav-desc'>Favorite</text>
+    <text class='nav-desc'>收藏</text>
   </view>
-  <view class='nav-item'>
+  <view class='nav-item' bindtap="toMap">
     <text class='iconfont iconchangyongtubiao-mianxing-1 nav-icon'></text>
-    <text class='nav-desc'>Map</text>
+    <text class='nav-desc'>地图</text>
   </view>
-  <view class='nav-item' bindtap="toProduct">
+  <view class='nav-item' bindtap="toDemo">
     <text class='iconfont iconchangyongtubiao-mianxing-6 nav-icon'></text>
-    <text class='nav-desc'>Demo</text>
+    <text class='nav-desc'>示例</text>
   </view>
 </view>
