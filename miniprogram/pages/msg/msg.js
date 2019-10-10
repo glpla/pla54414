@@ -34,15 +34,15 @@ Page({
     if (!this.data.userName) {
       wx.showModal({
         title: '提示',
-        content: '需要授权才能使用留言功能,是否继续?',
+        content: '需要登陆才能使用留言功能,是否继续?',
         success(res) {
           if (res.confirm) {
-            wx.navigateTo({
+            wx.redirectTo({
               url: '../login/login',
             })
           } else if (res.cancel) {
             wx.showToast({
-              title: '您取消了授权!',
+              title: '您取消了登陆!',
             })
           }
         }
@@ -67,37 +67,39 @@ Page({
         title: '数据提交中...',
         icon: "loading"
       })
-      db.collection('pla54414').add({
-          data: {
-            time: formatTime(new Date()),
-            userName: this.data.userName,
-            msg: this.data.msg,
-            userPic: app.globalData.userPic,
-            city: app.globalData.city,
-            province: app.globalData.province,
-            like: 0,
-            likes: [],
-            comments: []
-          }
-        })
-        .then(res => {
-          wx.showToast({
-            title: '提交成功',
-            icon: "none"
-          })
-          this.onQuery();
-          app.globalData.isEdit = false;
-          this.data.inter = setTimeout(() => {
-            app.globalData.isEdit = true;
-          }, 5 * 60 * 1000)
-          this.setData({
-            msg: ''
-          })
-        }).catch(err => {
-          console.log(err)
-        })
+      this.saveData();
     }
-
+  },
+  saveData() {
+    db.collection('pla54414').add({
+        data: {
+          time: formatTime(new Date()),
+          userName: this.data.userName,
+          msg: this.data.msg,
+          userPic: app.globalData.userPic,
+          city: app.globalData.city,
+          province: app.globalData.province,
+          like: 0,
+          likes: [],
+          comments: []
+        }
+      })
+      .then(res => {
+        wx.showToast({
+          title: '提交成功',
+          icon: "none"
+        })
+        this.onQuery();
+        app.globalData.isEdit = false;
+        this.data.inter = setTimeout(() => {
+          app.globalData.isEdit = true;
+        }, 5 * 60 * 1000)
+        this.setData({
+          msg: ''
+        })
+      }).catch(err => {
+        console.log(err)
+      })
   },
   onQuery() {
     db.collection('pla54414').orderBy('time', 'desc').get().then(res => {

@@ -3,10 +3,12 @@
 
   <view class='item-wrap' wx:for='{{records}}' wx:key='{{item._id}}'>
     <view class='item'>
-      <view class='user-info' style="background-image: url({{item.userPic}})">
+      <image class='user-info' src="{{item.userPic}}" wx:if='{{item.userPic}}'></image>
+      <view class='user-info' style="background-image: url({{item.userInfo.avatarUrl}})" wx:else>
       </view>
       <view class='user-msg'>
-        <view class='nick-name'>{{item.userName}}</view>
+        <view class='nick-name' wx:if='{{item.userName}}'>{{item.userName}}</view>
+        <view class='nick-name' wx:else>{{item.userInfo.nickName}}</view>
         <view class='msg-wrap'>
           <view class="msg">{{item.msg}}</view>
         </view>

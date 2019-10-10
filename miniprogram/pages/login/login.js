@@ -10,6 +10,7 @@ let qqmapsdk = new QQMapWX({
   key: 'U6QBZ-ROQ3W-PFMRZ-O4VA5-LZOKQ-G7FZA'
 });
 const app = getApp();
+const db = wx.cloud.database();
 
 Page({
   data: {
@@ -46,11 +47,30 @@ Page({
       })
       return;
     }
-    app.globalData.userName = this.data.userName;
-    app.globalData.userPass = this.data.userPass;
-    wx.redirectTo({
-      url: '../msg/msg'
+    db.collection('pla54414-users').get().then(res => {
+      let users = res.data;
+      let bool = false;
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].userName == this.data.userName && users[i].userPass == this.data.userPass) {
+          app.globalData.userName = users[i].userName;
+          app.globalData.userPass = users[i].userPass;
+          app.globalData.userPic = users[i].userPic;
+          bool = true;
+          break;
+        }
+      }
+      if (bool) {
+        wx.redirectTo({
+          url: '../msg/msg'
+        })
+      } else {
+        wx.showToast({
+          title: '用户名或密码不正确',
+        })
+      }
     })
+
+
   },
   onReg() {
     wx.redirectTo({
@@ -97,5 +117,4 @@ Page({
     }
   },
   onReady: function() {}
-
 })

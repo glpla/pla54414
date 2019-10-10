@@ -1,17 +1,23 @@
 <view class="container">
   <view class="reg-wrap">
     <view class="input-wrap">
-      <label>用户名</label>
-      <input type="text" maxlength="8" placeholder="8位中文/字母/数字" placeholder-class="ph"></input>
+      <view class='img' bindtap="onPic" wx:if='{{!fp}}'>选择头像</view>
+      <view class='img' bindtap="onPic" wx:else>
+        <image src="{{fp}}"></image>
+      </view>
     </view>
     <view class="input-wrap">
-      <label>密码</label>
-      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph"></input>
+      <view class='desc'>用户名</view>
+      <input type="text" maxlength="8" placeholder="8位中文/字母/数字" placeholder-class="ph" bindinput="onName"></input>
     </view>
     <view class="input-wrap">
-      <label>确认密码</label>
-      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph"></input>
+      <view class='desc'>密码</view>
+      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph" bindinput="onPass"></input>
     </view>
-    <view class="reg-btn">注册</view>
+    <view class="input-wrap">
+      <view class='desc'>确认密码</view>
+      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph" bindinput="onConfirm"></input>
+    </view>
+    <view class="reg-btn" bindtap="onReg">注册</view>
   </view>
 </view>

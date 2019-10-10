@@ -103,13 +103,13 @@ Component({
       let idx = e.currentTarget.dataset.idx,
         id = e.currentTarget.dataset.id,
         likes = e.currentTarget.dataset.likes;
-      if (likes.includes(this.data.curUser)) {
+      if (likes.includes(this.data.userName)) {
         console.log('取消点赞');
-        let index = likes.findIndex(value => value == this.data.curUser);
+        let index = likes.findIndex(value => value == this.data.userName);
         likes.splice(index, 1);
       } else {
-        console.log('点赞成功')
-        likes.push(this.data.curUser)
+        console.log('点赞成功');
+        likes.push(this.data.userName)
       }
       wx.cloud.callFunction({
         name: 'likes',

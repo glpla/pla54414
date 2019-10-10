@@ -1,66 +1,140 @@
-// pages/reg/reg.js
+import {
+  formatTime
+} from '../../utils/util.js'
+const db = wx.cloud.database();
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    pic: '',
+    name: '',
+    pass: '',
+    tempPass: '',
+    fp: '',
+    bool: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onPic() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        // console.log(res);
+        this.setData({
+          fp: res.tempFilePaths[0]
+        })
+      },
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onName(e) {
+    this.setData({
+      name: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onPass(e) {
+    this.setData({
+      pass: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onConfirm(e) {
+    this.setData({
+      tempPass: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onReg() {
+    if (!this.data.fp) {
+      wx.showToast({
+        title: '头像为空',
+      })
+      return;
+    }
+    if (!this.data.name) {
+      wx.showToast({
+        title: '用户名为空',
+      })
+      return;
+    }
+    if (!this.data.pass) {
+      wx.showToast({
+        title: '密码为空',
+      })
+      return;
+    }
+    if (this.data.pass != this.data.tempPass) {
+      wx.showToast({
+        title: '俩次密码不一致',
+      })
+      return;
+    }
+    this.isHas();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  isHas() {
+    db.collection('pla54414-users').get().then(res => {
+      let users = res.data;
+      let bool = false;
+      for (let i = 0; i < users.length; i++) {
+        console.log(users[i].userName, this.data.name);
+        if (users[i].userName == this.data.name) {
+          bool = true;
+          break;
+        }
+      }
+      if (bool) {
+        wx.showToast({
+          title: '用户已存在',
+        })
+      } else {
+        this.saveData();
+      }
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  saveData() {
+    let item = this.data.fp;
+    let ext = /\.\w+$/.exec(item);
+    let cloudFp = new Date().getTime() + ext;
+    // console.log(cloudFp);
+    wx.cloud.uploadFile({
+      cloudPath: 'pla54414/' + cloudFp,
+      filePath: item,
+      success: res => {
+        console.log(res.fileID);
+        let fileId = res.fileID;
+        db.collection('pla54414-users').add({
+          data: {
+            regTime: formatTime(new Date()),
+            userName: this.data.name,
+            userPass: this.data.pass,
+            userPic: fileId
+          }
+        }).then(res => {
+          // 保存成功更新app数据并直接登陆
+          app.globalData.userName = this.data.userName;
+          app.globalData.userPic = this.data.userPic;
+          wx.showModal({
+            title: '提示',
+            content: '信息保存成功',
+            showCancel: false,
+            success(res) {
+              if (res.confirm) {
+                wx.redirectTo({
+                  url: '../index/index',
+                })
+              }
+            }
+          })
+        })
+        //返回处理结果
+        resolve()
+      },
+      fail: console.error
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLoad: function(options) {
+    // db.collection('pla54414-users').get().then(res => {
+    //   console.log(res);
+    //   this.setData({
+    //     fp: res.data[2].userPic
+    //   })
+    // })
   }
+
 })

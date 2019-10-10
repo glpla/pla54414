@@ -10,7 +10,7 @@ page {
 
 .reg-wrap {
   width: 60%;
-  margin: 200rpx auto;
+  margin: 120rpx auto;
 }
 
 .input-wrap {
@@ -25,6 +25,31 @@ input {
   border-radius: 60rpx;
   margin-top: 10rpx;
   text-align: center;
+}
+
+.desc {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  margin: 20rpx auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  border-radius: 50%;
+  text-align: center;
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 0 40rpx #fff;
+}
+
+image {
+  width: 100%;
+  height: 100%;
 }
 
 .reg-btn {
