@@ -1,11 +1,6 @@
 Component({
-
   properties: {},
-
-
   data: {},
-
-
   methods: {
     toPic() {
       wx.navigateTo({
@@ -16,6 +11,7 @@ Component({
       wx.navigateTo({
         url: '../msg/msg',
       })
+
     },
     toGym() {
       wx.navigateTo({
@@ -47,5 +43,9 @@ Component({
         url: '../demo/demo',
       })
     }
+  },
+  lifetimes: {
+    attached: function() {},
+    detached: function() {}
   }
 })

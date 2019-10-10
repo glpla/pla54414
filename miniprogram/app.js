@@ -16,13 +16,17 @@ App({
 
     this.globalData = {
       isEdit: true,
-      userInfo: {},
+      userInfo: null,
       logged: false,
       openid: '',
       userid: 'ofaJG4zF9VE6g206HAu-9zhajhck',
       self: false,
+      userPic: null,
+      userName: '',
+      userPass: '',
       city: null,
-      province: null
+      province: null,
+      isLocation: false
     }
   }
 })

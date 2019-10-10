@@ -14,7 +14,9 @@ let qqmapsdk = new QQMapWX({
 const app = getApp()
 
 Page({
-  data: {},
+  data: {
+    isLogged: false
+  },
 
   onGetUserInfo: function(e) {
     // console.log(e)
@@ -34,30 +36,21 @@ Page({
           // console.log(app.globalData.self)
 
           wx.redirectTo({
-            url: '../index/index',
+            url: '../msg/msg',
           })
-
         },
         fail: console.error
       })
-
-
     }
   },
+  onDeny() {
+    wx.redirectTo({
+      url: '../index/index'
+    })
+  },
   onLoad: function(options) {
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            lang: "zh_CN",
-            success: res => {
-              // console.log(res.userInfo);
-              app.globalData.userInfo = res.userInfo;
-            }
-          })
-        }
-      }
+    this.setData({
+      isLogged: false
     })
     wx.getLocation({
       type: 'wgs84',
@@ -80,25 +73,32 @@ Page({
         });
       },
     })
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          this.setData({
+            isLogged: true
+          })
+          wx.getUserInfo({
+            lang: "zh_CN",
+            success: res => {
+              // console.log(res.userInfo);
+              app.globalData.userInfo = res.userInfo;
+              wx.redirectTo({
+                url: '../msg/msg',
+              })
+            }
+          })
+        }
+      }
+    })
   },
-
-
   onReady: function() {},
-
-
   onShow: function() {},
-
-
   onHide: function() {},
-
-
   onUnload: function() {},
-
-
   onPullDownRefresh: function() {},
-
-
   onReachBottom: function() {},
-
   onShareAppMessage: function() {}
 })

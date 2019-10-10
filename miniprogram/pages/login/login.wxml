@@ -1,0 +1,28 @@
+<view class="container">
+  <view class='login-wrap'>
+    <view class="input-wrap">
+      <text class="iconfont iconyonghu txt"></text>
+      <input type='text' placeholder-class="input-ph" placeholder="用户名" maxlength="8" bindinput="onName"></input>
+      <text class="iconfont iconxinxi hint-txt" bindtap="onHint"></text>
+    </view>
+    <view class="input-wrap">
+      <text class="iconfont iconmichi txt"></text>
+      <input type='password' placeholder-class="input-ph" placeholder="密码" maxlength="8" bindinput="onPass"></input>
+      <text class="iconfont iconxinxi hint-txt" bindtap="onHint"></text>
+    </view>
+    <view class='location'>
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox id='loca' class="cb" value="{{isLocation}}"></checkbox>
+        <label for='loca'>允许获取地理位置</label>
+      </checkbox-group>
+    </view>
+    <button class='btn' bindtap="onLogin">登陆</button>
+    <button class='btn reg' bindtap="onReg">注册</button>
+  </view>
+  <view class='hint'>第三方登陆</view>
+  <view class='third-part'>
+    <button class='wx-btn' open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">
+      <text class="iconfont iconweixin"></text>
+    </button>
+  </view>
+</view>

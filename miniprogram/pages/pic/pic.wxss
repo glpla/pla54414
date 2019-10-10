@@ -1,9 +1,34 @@
-.mapWrapper {
-  width: 100%;
-  height: 100%;
+.item0 {
+  position: relative;
+  width: 80%;
+  height: 160rpx;
+  margin: 200rpx auto;
+  perspective: 800rpx;
 }
 
-.map {
+.item0 view {
+  position: absolute;
+  transform-style: preserve-3d;
   width: 100%;
   height: 100%;
+  line-height: 160rpx;
+  text-align: center;
+  overflow: hidden;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.item0 .front {
+  transform: translateY(100rpx);
+}
+
+.item0 .right {
+  transform: rotate(90deg) translateY(100rpx);
+}
+
+.item0 .back {
+  transform: rotate(180deg) translateY(100rpx);
+}
+
+.item0 .left {
+  transform: rotate(270deg) translateY(100rpx);
 }

@@ -3,11 +3,10 @@
 
   <view class='item-wrap' wx:for='{{records}}' wx:key='{{item._id}}'>
     <view class='item'>
-      <view class='user-info' style="background-image: url({{item.userInfo.avatarUrl}})">
+      <view class='user-info' style="background-image: url({{item.userPic}})">
       </view>
       <view class='user-msg'>
-        <view class='nick-name' wx:if='{{item.userInfo.nickName}}'>{{item.userInfo.nickName}}</view>
-        <view class='nick-name' wx:else>无名氏</view>
+        <view class='nick-name'>{{item.userName}}</view>
         <view class='msg-wrap'>
           <view class="msg">{{item.msg}}</view>
         </view>
@@ -20,7 +19,6 @@
     </view>
     <view class='tips'>
       <view class="time ellipsis">{{item.time}} 发布于 {{item.city?item.city:"火星"}}</view>
-
       <view class='comment'>
         <view class='options {{index==curIndex?"cur":""}}'>
           <view bindtap="optionDel" data-idx='{{index}}' data-id='{{item._id}}' wx:if='{{isSelf}}'>

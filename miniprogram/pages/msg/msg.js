@@ -14,7 +14,7 @@ Page({
     inter: 0,
     records: [],
     isSelf: false,
-    curUser: ''
+    userName: null
   },
   makeCall() {
     wx.makePhoneCall({
@@ -31,53 +31,73 @@ Page({
     })
   },
   onSubmit() {
-    if (!app.globalData.isEdit) {
-      wx.showToast({
-        title: '请勿频繁提交',
-        icon: "none"
-      })
-      return
-    }
-    if (this.data.msg.length == 0) {
-      wx.showToast({
-        title: '内容为空',
-        icon: "none"
-      })
-      return
-    }
-
-    wx.showToast({
-      title: '数据提交中...',
-      icon: "loading"
-    })
-    db.collection('pla54414').add({
-        data: {
-          time: formatTime(new Date()),
-          userInfo: app.globalData.userInfo,
-          msg: this.data.msg,
-          city: app.globalData.city,
-          province: app.globalData.province,
-          like: 0,
-          likes: [],
-          comments: []
+    if (!this.data.userName) {
+      wx.showModal({
+        title: '提示',
+        content: '需要授权才能使用留言功能,是否继续?',
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          } else if (res.cancel) {
+            wx.showToast({
+              title: '您取消了授权!',
+            })
+          }
         }
       })
-      .then(res => {
+    } else {
+      if (!app.globalData.isEdit) {
         wx.showToast({
-          title: '提交成功',
+          title: '请勿频繁提交',
           icon: "none"
         })
-        this.onQuery();
-        app.globalData.isEdit = false;
-        this.data.inter = setTimeout(() => {
-          app.globalData.isEdit = true;
-        }, 5 * 60 * 1000)
-        this.setData({
-          msg: ''
+        return
+      }
+      if (this.data.msg.length == 0) {
+        wx.showToast({
+          title: '内容为空',
+          icon: "none"
         })
-      }).catch(err => {
-        console.log(err)
+        return
+      }
+
+      wx.showToast({
+        title: '数据提交中...',
+        icon: "loading"
       })
+      db.collection('pla54414').add({
+          data: {
+            time: formatTime(new Date()),
+            userName: this.data.userName,
+            msg: this.data.msg,
+            userPic: app.globalData.userPic,
+            city: app.globalData.city,
+            province: app.globalData.province,
+            like: 0,
+            likes: [],
+            comments: []
+          }
+        })
+        .then(res => {
+          wx.showToast({
+            title: '提交成功',
+            icon: "none"
+          })
+          this.onQuery();
+          app.globalData.isEdit = false;
+          this.data.inter = setTimeout(() => {
+            app.globalData.isEdit = true;
+          }, 5 * 60 * 1000)
+          this.setData({
+            msg: ''
+          })
+        }).catch(err => {
+          console.log(err)
+        })
+    }
+
   },
   onQuery() {
     db.collection('pla54414').orderBy('time', 'desc').get().then(res => {
@@ -93,7 +113,7 @@ Page({
     this.onQuery();
     this.setData({
       isSelf: app.globalData.self,
-      curUser: app.globalData.userInfo.nickName
+      userName: app.globalData.userName
     })
   }
 })

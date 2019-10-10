@@ -26,7 +26,6 @@ Component({
           })
         }
       })
-
     },
     makeCall() {
       wx.makePhoneCall({

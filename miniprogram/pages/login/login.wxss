@@ -1,0 +1,129 @@
+page {
+  background-color: #179cd1;
+}
+
+.login-wrap {
+  width: 60%;
+  margin: 200rpx auto 60rpx;
+}
+
+.input-wrap {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+
+input {
+  color: #fff;
+  padding: 0 10rpx;
+  flex: 1;
+}
+
+.input-ph {
+  color: #f6f6f6;
+}
+
+.txt {
+  color: #f6f6f6;
+  font-size: 1.2rem;
+  padding: 10rpx;
+}
+
+.hint-txt {
+  color: #f6f6f6;
+  padding: 10rpx;
+}
+
+.btn {
+  margin-top: 20rpx;
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.reg {
+  background-color: #ff0;
+}
+
+.hint {
+  margin: 100rpx auto 20rpx;
+  font-size: 0.86rem;
+  color: #f6f6f6;
+  position: relative;
+}
+
+.hint::before, .hint::after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 2rpx;
+  background: #f6f6f6;
+}
+
+.hint::before {
+  left: -100%;
+  top: 50%;
+}
+
+.hint::after {
+  right: -100%;
+  top: 50%;
+}
+
+.location {
+  margin: 20rpx auto 60rpx;
+  text-align: right;
+  color: #f6f6f6;
+  font-size: 0.86rem;
+}
+
+.third-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wx-btn {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  outline: transparent;
+  border: transparent;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wx-btn text {
+  color: #ff0;
+  font-size: 2rem;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  /* border: none; *//* background: red; */
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  /* border-radius: 50%; 圆角 *//* width: 40rpx; 选中后对勾大小，不要超过背景的尺寸 *//* height: 40rpx; 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

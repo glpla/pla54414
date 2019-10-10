@@ -55,6 +55,19 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "reg",
+					"pathName": "pages/reg/reg",
+					"scene": null
 				}
 			]
 		}

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="reg-wrap">
+    <view class="input-wrap">
+      <label>用户名</label>
+      <input type="text" maxlength="8" placeholder="8位中文/字母/数字" placeholder-class="ph"></input>
+    </view>
+    <view class="input-wrap">
+      <label>密码</label>
+      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph"></input>
+    </view>
+    <view class="input-wrap">
+      <label>确认密码</label>
+      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph"></input>
+    </view>
+    <view class="reg-btn">注册</view>
+  </view>
+</view>

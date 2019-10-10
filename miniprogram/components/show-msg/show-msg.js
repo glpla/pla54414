@@ -23,6 +23,8 @@ Component({
     }
   },
   data: {
+    userName: '',
+    userPic: '',
     curUser: '',
     inter: 0,
     curIndex: null,
@@ -287,7 +289,8 @@ Component({
   lifetimes: {
     attached: function() {
       this.setData({
-        curUser: app.globalData.userInfo.nickName
+        userName: app.globalData.userName,
+        userPic: app.globalData.userPic
       })
     },
     detached: function() {

@@ -91,7 +91,6 @@
       </view>
     </view>
   </view>
-
   <button class='btn' bindtap="toMsg">感兴趣就给我留言吧</button>
   <!-- <button class='btn' bindtap="upFile" wx:if='{{isSelf}}'>上传简历</button> -->
   <!-- <button class='btn' bindtap="getFile" wx:if='{{isSelf}}'>下载简历</button> -->
