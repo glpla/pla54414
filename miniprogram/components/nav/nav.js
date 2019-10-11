@@ -42,6 +42,11 @@ Component({
       wx.navigateTo({
         url: '../demo/demo',
       })
+    },
+    toAdmin() {
+      wx.navigateTo({
+        url: '../admin/admin',
+      })
     }
   },
   lifetimes: {

@@ -5,6 +5,7 @@
     "pages/message/message",
     "pages/login/login",
     "pages/reg/reg",
+    "pages/admin/admin",
     "pages/home/home",
     "pages/pic/pic",
     "pages/msg/msg",

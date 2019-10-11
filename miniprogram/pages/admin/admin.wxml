@@ -1,0 +1,15 @@
+<view class="container">
+  <view class='wrap' wx:if='{{!isOk}}'>
+    <input type='password' placeholder-class="input-ph" placeholder="超级密码" maxlength="8" bindinput="onPw" focus="true"></input>
+    <button bindtap="onLogin">登陆</button>
+  </view>
+  <view wx:else class="upload">
+    <view class="upload-btn" bindtap="uploadImg">+</view>
+    <button bindtap="upload">首页swiper上传</button>
+    <view class="img-wrap">
+      <view class='img-box' wx:for='{{imgs}}' wx:key=''>
+        <image src="{{item}}" mode="widthFix" bindtap="previewImg" data-src='{{item}}'></image>
+      </view>
+    </view>
+  </view>
+</view>

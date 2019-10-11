@@ -20,7 +20,7 @@
     <text class='nav-desc'>办公</text>
   </view>
   <view class='nav-item' bindtap="toLike">
-    <text class='iconfont iconchangyongtubiao-mianxing-3 nav-icon'></text>
+    <text class='iconfont iconxin nav-icon'></text>
     <text class='nav-desc'>收藏</text>
   </view>
   <view class='nav-item' bindtap="toMap">
@@ -30,5 +30,13 @@
   <view class='nav-item' bindtap="toDemo">
     <text class='iconfont iconchangyongtubiao-mianxing-6 nav-icon'></text>
     <text class='nav-desc'>示例</text>
+  </view>
+  <view class='nav-item' bindtap="toDemo">
+    <text class='iconfont iconchangyongtubiao-mianxing-7 nav-icon'></text>
+    <text class='nav-desc'>绿植</text>
+  </view>
+  <view class='nav-item' bindtap="toAdmin">
+    <text class='iconfont iconmichi nav-icon'></text>
+    <text class='nav-desc'>管理</text>
   </view>
 </view>
