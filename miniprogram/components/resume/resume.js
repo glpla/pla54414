@@ -34,7 +34,7 @@ Component({
     },
     toMsg() {
       wx.navigateTo({
-        url: '../msg/msg',
+        url: '../message/message',
       })
     },
     onQuery() {

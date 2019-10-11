@@ -1,0 +1,22 @@
+<view>
+  <view class='wrap'>
+    <input maxlength="8" bindinput='onUser' placeholder="昵称(可选)" placeholder-class='phc'></input>
+  </view>
+  <view class='wrap'>
+    <input maxlength="15" bindinput='onContact' placeholder="联系方式(可选)" placeholder-class='phc'></input>
+  </view>
+  <view class='wrap'>
+    <textarea placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-class='phc' />
+  </view>
+  <button bindtap="onSubmit">提交</button>
+  <button open-type='contact'>联系客服</button>
+  <button bindtap='makeCall'>联系站长本尊</button>
+  <view class="msg-wrap" wx:for='{{records}}'>
+    <view class="name">
+      <text class="iconfont iconyonghu"></text>: {{item.userName}}</view>
+    <view class="contact">
+      <text class="iconfont icontel-fill"></text>: {{item.userContact}}</view>
+    <view class="msg">
+      <text class="iconfont iconchangyongtubiao-mianxing-5"></text>: {{item.msg}}</view>
+  </view>
+</view>
