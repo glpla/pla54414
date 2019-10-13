@@ -1,1 +1,51 @@
-/* pages/like/like.wxss */
+.likes-wrap {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.left {
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.left-bar {
+  padding: 10px 0;
+  margin-bottom: 10rpx;
+  border-bottom: 4rpx solid #69c3aa;
+}
+
+.left-item {
+  text-transform: uppercase;
+  padding: 10rpx;
+}
+
+.cur {
+  background: #69c3aa;
+  color: #fff;
+}
+
+.right {
+  flex: 1;
+  height: 100%;
+}
+
+scroll-view {
+  height: 100%;
+}
+
+.right-title {
+  padding: 10rpx 0;
+  text-transform: uppercase;
+}
+
+.right-item {
+  display: flex;
+  flex-direction: column;
+}
+
+image {
+  width: 100%;
+}

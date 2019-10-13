@@ -1,4 +1,5 @@
 {
+  "navigationBarBackgroundColor": "#179cd1",
   "usingComponents": {
     "home-swiper": "../../components/swiper/swiper",
     "resume": "../../components/resume/resume",

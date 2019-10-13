@@ -1,66 +1,143 @@
-// pages/office/office.js
+const db = wx.cloud.database();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    date: '2019-10-12',
+    time: '09:00',
+    client: '',
+    target: '',
+    event: '',
+    staff: '',
+    events: [],
+    navItem: [{
+      id: 100,
+      title: "登记",
+      desc: 'Todo'
+    }, {
+      id: 101,
+      title: "待办",
+      desc: 'Todo'
+    }, {
+      id: 102,
+      title: "处理中",
+      desc: 'Doing'
+    }, {
+      id: 103,
+      title: "完结",
+      desc: 'Done'
+    }, {
+      id: 104,
+      title: "所有",
+      desc: 'All'
+    }, ],
+    navIndex: 0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onNav(e) {
+    this.setData({
+      navIndex: e.currentTarget.dataset.idx
+    })
+    switch (this.data.navIndex) {
+      case 0:
+        break;
+      default:
+        this.getEvents(this.data.navIndex);
+        break;
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getEvents(flag) {
+    db.collection('pla54414-events').get().then(res => {
+      console.log(res)
+      this.setData({
+        events: res.data
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  bindDateChange: function(e) {
+    this.setData({
+      date: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  bindTimeChange: function(e) {
+    this.setData({
+      time: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onClient(e) {
+    this.setData({
+      client: e.detail.value
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onTarget(e) {
+    this.setData({
+      target: e.detail.value
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  onEvent(e) {
+    this.setData({
+      event: e.detail.value
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  onStaff(e) {
+    this.setData({
+      staff: e.detail.value
+    })
+  },
+  onSubmit() {
+    if (!this.data.client) {
+      wx.showToast({
+        title: '客户为空',
+      })
+      return;
+    }
+    if (!this.data.target) {
+      wx.showToast({
+        title: '投诉对象为空',
+      })
+      return;
+    }
+    if (!this.data.event) {
+      wx.showToast({
+        title: '事由为空',
+      })
+      return;
+    }
+    if (!this.data.staff) {
+      wx.showToast({
+        title: '经办人为空',
+      })
+      return;
+    }
+    db.collection('pla54414-events').add({
+      data: {
+        date: this.data.date,
+        time: this.data.time,
+        client: this.data.client,
+        target: this.data.target,
+        event: this.data.event,
+        staff: this.data.staff,
+        flag: 1,
+        "部门主管": '',
+        "部门主任": '',
+        "中心主任": '',
+        "校长": ''
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '提交成功',
+        icon: "none"
+      })
+      this.setData({
+        client: '',
+        target: '',
+        event: '',
+        staff: ''
+      })
+    })
+  },
+  onDetail(e) {
+    wx.navigateTo({
+      url: '../events/events?id=' + e.currentTarget.dataset.idx,
+    })
+  },
+  onLoad: function(options) {}
 })

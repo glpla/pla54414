@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "Demo",
+  "navigationBarBackgroundColor": "#ed786a",
   "usingComponents": {
     "wave": "../../components/wave/wave"
   }

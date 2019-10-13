@@ -1,66 +1,39 @@
 // pages/product/product.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    cIndex: 0,
+    list: [{
+      id: 900,
+      title: 'layout'
+    }, {
+      id: 901,
+      title: 'transform'
+    }, {
+      id: 902,
+      title: 'animation'
+    }, {
+      id: 903,
+      title: 'transition'
+    }, {
+      id: 904,
+      title: 'iconfont'
+    }, {
+      id: 905,
+      title: 'echart'
+    }, {
+      id: 906,
+      title: 'effect'
+    }]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onSel(e) {
+    this.setData({
+      cIndex: e.currentTarget.dataset.idx
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onChange(e) {
+    this.setData({
+      cIndex: e.detail.current
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  onLoad: function(options) {}
 })

@@ -1,2 +1,45 @@
-<!--pages/office/office.wxml-->
-<text>to do</text>
+<view>
+  <view class="header-wrap">
+    <view wx:for='{{navItem}}' wx:key='item.id' class="nav-item" bindtap="onNav" data-idx='{{index}}'>
+      <view class='{{index==navIndex?"active":""}}'>{{item.title}}</view>
+      <view>{{item.desc}}</view>
+    </view>
+  </view>
+  <view wx:if='{{navIndex==0}}'>
+    <view class='date-time'>
+      <picker mode="date" value="{{date}}" start="2019-01-01" end="2019-12-31" bindchange="bindDateChange">
+        <view>
+          <text>日期Date: {{date}}</text>
+          <text>(单击选择)</text>
+        </view>
+      </picker>
+      <picker mode="time" value="{{time}}" start="09:00" end="17:00" bindchange="bindTimeChange">
+        <view>
+          <text>时间Time: {{time}}</text>
+          <text>(单击选择)</text>
+        </view>
+      </picker>
+    </view>
+    <view class="desc">客户Client</view>
+    <input maxlength="8" bindinput='onClient' placeholder="姓名" placeholder-class='phc'></input>
+    <view class="desc">投诉对象Target</view>
+    <input maxlength="8" bindinput='onTarget' placeholder="姓名" placeholder-class='phc'></input>
+    <view class="desc">事由Focus</view>
+    <textarea bindinput='onEvent' placeholder="事由概要" placeholder-class='phc'></textarea>
+    <view class="desc">经办人Staff</view>
+    <input maxlength="8" bindinput='onStaff' placeholder="客服人员" placeholder-class='phc'></input>
+    <button bindtap="onSubmit">提交</button>
+  </view>
+  <view wx:if='{{navIndex==1}}' class="event-wrap">
+    <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs">{{item.event}}</view>
+    </view>
+  </view>
+  <view wx:if='{{navIndex==2}}'>
+    <text class="desc">client</text>
+  </view>
+  <view wx:if='{{navIndex==3}}'>
+    <text class="desc">client</text>
+  </view>
+</view>

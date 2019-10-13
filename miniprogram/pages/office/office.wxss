@@ -1,1 +1,113 @@
-/* pages/office/office.wxss */
+.header-wrap {
+  margin: 0 auto 20rpx;
+  display: flex;
+  justify-content: space-around;
+  background-color: #a982d5;
+  color: #fff;
+  padding: 20rpx;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nav-item view:first-child {
+  padding: 10rpx 20rpx;
+}
+
+.nav-item view:last-child {
+  margin-top: 6rpx;
+  font-size: 0.6rem;
+  color: #fff;
+}
+
+.active {
+  background: #f6f6f6;
+  color: #a982d5;
+  border-radius: 10rpx;
+}
+
+.wrap {
+  width: 90%;
+  padding: 10rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  margin: 0rpx auto;
+}
+
+.date-time {
+  width: 90%;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #ddd;
+  margin: 0 auto 20rpx;
+  font-size: 0.8rem;
+}
+
+.date-time view {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.phc {
+  color: #aaa;
+}
+
+.desc {
+  width: 90%;
+  margin: 4px auto 0;
+  font-size: 0.8rem;
+}
+
+input {
+  width: 90%;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+  margin: 0rpx auto 20rpx;
+  border: 2rpx solid #aaa;
+  font-size: 0.8rem;
+}
+
+textarea {
+  width: 90%;
+  line-height: 38rpx;
+  margin: 10rpx auto 20rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #aaa;
+  font-size: 0.8rem;
+  color: #333;
+  padding: 10rpx;
+}
+
+button {
+  width: 90%;
+  background: #a982d5;
+  color: #fff;
+  margin: 20rpx auto 0;
+  font-size: 0.8rem;
+}
+
+.event-wrap {
+  padding: 10rpx;
+}
+
+.event-item {
+  display: flex;
+  font-size: 0.8rem;
+  color: #666;
+  padding-bottom: 10rpx;
+}
+
+.event-sn {
+  width: 60rpx;
+  text-align: center;
+}
+
+.event-abs {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

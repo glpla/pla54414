@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="date-time">{{item.date}} {{item.time}} 经办人:{{item.staff}}</view>
+  <view class="leader">{{item.client}} 投诉 {{item.target}}</view>
+  <view class="event">{{item.event}}</view>
+  <view class="leader">部门主管</view>
+  <view wx:if='{{!item.checkLeader}}'>
+    <textarea></textarea>
+    <button>签收</button>
+  </view>
+  <view wx:else>{{item.checkTeam}}</view>
+  <view class="leader">部门主任</view>
+  <view wx:if='{{!item.checkTeam}}'>
+    <textarea></textarea>
+    <button>签收</button>
+  </view>
+  <view wx:else>{{item.checkDean}}</view>
+  <view class="leader">中心主任</view>
+  <view wx:if='{{!item.checkDean}}'>
+    <textarea></textarea>
+    <button>签收</button>
+  </view>
+  <view wx:else>{{item.checkMaster}}</view>
+  <view class="leader">校长</view>
+  <view wx:if='{{!item.checkMaster}}'>
+    <textarea></textarea>
+    <button>签收</button>
+  </view>
+  <view wx:else>{{item.checkLeader}}</view>
+</view>
