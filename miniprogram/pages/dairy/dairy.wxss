@@ -1,0 +1,50 @@
+page {
+  padding: 10rpx;
+}
+
+textarea {
+  width: 100%;
+  border: 2rpx solid #fff;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: 0rpx auto;
+  padding: 10rpx;
+}
+
+.img-btn {
+  width: 240rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  border-radius: 10rpx;
+}
+
+.img-box {
+  width: 100%;
+  margin: 10rpx auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.img-box image {
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+}
+
+.submit-btn {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  background: #179cd1;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+}

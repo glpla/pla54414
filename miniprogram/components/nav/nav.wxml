@@ -13,7 +13,7 @@
   </view>
   <view class='nav-item' bindtap="toAgenda">
     <text class='iconfont iconchangyongtubiao-mianxing-2 nav-icon'></text>
-    <text class='nav-desc'>日程</text>
+    <text class='nav-desc'>日志</text>
   </view>
   <view class='nav-item' bindtap="toOffice">
     <text class='iconfont iconchangyongtubiao-mianxing-4 nav-icon'></text>

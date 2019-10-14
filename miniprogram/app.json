@@ -8,11 +8,12 @@
     "pages/admin/admin",
     "pages/office/office",
     "pages/events/events",
+    "pages/dairy/dairy",
+    "pages/agenda/agenda",
     "pages/home/home",
     "pages/pic/pic",
     "pages/msg/msg",
     "pages/gym/gym",
-    "pages/agenda/agenda",
     "pages/like/like",
     "pages/map/map",
     "pages/demo/demo"
