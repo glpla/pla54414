@@ -1,38 +1,96 @@
 .wrap {
-  width: 90%;
-  padding: 10rpx;
-  border: 2rpx solid #ddd;
-  border-radius: 10rpx;
-  margin: 20rpx auto 0;
+  position: relative;
+  width: 720rpx;
+  height: 600rpx;
+  top: 0rpx;
+  margin: 200rpx auto 0rpx;
+  transition: 0.5s ease-in-out;
 }
 
-.phc {
-  color: #aaa;
+.wrap-active {
+  margin-top: 500rpx;
+}
+
+.after, .before {
+  position: absolute;
+  width: 100%;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+
+.after {
+  bottom: 165rpx;
+}
+
+.before {
+  z-index: 99;
+}
+
+.form {
+  position: absolute;
+  top: 285rpx;
+  left: 50%;
+  width: 640rpx;
+  height: 160rpx;
+  background: #ddd;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  transform: translateX(-50%);
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.form-active {
+  top: -440rpx;
+  height: 900rpx;
+}
+
+.header {
+  text-align: center;
+  padding-top: 40rpx;
+  padding-bottom: 60rpx;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #666;
+  padding: 4rpx;
 }
 
 input, textarea {
   width: 100%;
+  height: 60rpx;
   font-size: 0.8rem;
   color: #333;
+  padding: 0 10rpx;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #fff;
+  background-color: #fff;
 }
 
-button {
-  width: 90%;
-  background: #ffa500;
+textarea {
+  height: 140rpx;
+  padding-top: 10rpx;
+}
+
+.btn {
   color: #fff;
+  width: 80%;
+  background: #4f8ead;
+  text-align: center;
   margin: 20rpx auto 0;
-  font-size: 0.8rem;
-}
-
-.msg-wrap {
-  width: 90%;
-  margin: 20rpx auto 0;
-  box-shadow: 0 10rpx 10rpx #c7c7c7;
+  font-size: 1.0rem;
   padding: 10rpx;
-  color: #666;
-  font-size: 0.8rem;
+  border-radius: 10rpx;
 }
 
-.contact {
-  margin: 20rpx 0;
+.check {
+  width: 90%;
+  margin: 20rpx auto;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.check text {
+  padding: 10rpx;
 }

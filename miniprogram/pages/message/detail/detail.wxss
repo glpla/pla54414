@@ -1,0 +1,11 @@
+.msg-wrap {
+  margin-top: 20rpx;
+  box-shadow: 0 10rpx 10rpx #c7c7c7;
+  padding: 10rpx;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.contact {
+  margin: 20rpx 0;
+}

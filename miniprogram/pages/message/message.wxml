@@ -1,22 +1,21 @@
 <view>
-  <view class='wrap'>
-    <input maxlength="8" bindinput='onUser' placeholder="昵称(可选)" placeholder-class='phc'></input>
+  <view class="wrap {{isActive?'wrap-active':''}}">
+    <image class='after' src="/images/before.png" mode="widthFix"></image>
+    <image class='before' src="/images/after.png" mode="widthFix" bindtap="onStart"></image>
+    <view class="form {{isActive?'form-active':''}}">
+      <view class="header">说点啥吧</view>
+      <view class="label">内容</view>
+      <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' />
+      <view class="label">昵称(可选)</view>
+      <input maxlength="8" bindinput='onUser'></input>
+      <view class="label">联系方式(可选)</view>
+      <input maxlength="15" bindinput='onContact'></input>
+      <view class="btn" bindtap="onSubmit">提交</view>
+    </view>
   </view>
-  <view class='wrap'>
-    <input maxlength="15" bindinput='onContact' placeholder="联系方式(可选)" placeholder-class='phc'></input>
-  </view>
-  <view class='wrap'>
-    <textarea placeholder="留下您宝贵的意见吧" maxlength='60' bindinput='onMsgInput' placeholder-class='phc' />
-  </view>
-  <button bindtap="onSubmit">提交</button>
-  <button open-type='contact'>联系客服</button>
-  <button bindtap='makeCall'>联系站长本尊</button>
-  <view class="msg-wrap" wx:for='{{records}}'>
-    <view class="name">
-      <text class="iconfont iconyonghu"></text>: {{item.userName}}</view>
-    <view class="contact">
-      <text class="iconfont icontel-fill"></text>: {{item.userContact}}</view>
-    <view class="msg">
-      <text class="iconfont iconchangyongtubiao-mianxing-5"></text>: {{item.msg}}</view>
+  <view class="check">
+    <text class="iconfont iconkefu-tianchong" open-type='contact'></text>
+    <text class="iconfont iconkefurexian" bindtap='makeCall'></text>
+    <text class="iconfont iconqianyuejilu" bindtap='onCheck'></text>
   </view>
 </view>

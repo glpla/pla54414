@@ -3,6 +3,7 @@
     "pages/greeting/greeting",
     "pages/index/index",
     "pages/message/message",
+    "pages/message/detail/detail",
     "pages/login/login",
     "pages/reg/reg",
     "pages/office/office",

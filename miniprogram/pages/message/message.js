@@ -12,9 +12,15 @@ Page({
     msg: "",
     len: 60,
     inter: 0,
-    records: [],
     userName: '大树爱你哦',
-    userContact: '18888888888'
+    userContact: '18888888888',
+    isActive: false
+  },
+  onStart() {
+    console.log('hi')
+    this.setData({
+      isActive: true
+    })
   },
   makeCall() {
     wx.makePhoneCall({
@@ -31,7 +37,7 @@ Page({
       userContact: e.detail.value
     })
   },
-  onMsgInput(e) {
+  onMsg(e) {
     this.setData({
       msg: e.detail.value
     })
@@ -49,13 +55,16 @@ Page({
       })
       return
     }
-
     wx.showToast({
       title: '数据提交中...',
       icon: "loading"
     })
     this.saveData();
-
+  },
+  onCheck() {
+    wx.navigateTo({
+      url: './detail/detail',
+    })
   },
   saveData() {
     db.collection('pla54414-msg').add({
@@ -71,29 +80,17 @@ Page({
           title: '提交成功',
           icon: "none"
         })
-        this.onQuery();
         app.globalData.isEdit = false;
         this.data.inter = setTimeout(() => {
           app.globalData.isEdit = true;
         }, 5 * 60 * 1000)
         this.setData({
-          msg: ''
+          msg: '',
+          isActive: false
         })
       }).catch(err => {
         console.log(err)
       })
   },
-  onQuery() {
-    db.collection('pla54414-msg').orderBy('time', 'desc').get().then(res => {
-      // console.log(res.data)
-      this.setData({
-        records: res.data
-      })
-    }).catch(err => {
-      console.log(err)
-    })
-  },
-  onLoad: function(options) {
-    this.onQuery();
-  }
+  onLoad: function(options) {}
 })
