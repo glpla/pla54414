@@ -1,6 +1,5 @@
 Page({
   data: {
-    cIndex: 0,
     likes: [{
         id: 600,
         title: "hot",
@@ -189,15 +188,6 @@ Page({
         ]
       }
     ]
-  },
-  onSel(e) {
-    this.setData({
-      cIndex: e.currentTarget.dataset.idx
-    })
-  },
-  onScroll(e) {
-    console.log(e)
-    // 0 1082 2795 3877 5590 6883
   },
   onLoad: function(options) {}
 })

@@ -1,14 +1,17 @@
 <view class=''>
-  <block wx:for='{{records}}' wx:key='' wx:for-item='recordItem'>
-    <view class='info-box'>
-      <view class='info-time'>{{recordItem.time}}</view>
-      <view class='info-msg' wx:if='{{!recordItem.msg}}'>暂无评论</view>
-      <view class='info-msg' wx:else>{{recordItem.msg}}</view>
-      <view class='info-img'>
-        <view class='img-box' wx:for='{{recordItem.fileID}}' wx:key=''>
-          <image src="{{item}}" mode="widthFit" bindtap="previewImg" data-src='{{item}}' data-imgs='{{recordItem.fileID}}'></image>
+  <view wx:if='{{records.length==0}}'>日志为空，赶紧去说点什么吧</view>
+  <view wx:else>
+    <block wx:for='{{records}}' wx:key='' wx:for-item='recordItem'>
+      <view class='info-box'>
+        <view class='info-time'>{{recordItem.time}}</view>
+        <view class='info-msg' wx:if='{{!recordItem.msg}}'>暂无评论</view>
+        <view class='info-msg' wx:else>{{recordItem.msg}}</view>
+        <view class='info-img'>
+          <view class='img-box' wx:for='{{recordItem.fileID}}' wx:key=''>
+            <image src="{{item}}" mode="widthFit" bindtap="previewImg" data-src='{{item}}' data-imgs='{{recordItem.fileID}}'></image>
+          </view>
         </view>
       </view>
-    </view>
-  </block>
+    </block>
+  </view>
 </view>

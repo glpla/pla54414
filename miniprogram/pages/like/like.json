@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "收藏",
   "navigationBarBackgroundColor": "#69c3aa",
-  "usingComponents": {}
+  "usingComponents": {
+    "sidebar": "/components/sidebar/sidebar"
+  }
 }

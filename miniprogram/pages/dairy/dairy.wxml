@@ -4,6 +4,6 @@
   <view class='img-box'>
     <image wx:for='{{imgs}}' wx:key='' src="{{item}}" mode="widthFit" bindtap="previewImg" data-src='{{item}}'></image>
   </view>
-  <view class='submit-btn' bindtap="onSubmit">提交记录</view>
-  <view class='submit-btn' bindtap="onHistory">查看记录</view>
+  <view class='submit-btn' bindtap="onSubmit">提交</view>
+  <view class='submit-btn' bindtap="onHistory">查看</view>
 </view>

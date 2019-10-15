@@ -14,7 +14,7 @@ Page({
     })
   },
   onLoad: function(options) {
-    db.collection('daily').orderBy('createTime', 'desc').get()
+    db.collection('pla54414-dairy').orderBy('createTime', 'desc').get()
       .then(res => {
         console.log(res)
         this.setData({

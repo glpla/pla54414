@@ -65,7 +65,7 @@ Page({
     Promise.all(promiseAll).then(res => {
       //所有的上传都结束了才会执行入库操作
       // console.log('upload done')
-      db.collection('daily').add({
+      db.collection('pla54414-dairy').add({
           data: {
             time: formatTime(new Date()),
             msg: this.data.msg,
@@ -77,6 +77,11 @@ Page({
           wx.hideToast()
           wx.showToast({
             title: '提交成功',
+          })
+          this.setData({
+            msg: '',
+            imgs: [],
+            fileID: []
           })
         })
         .catch(err => {

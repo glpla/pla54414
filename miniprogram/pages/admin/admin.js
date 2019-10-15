@@ -6,7 +6,7 @@ Page({
   data: {
     pw: '5474..',
     tmp: '',
-    isOk: true,
+    isOk: false,
     imgs: [],
     fileID: []
   },
