@@ -86,7 +86,7 @@ Page({
   },
   onHistory() {
     wx.navigateTo({
-      url: '../agenda/agenda',
+      url: './detail/detail',
     })
   },
   previewImg(e) {

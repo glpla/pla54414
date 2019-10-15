@@ -20,7 +20,7 @@ Component({
     },
     toAgenda() {
       wx.navigateTo({
-        url: '../agenda/agenda',
+        url: '../dairy/dairy',
       })
     },
     toOffice() {
@@ -35,7 +35,7 @@ Component({
     },
     toMap() {
       wx.navigateTo({
-        url: '../map/map',
+        url: '../wine/wine',
       })
     },
     toDemo() {

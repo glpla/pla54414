@@ -1,0 +1,31 @@
+.info-box {
+  margin-top: 20rpx;
+  box-shadow: 0 10rpx 10rpx #c7c7c7;
+}
+
+.info-time {
+  font-size: 0.8rem;
+  color: #aaa;
+  padding: 0 10rpx;
+}
+
+.info-msg {
+  padding: 10rpx;
+}
+
+.info-img {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-img .img-box {
+  width: 240rpx;
+  height: 240rpx;
+  padding: 10rpx;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}

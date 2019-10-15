@@ -6,7 +6,7 @@ Page({
   data: {
     pw: '5474..',
     tmp: '',
-    isOk: false,
+    isOk: true,
     imgs: [],
     fileID: []
   },
@@ -41,7 +41,13 @@ Page({
       }
     })
   },
-  upload() {
+  homeUpload() {
+    this.upload('pla54414-swiper')
+  },
+  wineUpload() {
+    this.upload('pla54414-wine')
+  },
+  upload(path) {
     if (this.data.imgs.length == 0) {
       wx.showToast({
         title: '请选择图片',
@@ -59,7 +65,7 @@ Page({
         let item = this.data.imgs[i];
         let ext = /\.\w+$/.exec(item)[0];
         wx.cloud.uploadFile({
-          cloudPath: 'pla54414-swiper/' + new Date().getTime() + ext,
+          cloudPath: path + '/' + new Date().getTime() + ext,
           filePath: item,
           success: res => {
             // console.log(res.fileID)
@@ -77,7 +83,7 @@ Page({
     Promise.all(promiseAll).then(res => {
       //所有的上传都结束了才会执行入库操作
       // console.log('upload done')
-      db.collection('pla54414-swiper').add({
+      db.collection(path).add({
           data: {
             time: formatTime(new Date()),
             fileID: this.data.fileID,

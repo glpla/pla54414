@@ -5,7 +5,8 @@
   </view>
   <view wx:else class="upload">
     <view class="upload-btn" bindtap="uploadImg">+</view>
-    <button bindtap="upload">首页swiper上传</button>
+    <button bindtap="homeUpload">首页swiper上传</button>
+    <button bindtap="wineUpload">红酒swiper上传</button>
     <view class="img-wrap">
       <view class='img-box' wx:for='{{imgs}}' wx:key=''>
         <image src="{{item}}" mode="widthFix" bindtap="previewImg" data-src='{{item}}'></image>

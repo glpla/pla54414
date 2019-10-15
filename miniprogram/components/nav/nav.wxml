@@ -24,8 +24,8 @@
     <text class='nav-desc'>收藏</text>
   </view>
   <view class='nav-item' bindtap="toMap">
-    <text class='iconfont iconchangyongtubiao-mianxing-1 nav-icon'></text>
-    <text class='nav-desc'>地图</text>
+    <text class='iconfont iconjiuwine56 nav-icon'></text>
+    <text class='nav-desc'>红酒</text>
   </view>
   <view class='nav-item' bindtap="toDemo">
     <text class='iconfont iconchangyongtubiao-mianxing-6 nav-icon'></text>

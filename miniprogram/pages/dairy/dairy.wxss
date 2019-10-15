@@ -4,11 +4,16 @@ page {
 
 textarea {
   width: 100%;
-  border: 2rpx solid #fff;
+  border: 2rpx solid #ddd;
   border-radius: 10rpx;
   background: #fff;
   margin: 0rpx auto;
   padding: 10rpx;
+}
+
+.phs {
+  color: #aaa;
+  font-size: 0.8rem;
 }
 
 .img-btn {
@@ -19,13 +24,14 @@ textarea {
   background: #fff;
   text-align: center;
   font-size: 0.8rem;
-  color: #aaa;
+  color: #179cd1;
+  border: 2rpx solid #179cd1;
   border-radius: 10rpx;
 }
 
 .img-box {
   width: 100%;
-  margin: 10rpx auto;
+  margin: 10rpx auto 0;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -42,7 +48,7 @@ textarea {
 .submit-btn {
   height: 60rpx;
   line-height: 60rpx;
-  margin-top: 10rpx;
+  margin-bottom: 10rpx;
   background: #179cd1;
   text-align: center;
   border-radius: 10rpx;

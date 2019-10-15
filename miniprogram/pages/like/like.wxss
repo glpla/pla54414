@@ -30,6 +30,8 @@
 .right {
   flex: 1;
   height: 100%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
 }
 
 scroll-view {
@@ -48,4 +50,5 @@ scroll-view {
 
 image {
   width: 100%;
+  border-radius: 10rpx;
 }

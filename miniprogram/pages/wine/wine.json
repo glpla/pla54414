@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#FF69B4",
+  "navigationBarTitleText": "红酒",
+  "usingComponents": {
+    "wine-swiper": "../../components/swiper/swiper"
+  }
+}

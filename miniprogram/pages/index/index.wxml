@@ -1,5 +1,5 @@
 <view class=''>
-  <home-swiper></home-swiper>
+  <home-swiper imgs='{{imgs}}'></home-swiper>
   <home-nav></home-nav>
   <resume></resume>
 </view>

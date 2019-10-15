@@ -22,7 +22,6 @@
 .item-wrap {
   position: relative;
   margin-top: 10rpx;
-  /* border-top: 2rpx solid #ddd; */
   box-shadow: 0 10rpx 10rpx #c7c7c7;
 }
 

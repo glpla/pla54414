@@ -1,0 +1,3 @@
+<view>
+  <wine-swiper imgs='{{imgs}}'></wine-swiper>
+</view>
