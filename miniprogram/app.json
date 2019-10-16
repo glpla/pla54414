@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/greeting/greeting",
+    "pages/pic/pic",
     "pages/index/index",
+    "pages/greeting/greeting",
+    
     "pages/message/message",
     "pages/message/detail/detail",
     "pages/login/login",
@@ -12,7 +14,7 @@
     "pages/dairy/detail/detail",
     "pages/agenda/agenda",
     "pages/home/home",
-    "pages/pic/pic",
+    
     "pages/msg/msg",
     "pages/gym/gym",
     "pages/like/like",
