@@ -5,7 +5,7 @@
     <view class="form {{isActive?'form-active':''}}">
       <view class="header">说点啥吧</view>
       <view class="label">内容</view>
-      <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' />
+      <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' focus="{{isActive}}" />
       <view class="label">昵称(可选)</view>
       <input maxlength="8" bindinput='onUser'></input>
       <view class="label">联系方式(可选)</view>
@@ -14,8 +14,14 @@
     </view>
   </view>
   <view class="check">
-    <text class="iconfont iconkefu-tianchong" open-type='contact'></text>
-    <text class="iconfont iconkefurexian" bindtap='makeCall'></text>
-    <text class="iconfont iconqianyuejilu" bindtap='onCheck'></text>
+    <button open-type='contact'>
+      <text class="iconfont iconkefu-tianchong"></text>
+    </button>
+    <button bindtap='makeCall'>
+      <text class="iconfont iconkefurexian"></text>
+    </button>
+    <button bindtap='onCheck'>
+      <text class="iconfont iconqianyuejilu"></text>
+    </button>
   </view>
 </view>

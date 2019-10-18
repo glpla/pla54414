@@ -33,7 +33,7 @@ Component({
         url: '../like/like',
       })
     },
-    toMap() {
+    toWine() {
       wx.navigateTo({
         url: '../wine/wine',
       })

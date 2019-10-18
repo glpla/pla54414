@@ -1,7 +1,5 @@
 <view class='wrap'>
-  <view wx:for='{{imgs}}'>
-    <image src="{{item.tempFileURL}}" mode="widthFix"></image>
+  <view class='img-box' wx:for='{{imgs}}' wx:key='{{item._id}}'>
+    <image src="{{item.fileID}}" mode="widthFix" bindtap="preImg" data-img="{{item.fileID}}"></image>
   </view>
-  <button open-type="getUserInfo" bindgetuserinfo='userInfo'>userInfo</button>
-  <image src="{{img}}"></image>
 </view>

@@ -6,11 +6,10 @@ Page({
     idx: 700
   },
   onLoad: function(options) {
-    db.collection('pla54414-wine').get().then(res => {
-      console.log(res.data)
-      let len = res.data.length;
+    db.collection('pla54414-wine').limit(10).get().then(res => {
+      // console.log(res.data)
       this.setData({
-        imgs: res.data[len - 1].fileID
+        imgs: res.data
       })
     })
   }

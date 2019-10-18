@@ -4,7 +4,7 @@
     <view class="left-item {{cIndex==index?'cur':''}}" wx:for='{{likes}}' wx:key='{{item.id}}' bindtap="onSel" data-idx="{{index}}">{{item.title}}</view>
   </view>
   <view class="right">
-    <scroll-view scroll-y scroll-into-view="view{{cIndex}}" scroll-with-animation bindscroll='onScroll'>
+    <scroll-view scroll-y scroll-into-view="view{{cIndex}}" scroll-with-animation>
       <view wx:for='{{likes}}' wx:key='{{item.id}}' id='view{{index}}' data-idx='{{index}}'>
         <view class="right-title">{{item.title}}</view>
         <view wx:for='{{item.list}}' wx:for-item='list' wx:key='{{list.id}}'>

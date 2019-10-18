@@ -1,11 +1,11 @@
 .login-wrap {
   width: 80%;
-  margin: 200rpx auto 60rpx;
+  margin: 600rpx auto 60rpx;
 }
 
 .wrap {
   width: 80%;
-  margin: 100rpx auto;
+  margin: 400rpx auto;
 }
 
 input {

@@ -17,7 +17,7 @@
 
 .nav-item view:last-child {
   margin-top: 6rpx;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: #fff;
 }
 
@@ -27,77 +27,71 @@
   border-radius: 10rpx;
 }
 
-.wrap {
-  width: 90%;
+.part0 {
   padding: 10rpx;
-  border: 2rpx solid #ddd;
-  border-radius: 10rpx;
-  margin: 0rpx auto;
 }
 
-.date-time {
-  width: 90%;
+.part0 .date-time {
   padding-bottom: 10rpx;
   border-bottom: 2rpx solid #ddd;
-  margin: 0 auto 20rpx;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-.date-time view {
+.part0 .date-time view {
+  height: 60rpx;
+  line-height: 60rpx;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10rpx;
+  /* margin-bottom: 10rpx; */
 }
 
-.phc {
+.part0 .phc {
   color: #aaa;
 }
 
-.desc {
-  width: 90%;
-  margin: 4px auto 0;
+.part0 .desc {
+  height: 60rpx;
+  line-height: 60rpx;
   font-size: 0.8rem;
 }
 
-input {
-  width: 90%;
-  height: 50rpx;
-  line-height: 50rpx;
+.part0 input {
+  height: 60rpx;
+  line-height: 60rpx;
   padding: 0 10rpx;
   border-radius: 10rpx;
-  margin: 0rpx auto 20rpx;
   border: 2rpx solid #ddd;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-textarea {
-  width: 90%;
+.part0 textarea {
+  width: 100%;
   line-height: 38rpx;
-  margin: 10rpx auto 20rpx;
   border-radius: 10rpx;
   border: 2rpx solid #ddd;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #333;
   padding: 10rpx;
 }
 
-button {
-  width: 90%;
+.part0 button {
+  width: 100%;
+  margin-top: 20rpx;
   background: #a982d5;
   color: #fff;
-  margin: 20rpx auto 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-.event-wrap {
+.part1 {
   padding: 10rpx;
 }
 
-.event-item {
+.part1 .event-item {
   display: flex;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #666;
-  padding-bottom: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }
 
 .event-sn {
@@ -110,4 +104,22 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.part1 .page-box {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.part1 .page-box .page {
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.part1 .page-box .cur-page {
+  color: #976aca;
+  font-weight: 700;
 }

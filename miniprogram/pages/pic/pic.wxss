@@ -1,3 +1,14 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-box {
+  width: 32%;
+  padding: 4rpx 8rpx 0 4rpx;
+}
+
 image {
-  width: 200rpx;
+  width: 100%;
+  border-radius: 10rpx;
 }

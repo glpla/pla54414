@@ -8,7 +8,7 @@
 }
 
 .wrap-active {
-  margin-top: 500rpx;
+  margin-top: 460rpx;
 }
 
 .after, .before {
@@ -85,12 +85,20 @@ textarea {
 }
 
 .check {
-  width: 90%;
-  margin: 20rpx auto;
-  text-align: right;
-  font-size: 1rem;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
 }
 
-.check text {
-  padding: 10rpx;
+.check button {
+  margin: 10rpx;
+  /* width: 60rpx;
+  height: 60rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx #4f8ead;
 }

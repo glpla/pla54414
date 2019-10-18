@@ -16,5 +16,8 @@ Page({
   },
   onLoad: function(options) {
     this.onQuery();
+  },
+  onPullDownRefresh() {
+    this.onQuery();
   }
 })
