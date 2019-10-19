@@ -1,0 +1,12 @@
+<view>
+  <view>共有记录:{{list.length}}条</view>
+  <view class="event-box">
+    <view class='event-item' wx:for='{{list}}' wx:key='{{item.time}}' data-idx="{{item._id}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs">{{item.event}}</view>
+    </view>
+  </view>
+  <view class='page-box'>
+    <view wx:for='{{pages}}' wx:key='{{index}}' class="page {{page==index?'cur-page':''}}" bindtap="onPage" data-ind="{{index}}">{{index+1}}</view>
+  </view>
+</view>

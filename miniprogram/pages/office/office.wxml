@@ -22,7 +22,7 @@
     </view>
   </view>
   <!-- part0 -->
-  <view class='part0' wx:if='{{navIndex==0}}'>
+  <view wx:if='{{navIndex==0}}' class='part0'>
     <view class='date-time'>
       <picker mode="date" value="{{date}}" start="2019-01-01" end="2019-12-31" bindchange="bindDateChange">
         <view>
@@ -49,23 +49,46 @@
   </view>
   <!-- part1 -->
   <view wx:if='{{navIndex==1}}' class="part1">
-    <view>共有记录:{{total}}条</view>
+    <view>共有记录:{{events.length}}条</view>
     <view class="event-box">
-      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" bindtap="onDetail">
-        <view class="event-sn">{{page*len+index+1}}</view>
+      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+        <view class="event-sn">{{index+1}}</view>
         <view class="event-abs">{{item.event}}</view>
       </view>
     </view>
-    <view class='page-box'>
+    <!-- <view class='page-box'>
       <view wx:for='{{pages}}' wx:key='{{index}}' class="page {{page==index?'cur-page':''}}" bindtap="onPage" data-ind="{{index}}">{{index+1}}</view>
-    </view>
+    </view> -->
   </view>
   <!-- part2 -->
-  <view wx:if='{{navIndex==2}}'>
-    <text class="desc">client</text>
+  <view wx:if='{{navIndex==2}}' class="part2">
+    <view>共有记录:{{events.length}}条</view>
+    <view class="event-box">
+      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+        <view class="event-sn">{{index+1}}</view>
+        <view class="event-abs">{{item.event}}</view>
+      </view>
+    </view>
   </view>
   <!-- part3 -->
-  <view wx:if='{{navIndex==3}}'>
-    <text class="desc">client</text>
+  <view wx:if='{{navIndex==3}}' class="part3">
+    <view>共有记录:{{events.length}}条</view>
+    <view class="event-box">
+      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+        <view class="event-sn">{{index+1}}</view>
+        <view class="event-abs">{{item.event}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- part4 -->
+  <view wx:if='{{navIndex==4}}' class="part4">
+    <view>共有记录:{{events.length}}条</view>
+    <view class="event-box">
+      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+        <view class="event-sn">{{index+1}}</view>
+        <view class="event-abs">{{item.event}}</view>
+        <view class='event-flag'>{{flagArr[item.flag]}}</view>
+      </view>
+    </view>
   </view>
 </view>

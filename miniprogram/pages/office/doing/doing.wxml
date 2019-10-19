@@ -1,0 +1,67 @@
+<view class="wrap">
+  <view class="title">{{item.client}} 投诉 {{item.target}}</view>
+  <view class='res-box'>
+    <view class="res-title time">
+      <text>事项</text>
+      <text>{{item.date}} {{item.time}}</text>
+    </view>
+    <view class="res-cont">{{item.event}}</view>
+  </view>
+  <view class="staff">经办人:{{item.staff}}</view>
+
+  <view wx:if='{{item.flag>=0}}'>
+    <view wx:if='{{!item.res0}}'>
+      <view class='res-box'>
+        <view class="res-title">部门主管</view>
+        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      </view>
+      <button bindtap="onRes" data-res="0">签收</button>
+    </view>
+    <view class='res-box' wx:else>
+      <view class="res-title">部门主管</view>
+      <view class="res-cont">{{item.res0}}</view>
+    </view>
+  </view>
+
+  <view wx:if='{{item.flag>=1}}'>
+    <view wx:if='{{!item.res1}}'>
+      <view class='res-box'>
+        <view class="res-title">部门主任</view>
+        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      </view>
+      <button bindtap="onRes" data-res="1">签收</button>
+    </view>
+    <view class='res-box' wx:else>
+      <view class="res-title">部门主任</view>
+      <view class="res-cont">{{item.res1}}</view>
+    </view>
+  </view>
+
+  <view wx:if='{{item.flag>=2}}'>
+    <view wx:if='{{!item.res2}}'>
+      <view class='res-box'>
+        <view class="res-title">中心主任</view>
+        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      </view>
+      <button bindtap="onRes" data-res="2">签收</button>
+    </view>
+    <view class='res-box' wx:else>
+      <view class="res-title">中心主任</view>
+      <view class="res-cont">{{item.res2}}</view>
+    </view>
+  </view>
+
+  <view wx:if='{{item.flag>=3}}'>
+    <view wx:if='{{!item.res3}}'>
+      <view class='res-box'>
+        <view class="res-title">校长</view>
+        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      </view>
+      <button bindtap="onRes" data-res="3">签收</button>
+    </view>
+    <view class='res-box' wx:else>
+      <view class="res-title">校长</view>
+      <view class="res-cont">{{item.res3}}</view>
+    </view>
+  </view>
+</view>

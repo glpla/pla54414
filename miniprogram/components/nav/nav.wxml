@@ -11,7 +11,7 @@
     <text class='iconfont iconjianshenfang nav-icon'></text>
     <text class='nav-desc'>运动</text>
   </view>
-  <view class='nav-item' bindtap="toAgenda">
+  <view class='nav-item' bindtap="toDairy">
     <text class='iconfont iconchangyongtubiao-mianxing-2 nav-icon'></text>
     <text class='nav-desc'>日志</text>
   </view>

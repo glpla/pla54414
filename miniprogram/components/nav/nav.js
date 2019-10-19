@@ -18,7 +18,7 @@ Component({
         url: '../gym/gym',
       })
     },
-    toAgenda() {
+    toDairy() {
       wx.navigateTo({
         url: '../dairy/dairy',
       })

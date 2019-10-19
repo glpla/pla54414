@@ -2,7 +2,6 @@
   "navigationBarBackgroundColor": "#a982d5",
   "navigationBarTitleText": "日程安排",
   "usingComponents": {
-    "van-row": "vant-weapp/row",
-    "van-col": "vant-weapp/col"
+    "event-list": "../../components/event-list/event-list"
   }
 }

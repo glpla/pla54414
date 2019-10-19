@@ -5,7 +5,7 @@ Page({
     imgs: []
   },
   onLoad: function(options) {
-    db.collection('pla54414-swiper').limit(10).get().then(res => {
+    db.collection('pla54414-swiper').orderBy('time', 'desc').limit(10).get().then(res => {
       // console.log(res.data)
       this.setData({
         imgs: res.data

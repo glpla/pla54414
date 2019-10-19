@@ -1,0 +1,37 @@
+.event-item {
+  display: flex;
+  font-size: 1rem;
+  color: #666;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.event-sn {
+  width: 60rpx;
+  text-align: center;
+}
+
+.event-abs {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page-box {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.page-box .page {
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.page-box .cur-page {
+  color: #976aca;
+  font-weight: 700;
+}

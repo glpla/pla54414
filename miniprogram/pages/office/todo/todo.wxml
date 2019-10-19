@@ -1,0 +1,12 @@
+<view class="wrap">
+  <view class="title">{{item.client}} 投诉 {{item.target}}</view>
+  <view class='res-box'>
+    <view class="res-title time">
+      <text>事项</text>
+      <text>{{item.date}} {{item.time}}</text>
+    </view>
+    <view class="res-cont">{{item.event}}</view>
+  </view>
+  <view class="staff">经办人:{{item.staff}}</view>
+  <button bindtap="onToRes">开始处理</button>
+</view>

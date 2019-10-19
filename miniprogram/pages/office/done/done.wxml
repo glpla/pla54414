@@ -1,0 +1,30 @@
+<view class="wrap">
+  <view class="title">{{item.client}} 投诉 {{item.target}}</view>
+  <view class='res-box'>
+    <view class="res-title time">
+      <text>事项</text>
+      <text>{{item.date}} {{item.time}}</text>
+    </view>
+    <view class="res-cont">{{item.event}}</view>
+  </view>
+  <view class="staff">经办人:{{item.staff}}</view>
+  <view class='res-box'>
+    <view class="res-title">部门主管</view>
+    <view class="res-cont">{{item.res0}}</view>
+  </view>
+
+  <view class='res-box'>
+    <view class="res-title">部门主任</view>
+    <view class="res-cont">{{item.res1}}</view>
+  </view>
+
+  <view class='res-box'>
+    <view class="res-title">中心主任</view>
+    <view class="res-cont">{{item.res2}}</view>
+  </view>
+
+  <view class='res-box'>
+    <view class="res-title">校长</view>
+    <view class="res-cont">{{item.res3}}</view>
+  </view>
+</view>
