@@ -1,5 +1,6 @@
 {
-  "usingComponents": {
-    
-  }
+  "navigationBarBackgroundColor": "#3CB371",
+  "navigationBarTitleText": "美图欣赏",
+  "usingComponents": {},
+  "enablePullDownRefresh": true
 }

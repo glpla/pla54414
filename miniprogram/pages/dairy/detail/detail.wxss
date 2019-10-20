@@ -29,3 +29,10 @@ image {
   height: 100%;
   border-radius: 10rpx;
 }
+
+.done {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 0.8rem;
+}

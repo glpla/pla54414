@@ -3,8 +3,8 @@
 .bar {
   background: #ddd;
   text-align: center;
-  padding: 10rpx;
-  margin: 10rpx auto;
+  height: 60rpx;
+  line-height: 60rpx;
   color: #999;
   font-size: 0.8rem;
 }
@@ -13,20 +13,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20rpx;
+  padding: 10rpx;
   margin-bottom: 20rpx;
   box-shadow: 0 10rpx 10rpx #c7c7c7;
-  position: relative;
 }
 
 .item-wrap .left {
-  width: 180rpx;
+  width: 160rpx;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #aaa;
+  color: #fff;
+}
+
+.item-wrap .right {
+  margin-left: 8rpx;
+  text-align: left;
+  flex: 1;
+}
+
+.left .left-icon {
+  font-size: 3rem;
+  text-shadow: 0 0rpx 20rpx #079;
+}
+
+.left .left-desc {
+  color: #333;
+  /* font-size: 0.8rem; */
+  margin-top: 10rpx;
+  letter-spacing: 0.1rem;
 }
 
 .tips {
@@ -35,7 +52,7 @@
 
 .tips text {
   font-weight: bold;
-  color: rgb(53, 189, 207);
+  color: #35bdcf;
 }
 
 .info-box {
@@ -49,43 +66,20 @@
 }
 
 .title-wrap {
-  padding: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 10rpx 0;
+  border-bottom: 2rpx solid #ddd;
 }
 
-.border-bottom {
-  border-bottom: 2rpx solid #eee;
-}
-
-.title {
-  font-size: 0.8rem;
-}
-
-.sub-title {
-  font-size: 0.68rem;
-  color: #666;
+.title-wrap:last-child {
+  border: none;
 }
 
 .location, .cell {
   color: #e79600;
   font-size: 0.8em;
   font-weight: bold;
-}
-
-.left .text {
-  font-size: 3rem;
-  text-shadow: 0 4rpx 1rpx #666;
-}
-
-.left .item-title {
-  font-size: 0.8rem;
-  margin-top: 10rpx;
-  letter-spacing: 0.1rem;
-}
-
-.item-wrap .right {
-  padding-left: 8rpx;
-  text-align: left;
-  flex: 1;
 }
 
 .skill {
@@ -97,6 +91,11 @@
   text-indent: 20rpx;
   color: #fff;
   background: #ffa500;
+}
+
+.sub-title {
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .btn {

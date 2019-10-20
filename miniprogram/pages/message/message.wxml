@@ -10,7 +10,7 @@
       <input maxlength="8" bindinput='onUser'></input>
       <view class="label">联系方式(可选)</view>
       <input maxlength="15" bindinput='onContact'></input>
-      <view class="btn" bindtap="onSubmit">提交</view>
+      <button class="btn" bindtap="onSubmit">提交</button>
     </view>
   </view>
   <view class="check">

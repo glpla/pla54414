@@ -101,6 +101,19 @@
 					"pathName": "pages/office/office",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pic",
+					"pathName": "pages/pic/pic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/dairy/detail/detail",
+					"scene": null
 				}
 			]
 		}

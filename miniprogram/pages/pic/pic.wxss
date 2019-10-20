@@ -1,14 +1,20 @@
 .wrap {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 10rpx;
 }
 
 .img-box {
-  width: 32%;
-  padding: 4rpx 8rpx 0 4rpx;
+  width: 100%;
+  margin: 10rpx 0;
 }
 
 image {
   width: 100%;
   border-radius: 10rpx;
+}
+
+.done {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 0.8rem;
 }

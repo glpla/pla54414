@@ -2,52 +2,52 @@
   <view class='bar'>站主</view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconuser1 text'></text>
-      <text class='item-title'>个人信息</text>
+      <text class='iconfont iconuser1 left-icon'></text>
+      <text class='left-desc'>个人信息</text>
     </view>
     <view class='right'>
-      <view class='title-wrap border-bottom'>
+      <view class='title-wrap'>
         <text class='iconfont iconmale'></text>
-        <text class='title'> 大树</text>
+        <text> 大树</text>
       </view>
-      <view class='title-wrap border-bottom'>
+      <view class='title-wrap'>
         <text class='iconfont icondangwugongkai'></text>
-        <text class='title'> 党员</text>
+        <text> 党员</text>
       </view>
-      <view class='title-wrap border-bottom' bindtap='checkLocation'>
+      <view class='title-wrap' bindtap='checkLocation'>
         <text class='iconfont iconweizhi'></text>
-        <text class='title'> 桂林.七星万达</text>
+        <text> 桂林.七星万达</text>
         <text class='location'>(查看位置)</text>
       </view>
-      <view class='title-wrap border-bottom'>
+      <view class='title-wrap'>
         <text class='iconfont iconliwu'></text>
-        <text class='title'> 08.22</text>
+        <text> 08.22</text>
       </view>
-      <view class='title-wrap border-bottom'>
+      <view class='title-wrap'>
         <text class='iconfont iconxuewei'></text>
-        <text class='title'> 工科硕士</text>
+        <text> 工科硕士</text>
       </view>
-      <view class='title-wrap border-bottom' bindtap='makeCall'>
+      <view class='title-wrap' bindtap='makeCall'>
         <text class='iconfont icontel-fill'></text>
-        <text class='title'> 13707735481</text>
+        <text> 13707735481</text>
         <text class='cell'>(点击拨打)</text>
       </view>
-      <view class='title-wrap border-bottom'>
+      <view class='title-wrap'>
         <text class='iconfont iconmail'></text>
-        <text class='title'> 1942194789@qq.com</text>
+        <text> 1942194789@qq.com</text>
       </view>
     </view>
   </view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconshujijiaocai text'></text>
-      <text class='item-title'>{{info[0].title}}</text>
+      <text class='iconfont iconshujijiaocai left-icon'></text>
+      <text class='left-desc'>{{info[0].title}}</text>
     </view>
     <view class='right'>
       <view class='title-wrap' wx:for='{{info[0].cont}}' wx:key='item'>
         <view class='skill'>
           <view style='width:{{item.per}}%'>
-            <text class='title'>{{item.skill}}</text>
+            <text>{{item.skill}}</text>
           </view>
         </view>
       </view>
@@ -56,12 +56,12 @@
 
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont icongongwenbao text'></text>
-      <text class='item-title'>{{info[3].title}}</text>
+      <text class='iconfont icongongwenbao left-icon'></text>
+      <text class='left-desc'>{{info[3].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap border-bottom' wx:for='{{info[3].cont}}' wx:key='{{item.id}}'>
-        <text class='title'>{{item.desc}}</text>-
+      <view class='title-wrap' wx:for='{{info[3].cont}}' wx:key='{{item.id}}'>
+        <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>
     </view>
@@ -69,29 +69,27 @@
 
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont icongongsiquanbushengchandingdanguanli text'></text>
-      <text class='item-title'>{{info[2].title}}</text>
+      <text class='iconfont icongongsiquanbushengchandingdanguanli left-icon'></text>
+      <text class='left-desc'>{{info[2].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap border-bottom' wx:for='{{info[2].cont}}' wx:key='{{item.id}}'>
-        <text class='title'>{{item.desc}}</text>-
+      <view class='title-wrap' wx:for='{{info[2].cont}}' wx:key='{{item.id}}'>
+        <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>
     </view>
   </view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconFavorite text'></text>
-      <text class='item-title'>{{info[4].title}}</text>
+      <text class='iconfont iconFavorite left-icon'></text>
+      <text class='left-desc'>{{info[4].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap border-bottom' wx:for='{{info[4].cont}}' wx:key='{{item.id}}'>
-        <text class='title'>{{item.desc}}</text>-
+      <view class='title-wrap' wx:for='{{info[4].cont}}' wx:key='{{item.id}}'>
+        <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>
     </view>
   </view>
   <button class='btn' bindtap="toMsg">感兴趣就给我留言吧</button>
-  <!-- <button class='btn' bindtap="upFile" wx:if='{{isSelf}}'>上传简历</button> -->
-  <!-- <button class='btn' bindtap="getFile" wx:if='{{isSelf}}'>下载简历</button> -->
 </view>
