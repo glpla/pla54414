@@ -1,1 +1,102 @@
-<view>to do</view>
+<view>
+  <home-swiper imgs='{{imgs}}'></home-swiper>
+  <view class="quiz-box">
+    <view class="item-box" wx:if='{{cIndex==0}}'>
+      <view class="title">测试一下,看看你是否是运动达人</view>
+      <view class="btn" bindtap="onStart">开始测试</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==300}}'>
+      <view class="item-cont">几点起床?</view>
+      <view class="item-option">
+        <radio-group bindchange="onChange" data-ind='0'>
+          <view>
+            <radio value="1" color='#6495ed'>0530</radio>
+          </view>
+          <view>
+            <radio value="2" color='#6495ed'>0630</radio>
+          </view>
+          <view>
+            <radio value="0" color='#6495ed'>0730</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="btn" bindtap="onNext">下一题</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==301}}'>
+      <view class="item-cont">参加过体育类的比赛吗?</view>
+      <view class="item-option">
+        <radio-group bindchange="onChange" data-ind='1'>
+          <view>
+            <radio value="1" color='#6495ed'>有</radio>
+          </view>
+          <view>
+            <radio value="2" color='#6495ed'>经常参加</radio>
+          </view>
+          <view>
+            <radio value="0" color='#6495ed'>没有</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="btn" bindtap="onNext">下一题</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==302}}'>
+      <view class="item-cont">早餐吃什么??</view>
+      <view class="item-option">
+        <radio-group bindchange="onChange" data-ind='2'>
+          <view>
+            <radio value="2" color='#6495ed'>鸡蛋 牛奶 1</radio>
+          </view>
+          <view>
+            <radio value="1" color='#6495ed'>昨天晚上的剩饭</radio>
+          </view>
+          <view>
+            <radio value="0" color='#6495ed'>不吃</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="btn" bindtap="onNext">下一题</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==303}}'>
+      <view class="item-cont">运动的频率是?</view>
+      <view class="item-option">
+        <radio-group bindchange="onChange" data-ind='3'>
+          <view>
+            <radio value="1" color='#6495ed'>每天</radio>
+          </view>
+          <view>
+            <radio value="2" color='#6495ed'>每周2-3次</radio>
+          </view>
+          <view>
+            <radio value="0" color='#6495ed'>每周1次</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="btn" bindtap="onNext">下一题</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==304}}'>
+      <view class="item-cont">喜欢喝什么饮料?</view>
+      <view class="item-option">
+        <radio-group bindchange="onChange" data-ind='4'>
+          <view>
+            <radio value="1" color='#6495ed'>白开水</radio>
+          </view>
+          <view>
+            <radio value="2" color='#6495ed'>运动饮料</radio>
+          </view>
+          <view>
+            <radio value="0" color='#6495ed'>果汁 奶茶</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="btn" bindtap="onSubmit">查看结果</view>
+    </view>
+    <view class="item-box" wx:if='{{cIndex==900}}'>
+      <view class="title">{{score}}</view>
+      <view class="item-res" wx:if='{{score>8}}'>运动达人</view>
+      <view class="item-res" wx:elif='{{score>4}}'>生活达人</view>
+      <view class="item-res" wx:else>弱鸡一枚</view>
+      <view class="btn" bindtap="onBack">返回</view>
+    </view>
+    <view class="tips-btn" wx:if='{{cIndex>0 && cIndex<900}}' bindtap='onClose'>X</view>
+  </view>
+</view>

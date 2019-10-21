@@ -1,66 +1,62 @@
-// pages/movie/movie.js
+const app = getApp();
+const db = wx.cloud.database();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    imgs: [],
+    cIndex: 0,
+    radio0: 0,
+    radio1: 0,
+    radio2: 0,
+    radio3: 0,
+    radio4: 0,
+    score: 0
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onClose() {
+    this.setData({
+      cIndex: 0,
+      score: 0
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onStart() {
+    this.setData({
+      cIndex: 300
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onChange(e) {
+    let ind = e.currentTarget.dataset.ind;
+    let value = e.detail.value
+    this.setData({
+      ['radio' + ind]: value
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onNext() {
+    console.log(this.data.radio0)
+    let idx = this.data.cIndex;
+    idx++
+    this.setData({
+      cIndex: idx
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onSubmit() {
+    let sum = Number(this.data.radio0) + Number(this.data.radio1) + Number(this.data.radio2) + Number(this.data.radio3) + Number(this.data.radio4);
+    this.setData({
+      cIndex: 900,
+      score: sum
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onBack() {
+    this.setData({
+      cIndex: 0,
+      score: 0
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLoad: function(options) {
+    db.collection('pla54414-gym').orderBy('time', 'desc').limit(10).get().then(res => {
+      // console.log(res.data)
+      this.setData({
+        imgs: res.data
+      })
+    })
   }
 })

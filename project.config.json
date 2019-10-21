@@ -113,6 +113,13 @@
 					"id": -1,
 					"name": "detail",
 					"pathName": "pages/dairy/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "gym",
+					"pathName": "pages/gym/gym",
 					"scene": null
 				}
 			]

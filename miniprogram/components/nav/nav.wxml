@@ -7,7 +7,7 @@
     <text class='iconfont iconchangyongtubiao-mianxing-5 nav-icon'></text>
     <text class='nav-desc'>留言</text>
   </view>
-  <view class='nav-item' bindtap="toDemo">
+  <view class='nav-item' bindtap="toGym">
     <text class='iconfont iconjianshenfang nav-icon'></text>
     <text class='nav-desc'>运动</text>
   </view>

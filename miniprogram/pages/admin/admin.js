@@ -44,6 +44,9 @@ Page({
   homeUpload() {
     this.uploadSigle('pla54414-swiper')
   },
+  gymUpload() {
+    this.uploadSigle('pla54414-gym')
+  },
   wineUpload() {
     this.uploadSigle('pla54414-wine')
   },

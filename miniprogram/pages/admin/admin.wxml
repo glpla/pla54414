@@ -14,6 +14,7 @@
       </view>
     </view> -->
     <button bindtap="homeUpload">首页swiper上传</button>
+    <button bindtap="gymUpload">运动swiper上传</button>
     <button bindtap="wineUpload">红酒swiper上传</button>
   </view>
 
