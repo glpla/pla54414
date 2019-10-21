@@ -10,7 +10,7 @@
   <view class="staff">经办人:{{item.staff}}</view>
 
   <view wx:if='{{item.flag>=0}}'>
-    <view wx:if='{{!item.res0}}'>
+    <view wx:if='{{!item.res0.cont}}'>
       <view class='res-box'>
         <view class="res-title">部门主管</view>
         <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
@@ -18,13 +18,16 @@
       <button bindtap="onRes" data-res="0">签收</button>
     </view>
     <view class='res-box' wx:else>
-      <view class="res-title">部门主管</view>
-      <view class="res-cont">{{item.res0}}</view>
+      <view class="res-title time">
+        <text>部门主管</text>
+        <text>{{item.res0.time}}</text>
+      </view>
+      <view class="res-cont">{{item.res0.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=1}}'>
-    <view wx:if='{{!item.res1}}'>
+    <view wx:if='{{!item.res1.cont}}'>
       <view class='res-box'>
         <view class="res-title">部门主任</view>
         <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
@@ -32,13 +35,16 @@
       <button bindtap="onRes" data-res="1">签收</button>
     </view>
     <view class='res-box' wx:else>
-      <view class="res-title">部门主任</view>
-      <view class="res-cont">{{item.res1}}</view>
+      <view class="res-title time">
+        <text>部门主任</text>
+        <text>{{item.res1.time}}</text>
+      </view>
+      <view class="res-cont">{{item.res1.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=2}}'>
-    <view wx:if='{{!item.res2}}'>
+    <view wx:if='{{!item.res2.cont}}'>
       <view class='res-box'>
         <view class="res-title">中心主任</view>
         <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
@@ -46,13 +52,16 @@
       <button bindtap="onRes" data-res="2">签收</button>
     </view>
     <view class='res-box' wx:else>
-      <view class="res-title">中心主任</view>
-      <view class="res-cont">{{item.res2}}</view>
+      <view class="res-title time">
+        <text>中心主任</text>
+        <text>{{item.res2.time}}</text>
+      </view>
+      <view class="res-cont">{{item.res2.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=3}}'>
-    <view wx:if='{{!item.res3}}'>
+    <view wx:if='{{!item.res3.cont}}'>
       <view class='res-box'>
         <view class="res-title">校长</view>
         <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
@@ -60,8 +69,11 @@
       <button bindtap="onRes" data-res="3">签收</button>
     </view>
     <view class='res-box' wx:else>
-      <view class="res-title">校长</view>
-      <view class="res-cont">{{item.res3}}</view>
+      <view class="res-title">
+        <text>校长</text>
+        <text>{{item.res3.time}}</text>
+      </view>
+      <view class="res-cont">{{item.res3.cont}}</view>
     </view>
   </view>
 </view>

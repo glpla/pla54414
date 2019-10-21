@@ -13,7 +13,7 @@
 
 .res-box {
   border-radius: 10rpx;
-  border: 2rpx solid #caa4f5;
+  border: 2rpx solid #00BFFF;
   margin-top: 20rpx;
 }
 
@@ -22,7 +22,7 @@
   line-height: 60rpx;
   padding: 0 20rpx;
   color: #fff;
-  background: #caa4f5;
+  background: #00BFFF;
 }
 
 .time {
@@ -53,7 +53,7 @@ textarea {
 button {
   margin-top: 20rpx;
   width: 100%;
-  background: #a982d5;
+  background: #00BFFF;
   color: #fff;
   font-size: 1rem;
 }

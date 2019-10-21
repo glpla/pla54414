@@ -1,5 +1,5 @@
 {
-  "navigationBarBackgroundColor": "#a982d5",
+  "navigationBarBackgroundColor": "#17acdd",
   "navigationBarTitleText": "日程安排",
   "usingComponents": {
     "event-list": "../../components/event-list/event-list"

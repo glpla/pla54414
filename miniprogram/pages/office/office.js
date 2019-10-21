@@ -164,10 +164,10 @@ Page({
         event: this.data.event,
         staff: this.data.staff,
         flag: 0,
-        res0: '',
-        res1: '',
-        res2: '',
-        res3: ''
+        res0: {},
+        res1: {},
+        res2: {},
+        res3: {}
       }
     }).then(res => {
       this.setData({

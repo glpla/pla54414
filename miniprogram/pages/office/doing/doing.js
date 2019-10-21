@@ -1,3 +1,6 @@
+import {
+  formatTime
+} from '../../../utils/util.js'
 const db = wx.cloud.database();
 Page({
   data: {
@@ -21,14 +24,23 @@ Page({
 
     let res = e.currentTarget.dataset.res;
     let tar = 'res' + res;
+    let time = formatTime(new Date()).substring(0, 16);
+    let tarC = ['res' + res]['cont'];
+    let tarT = tar['time'];
     db.collection('pla54414-office').doc(this.data.id).update({
       data: {
-        [tar]: this.data.response,
+        [tar]: {
+          time: time,
+          cont: this.data.response
+        },
         flag: db.command.inc(1)
       }
     }).then(res => {
       wx.showToast({
         title: '签署完毕',
+      })
+      wx.navigateTo({
+        url: '../../office/office',
       })
     })
   },
