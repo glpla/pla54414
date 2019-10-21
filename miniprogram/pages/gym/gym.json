@@ -2,8 +2,6 @@
   "navigationBarTitleText": "运动",
   "navigationBarBackgroundColor": "#6495ED",
   "usingComponents": {
-    "home-swiper": "../../components/swiper/swiper",
-    "van-radio": "vant-weapp/radio",
-    "van-radio-group": "vant-weapp/radio-group"
+    "home-swiper": "../../components/swiper/swiper"    
   }
 }

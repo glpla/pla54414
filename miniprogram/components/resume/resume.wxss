@@ -36,7 +36,7 @@
 
 .left .left-icon {
   font-size: 3rem;
-  text-shadow: 0 0rpx 20rpx #079;
+  text-shadow: 0 0rpx 20rpx #e79600;
 }
 
 .left .left-desc {
