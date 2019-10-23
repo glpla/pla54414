@@ -1,13 +1,12 @@
 <view class="container">
-  <view class='wrap' wx:if='{{!isOk}}'>
+  <view class='login-wrap' wx:if='{{!isOk}}'>
     <input type='password' placeholder-class="input-phc" placeholder="超级密码" maxlength="8" bindinput="onPw" focus="true"></input>
     <button bindtap="onLogin">登陆</button>
   </view>
-  <view class="wrap" wx:else>
-    <view class="upload-box">
-      <view class="btn" bindtap="chooseImg">+</view>
-      <image class="img" src="{{img}}" mode="widthFix"></image>
-    </view>
+  <view class="admin-wrap" wx:else>
+    <view class="btn" bindtap="chooseImg">选择图片</view>
+    <image class="img" wx:if='{{img}}' src="{{img}}" mode="widthFix"></image>
+    <input placeholder="说点啥吧" placeholder-class="input-phc" bindinput="onDesc"></input>
     <!-- <view class="img-wrap">
       <view class='img-box' wx:for='{{imgs}}' wx:key=''>
         <image src="{{item}}" mode="widthFix" bindtap="previewImg" data-src='{{item}}'></image>

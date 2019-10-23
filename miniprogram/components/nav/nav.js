@@ -43,6 +43,11 @@ Component({
         url: '../demo/demo',
       })
     },
+    toCalendar() {
+      wx.navigateTo({
+        url: '../calendar/calendar',
+      })
+    },
     toAdmin() {
       wx.navigateTo({
         url: '../admin/admin',

@@ -20,7 +20,7 @@ Page({
   },
   onStart() {
     db.collection('pla54414-gym-quiz').get().then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       this.setData({
         quiz: res.data,
         isStart: true,
@@ -37,7 +37,7 @@ Page({
     });
   },
   onIndex(e) {
-    console.log(e.currentTarget.dataset.ind)
+    // console.log(e.currentTarget.dataset.ind)
     this.setData({
       cIndex: e.currentTarget.dataset.ind
     })
@@ -47,7 +47,7 @@ Page({
     for (let i = 0; i < this.data.radio.length; i++) {
       sum += Number(this.data.radio[i])
     }
-    console.log(sum)
+    // console.log(sum)
     this.setData({
       cIndex: 900,
       score: sum
@@ -66,7 +66,7 @@ Page({
       title: '数据加载中',
     })
     db.collection('pla54414-gym').orderBy('time', 'desc').limit(10).get().then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       this.setData({
         imgs: res.data
       })

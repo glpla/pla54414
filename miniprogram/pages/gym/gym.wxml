@@ -2,8 +2,8 @@
   <home-swiper imgs='{{imgs}}'></home-swiper>
   <view class="quiz-box">
     <view class="item-box" wx:if='{{!isStart}}'>
-      <view class="title">测试一下,看看你是否是运动达人</view>
-      <view class="btn" bindtap="onStart">开始测试</view>
+      <view class="title">自己都不知道的真相</view>
+      <view class="btn" bindtap="onStart">测试一下吧</view>
     </view>
     <block wx:for='{{quiz}}' wx:key='{{index}}'>
       <view class="item-box" wx:if='{{cIndex==index}}'>

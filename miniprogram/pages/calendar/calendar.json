@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#aa0000",
+  "navigationBarTitleText": "万日历",
+  "usingComponents": {
+    "calen": "../../components/calen/calen"
+  }
+}

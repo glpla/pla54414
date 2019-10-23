@@ -31,9 +31,9 @@
     <text class='iconfont iconchangyongtubiao-mianxing-6 nav-icon'></text>
     <text class='nav-desc'>示例</text>
   </view>
-  <view class='nav-item' bindtap="toDemo">
-    <text class='iconfont iconchangyongtubiao-mianxing-7 nav-icon'></text>
-    <text class='nav-desc'>绿植</text>
+  <view class='nav-item' bindtap="toCalendar">
+    <text class='iconfont iconcalendar nav-icon'></text>
+    <text class='nav-desc'>日历</text>
   </view>
   <view class='nav-item' bindtap="toAdmin">
     <text class='iconfont iconmichi nav-icon'></text>

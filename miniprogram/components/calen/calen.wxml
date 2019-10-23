@@ -1,0 +1,34 @@
+<view class="calen">
+  <view class="calen-header">
+    <view class="left">
+      <image src="/images/cal{{indexUrl}}.png" mode="widthFix"></image>
+    </view>
+    <view class="right">
+      <view class="month-box">
+        <text class="iconfont iconcaret-left icon" bindtap="onMonDec"></text>
+        <text><text class="month">{{indexMonth+1}}</text>月</text>
+        <text class="iconfont iconcaret-right icon" bindtap="onMonInc"></text>
+      </view>
+      <view class="year-box">
+        <text class="iconfont iconcaret-left icon" bindtap="onYearDec"></text>
+        <text><text class="year">{{indexYear}}</text>年</text>
+        <text class="iconfont iconcaret-right icon" bindtap="onYearInc"></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- <swiper current="{{indexMonth}}" bindchange='onSwiperChange'>
+    <swiper-item wx:for='{{monthArr}}' wx:key='{{item.en}}' item-id='{{index}}'>
+      <view class="month">{{item.ch}}-{{item.en}}</view>
+    </swiper-item>
+  </swiper> -->
+
+  <view class="week">
+    <view wx:for='{{weekArr}}' wx:key='{{index}}'>{{item}}</view>
+  </view>
+  <view class='day'>
+    <block wx:for='{{dayTotal+dayBegin}}' wx:key='{{index}}'>
+      <view class="{{index<dayBegin?'positive':''}} {{curYear==indexYear&&curMonth==indexMonth&&curDate==index-dayBegin+1?'current-day':''}}" data-dayIndex='{{index - dayBegin}}' bindtap='onDay'>{{index - dayBegin + 1}}</view>
+    </block>
+  </view>
+</view>

@@ -1,5 +1,6 @@
-.wrap {
+.login-wrap {
   width: 100%;
+  margin: 400rpx auto;
 }
 
 .input-phc {
@@ -7,7 +8,6 @@
 }
 
 input {
-  margin-top: 200rpx;
   height: 60rpx;
   line-height: 60rpx;
   color: #7fb021;
@@ -16,7 +16,7 @@ input {
 }
 
 button {
-  margin-top: 20rpx;
+  margin-top: 40rpx;
   font-size: 1rem;
   color: #fff;
   height: 60rpx;
@@ -24,25 +24,22 @@ button {
   background-color: #7fb021;
 }
 
-.upload-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20rpx 0;
+.admin-wrap {
+  width: 100%;
+  margin-top: 10rpx;
 }
 
-.upload-box .btn {
-  width: 120rpx;
-  height: 120rpx;
-  line-height: 120rpx;
+.admin-wrap .btn {
+  height: 80rpx;
+  line-height: 80rpx;
   border: 2rpx solid #aaa;
+  border-radius: 10rpx;
   text-align: center;
-  font-size: 2rem;
-  color: #aaa;
+  color: #7fb021;
 }
 
-.upload-box .img {
-  flex: 1;
-  margin: 10rpx;
+.admin-wrap .img {
+  width: 100%;
+  margin: 20rpx 0;
   border-radius: 20rpx;
 }

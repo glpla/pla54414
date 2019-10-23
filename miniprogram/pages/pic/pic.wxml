@@ -1,5 +1,6 @@
 <view class='wrap'>
   <view class='img-box' wx:for='{{imgs}}' wx:key='{{item._id}}'>
+    <view>{{index+1}}:{{item.desc}}</view>
     <image src="{{item.fileID}}" mode="widthFix" bindtap="preImg" data-img="{{item.fileID}}"></image>
   </view>
   <view class="done" wx:if='{{isDone}}'>到底啦,请松手!</view>

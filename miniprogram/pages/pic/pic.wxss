@@ -4,12 +4,17 @@
 
 .img-box {
   width: 100%;
-  margin: 10rpx 0;
+  position: relative;
 }
 
-image {
+.img-box image {
   width: 100%;
   border-radius: 10rpx;
+}
+
+.img-box text {
+  height: 60rpx;
+  line-height: 60rpx;
 }
 
 .done {

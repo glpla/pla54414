@@ -10,7 +10,8 @@ Page({
     isOk: false,
     imgs: [],
     img: '',
-    fileID: []
+    fileID: [],
+    desc: ''
   },
   onPw(e) {
     this.setData({
@@ -41,6 +42,11 @@ Page({
       }
     })
   },
+  onDesc(e) {
+    this.setData({
+      desc: e.detail.value
+    })
+  },
   homeUpload() {
     this.uploadSigle('pla54414-swiper')
   },
@@ -57,6 +63,12 @@ Page({
       })
       return;
     }
+    if (!this.data.desc) {
+      wx.showToast({
+        title: '说点啥吧',
+      })
+      return;
+    }
     wx.showToast({
       title: '上传中',
       icon: 'loading'
@@ -70,6 +82,7 @@ Page({
         db.collection(path).add({
           data: {
             fileID: res.fileID,
+            desc: this.data.desc,
             time: formatTime(new Date()),
             createTime: db.serverDate()
           }
@@ -79,7 +92,8 @@ Page({
             title: '上传成功',
           })
           this.setData({
-            img: ''
+            img: '',
+            desc: ''
           })
         })
       },

@@ -1,0 +1,96 @@
+@import '/style/iconfont.wxss';
+
+.calen {
+  padding: 10rpx;
+}
+
+.calen-header {
+  display: flex;
+  align-items: flex-end;
+  height: 380rpx;
+  margin: 10rpx 0;
+}
+
+.left {
+  width: 380rpx;
+}
+
+.right {
+  flex: 1;
+}
+
+.left image {
+  width: 100%;
+}
+
+.month-box, .year-box {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.icon {
+  padding: 10rpx;
+  color: #aaa;
+}
+
+.year {
+  margin-top: 10rpx;
+}
+
+.year {
+  font-size: 2rem;
+}
+
+.month {
+  font-size: 1.4rem;
+}
+
+.week {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: center;
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.week view {
+  width: 104rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #999;
+  font-size: 0.86rem;
+}
+
+.day {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx 0;
+}
+
+.day view {
+  width: 104rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+  background: #eee;
+  border: 2rpx solid #fff;
+  border-radius: 20rpx;
+}
+
+.day .current-day {
+  color: #fff;
+  background: #f40;
+}
+
+.day view.positive {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  pointer-events: none;
+}
+
+swiper {
+  height: 60rpx;
+}
