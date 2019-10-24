@@ -18,15 +18,14 @@
   flex-wrap: wrap;
 }
 
-.info-img .img-box {
+.img-box {
   width: 240rpx;
-  height: 240rpx;
   padding: 10rpx;
 }
 
-image {
+.img-box image {
   width: 100%;
-  height: 100%;
+  height: 240rpx;
   border-radius: 10rpx;
 }
 

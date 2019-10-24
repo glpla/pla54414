@@ -122,6 +122,19 @@
 					"pathName": "pages/gym/gym",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "dairy",
+					"pathName": "pages/dairy/dairy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "message-detail",
+					"pathName": "pages/message/detail/detail",
+					"scene": null
 				}
 			]
 		}

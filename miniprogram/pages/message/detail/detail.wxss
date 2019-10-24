@@ -1,9 +1,9 @@
 .title {
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   text-align: center;
   color: #4f8ead;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .msg-wrap {
