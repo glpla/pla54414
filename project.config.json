@@ -134,6 +134,13 @@
 					"id": -1,
 					"name": "message-detail",
 					"pathName": "pages/message/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wine",
+					"pathName": "pages/wine/wine",
 					"scene": null
 				}
 			]

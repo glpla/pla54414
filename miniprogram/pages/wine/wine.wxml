@@ -1,3 +1,8 @@
 <view>
-  <wine-swiper imgs='{{imgs}}'></wine-swiper>
+  <!-- <wine-swiper imgs='{{imgs}}'></wine-swiper> -->
+  <view class="wrap">
+    <view class="item" wx:for='{{10}}' wx:key=''>
+      <image src="/images/cal{{index}}.png" mode="widthFix"></image>
+    </view>
+  </view>
 </view>

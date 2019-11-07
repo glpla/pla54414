@@ -13,10 +13,29 @@
 }
 
 .item {
-  line-height: 60rpx;
-  border-bottom: 2rpx solid #ddd;
+  line-height: 50rpx;
+  border: 2rpx solid #a6c1cf;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
 }
 
-.item:last-child {
-  border: none;
+.desc {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #aaa;
+}
+
+.desc view:nth-child(1) {
+  flex: 3;
+}
+
+.desc view:nth-child(2) {
+  flex: 3;
+}
+
+.desc view:nth-child(3) {
+  flex: 4;
 }

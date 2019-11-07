@@ -1,11 +1,22 @@
 <view>
   <view class="title">最新20条记录</view>
   <view class="msg-wrap" wx:for='{{records}}' wx:key='index'>
-    <view class="item">
-      <text class="iconfont iconyonghu"></text>: {{item.userName}}</view>
-    <view class="item">
-      <text class="iconfont icontel-fill"></text>: {{item.userContact}}</view>
-    <view class="item">
-      <text class="iconfont iconchangyongtubiao-mianxing-5"></text>: {{item.msg}}</view>
+    <view class="item">      
+      <text>{{item.msg}}</text>
+    </view>
+    <view class="desc">
+      <view>
+        <text class="iconfont iconyonghu"></text>
+        <text>{{item.userName}}</text>
+      </view>
+      <view>
+        <text class="iconfont icontel-fill"></text>
+        <text>{{item.userContact}}</text>
+      </view>
+      <view>
+        <text class="iconfont icontime"></text>
+        <text>{{item.time}}</text>
+      </view>
+    </view>
   </view>
 </view>

@@ -12,8 +12,8 @@ Page({
     msg: "",
     len: 60,
     inter: 0,
-    userName: '大树爱你哦',
-    userContact: '18888888888',
+    userName: '大树',
+    userContact: '13707735481',
     isActive: false
   },
   onStart() {

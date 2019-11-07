@@ -7,7 +7,7 @@
       <view class="label">内容</view>
       <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' focus="{{isActive}}" />
       <view class="label">昵称(可选)</view>
-      <input maxlength="8" bindinput='onUser'></input>
+      <input maxlength="6" bindinput='onUser'></input>
       <view class="label">联系方式(可选)</view>
       <input maxlength="15" bindinput='onContact'></input>
       <button class="btn" bindtap="onSubmit">提交</button>

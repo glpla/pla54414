@@ -7,7 +7,14 @@ Page({
     idx: 0,
     imgs: [],
     isDone: false,
-    preImgs: []
+    preImgs: [],
+    showToTop: false
+  },
+  onTop() {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
   },
   preImg(e) {
     // console.log(e.currentTarget.dataset.img)
@@ -31,7 +38,7 @@ Page({
     })
     let len = this.data.len;
     let num = this.data.len * this.data.idx;
-    db.collection('pla54414-swiper').skip(num).limit(len).get().then(res => {
+    db.collection('pla54414-swiper').orderBy('time', 'desc').skip(num).limit(len).get().then(res => {
       // console.log(res.data)
       let arr = res.data;
       this.setData({
@@ -42,6 +49,15 @@ Page({
       for (let i = 0; i < arr.length; i++) {
         this.data.preImgs.push(arr[i].fileID)
       }
+    })
+  },
+  onPageScroll: function(e) {
+    let bool = false;
+    if (e.scrollTop > 100) {
+      bool = true
+    }
+    this.setData({
+      showToTop: bool
     })
   },
   onLoad(options) {
