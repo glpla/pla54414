@@ -10,12 +10,6 @@ Page({
     preImgs: [],
     showToTop: false
   },
-  onTop() {
-    wx.pageScrollTo({
-      scrollTop: 0,
-      duration: 300
-    })
-  },
   preImg(e) {
     // console.log(e.currentTarget.dataset.img)
     wx.previewImage({

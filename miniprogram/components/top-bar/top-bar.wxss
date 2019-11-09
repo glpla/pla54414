@@ -1,0 +1,21 @@
+.header {
+  height: 40rpx;
+  display: flex;
+}
+
+.header view {
+  flex: 1;
+  height: 100%;
+  border-radius: 0 0 16rpx 16rpx;
+  box-shadow: 0 4rpx 4rpx #999;
+}
+
+.header view:nth-child(even) {
+  /* background: #69c3aa; */
+  /* background: #179cd1; */
+}
+
+.header view:nth-child(odd) {
+  /* background: #479e84; */
+  /* background: #25b1e9; */
+}

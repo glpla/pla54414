@@ -19,4 +19,5 @@
       </view>
     </view>
   </view>
+  <to-top color='#4f8ead' show='{{showToTop}}'></to-top>
 </view>

@@ -5,7 +5,7 @@
     <view class="form {{isActive?'form-active':''}}">
       <view class="header">说点啥吧</view>
       <view class="label">内容</view>
-      <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' focus="{{isActive}}" />
+      <textarea maxlength='60' bindinput='onMsg' value='{{msg}}' focus="{{isActive}}" wrap="hard" />
       <view class="label">昵称(可选)</view>
       <input maxlength="6" bindinput='onUser'></input>
       <view class="label">联系方式(可选)</view>

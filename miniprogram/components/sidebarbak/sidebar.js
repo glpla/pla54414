@@ -6,14 +6,12 @@ Component({
     }
   },
   data: {
-    cIndex: 0,
-    cTitle: 'hot sale'
+    cIndex: 0
   },
   methods: {
     onSel(e) {
       this.setData({
-        cIndex: e.currentTarget.dataset.idx,
-        cTitle: e.currentTarget.dataset.title
+        cIndex: e.currentTarget.dataset.idx
       })
     },
   }

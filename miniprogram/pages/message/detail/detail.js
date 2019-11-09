@@ -2,7 +2,8 @@ const app = getApp();
 const db = wx.cloud.database();
 Page({
   data: {
-    records: []
+    records: [],
+    showToTop: false
   },
   onQuery() {
     db.collection('pla54414-msg').orderBy('time', 'desc').get().then(res => {
@@ -19,5 +20,14 @@ Page({
   },
   onPullDownRefresh() {
     this.onQuery();
+  },
+  onPageScroll: function(e) {
+    let bool = false;
+    if (e.scrollTop > 100) {
+      bool = true
+    }
+    this.setData({
+      showToTop: bool
+    })
   }
 })

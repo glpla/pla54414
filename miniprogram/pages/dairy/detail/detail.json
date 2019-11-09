@@ -1,6 +1,8 @@
 {
   "navigationBarBackgroundColor": "#179cd1",
   "navigationBarTitleText": "日志列表",
-  "usingComponents": {},
+  "usingComponents": {
+    "to-top": "../../components/to-top/to-top"
+  },
   "enablePullDownRefresh": true
 }

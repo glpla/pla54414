@@ -1,0 +1,84 @@
+.wrap {
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+}
+
+.title {
+  padding: 0 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.desc {
+  padding: 0 10rpx;
+  color: #aaa;
+  font-size: 0.92rem;
+}
+
+.price-num {
+  padding: 0 10rpx;
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.new {
+  width: 100rpx;
+  color: #f40;
+}
+
+.old {
+  width: 100rpx;
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.num-box {
+  display: flex;
+  align-items: center;
+}
+
+.num-box>view {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #333;
+}
+
+.num-box .subtract, .num-box .add {
+  border-radius: 50%;
+  background: #479e84;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.num-box .num {
+  width: 100rpx;
+  height: 60rpx;
+  text-align: center;
+  border: 2rpx solid #479e84;
+  margin: 0 10rpx;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

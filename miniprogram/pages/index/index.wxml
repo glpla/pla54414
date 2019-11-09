@@ -2,4 +2,5 @@
   <home-swiper imgs='{{imgs}}'></home-swiper>
   <home-nav></home-nav>
   <resume></resume>
+  <to-top color='#179cd1' show='{{showToTop}}'></to-top>
 </view>

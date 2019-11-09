@@ -2,6 +2,8 @@
   "navigationBarTitleText": "收藏",
   "navigationBarBackgroundColor": "#69c3aa",
   "usingComponents": {
-    "sidebar": "/components/sidebar/sidebar"
+    "top-bar": "../../components/top-bar/top-bar",
+    "good": "../../components/goods/good/good",
+    "foot": "../../components/goods/foot/foot"
   }
 }

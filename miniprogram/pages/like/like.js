@@ -1,29 +1,81 @@
 Page({
   data: {
+    navIndex: 0,
+    curTitle: 'hotsale',
+    curIndex: 0,
+    num: 100,
+    orders: [{
+      uid: 'm6000',
+      num: 2
+    }, {
+      uid: 'm6002',
+      num: 1
+    }],
     likes: [{
         id: 600,
-        title: "hot",
+        title: "促销",
         scrollTop: '',
         list: [{
-            id: 6000,
-            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg'
+            id: 'm6000',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '120',
+            oldPrice: '160',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好'
           },
           {
-            id: 6001,
-            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg'
+            id: 'm6001',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '10',
+            oldPrice: '20',
+            title: '活络舒筋',
+            desc: '用了更爽快',
+            num: 101
           },
           {
-            id: 6002,
-            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg'
+            id: 'm6002',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '70',
+            oldPrice: '150',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好',
+            num: 0
           },
           {
-            id: 6003,
-            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg'
+            id: 'm6003',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '80',
+            oldPrice: '100',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好',
+            num: 9
           },
           {
-            id: 6004,
-            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg'
+            id: 'm6004',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '20',
+            oldPrice: '60',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好',
+            num: 3
           },
+          {
+            id: 'm6005',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '20',
+            oldPrice: '60',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好'
+          },
+          {
+            id: 'm6006',
+            pic: 'cloud://glpla-54414.676c-glpla-54414-1259726622/pla54414-swiper/1571532182322.jpg',
+            newPrice: '20',
+            oldPrice: '60',
+            title: '伤风感冒胶囊',
+            desc: '喝了都说好',
+            num: 10
+          }
         ]
       },
       {
@@ -188,6 +240,45 @@ Page({
         ]
       }
     ]
+  },
+  subtract(e) {
+    console.log(e);
+    // let uid = e.currentTarget.dataset.uid;
+    // let price = e.currentTarget.dataset.price;
+    // console.log(uid)
+    // this.queryOrder(uid, 'subtract')
+  },
+  add(e) {
+    console.log(e);
+    // let uid = e.currentTarget.dataset.uid;
+    // let price = e.currentTarget.dataset.price;
+    // console.log(uid)
+    // this.queryOrder(uid, 'add')
+  },
+  queryOrder(uid, str) {
+    this.data.orders.forEach(item => {
+      // console.log(item)
+      for (let key in item) {
+        console.log(uid, key, item[key]);
+        if (item[key] === uid) {
+          console.log('there you are!')
+          break;
+        }
+      }
+    })
+  },
+  nav(e) {
+    console.log(e.detail)
+    this.setData({
+      navIndex: e.detail
+    })
+  },
+  onSel(e) {
+    this.setData({
+      curIndex: e.currentTarget.dataset.idx,
+      curTitle: e.currentTarget.dataset.title
+    })
+    console.log(this.data.likes[this.data.curIndex])
   },
   onLoad: function(options) {}
 })

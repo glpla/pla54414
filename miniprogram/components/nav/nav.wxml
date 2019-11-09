@@ -21,7 +21,7 @@
   </view>
   <view class='nav-item' bindtap="toLike">
     <text class='iconfont iconxin nav-icon'></text>
-    <text class='nav-desc'>收藏</text>
+    <text class='nav-desc'>旧货</text>
   </view>
   <view class='nav-item' bindtap="toWine">
     <text class='iconfont iconjiuwine56 nav-icon'></text>

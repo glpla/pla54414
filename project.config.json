@@ -48,12 +48,6 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
 					"id": 1,
 					"name": "msg",
 					"pathName": "pages/msg/msg",
@@ -141,6 +135,14 @@
 					"id": -1,
 					"name": "wine",
 					"pathName": "pages/wine/wine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "like",
+					"pathName": "pages/like/like",
+					"query": "",
 					"scene": null
 				}
 			]

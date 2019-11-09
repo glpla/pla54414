@@ -1,0 +1,16 @@
+<view class="wrap">
+  <image class='img' src='{{good.pic}}' mode="widthFix"></image>
+  <view class="title">{{good.title}}</view>
+  <view class="desc">{{good.desc}}</view>
+  <view class="price-num">
+    <view class="price">
+      <view class="new">¥{{good.newPrice}}</view>
+      <view class="old">¥{{good.oldPrice}}</view>
+    </view>
+    <view class="num-box">
+      <view class="subtract {{num==0?'hidden':''}}" bindtap="onSubtract">-</view>
+      <input class="num" type="number" value='{{num}}' maxlength="2" bindinput="numUpdate"></input>
+      <view class="add" bindtap="onAdd">+</view>
+    </view>
+  </view>
+</view>

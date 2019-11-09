@@ -1,0 +1,2 @@
+<view class="['top',{{show?'animate':'animate-reverse'}}]" bindtap="onTop" style="background-color: {{color}};">
+</view>

@@ -1,0 +1,58 @@
+.top {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  /* background: #2aa05f; */
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  z-index: 99;
+}
+
+.top::before, .top::after {
+  position: absolute;
+  content: '';
+  width: 28rpx;
+  height: 28rpx;
+  background: #fff;
+}
+
+.top::before {
+  top: 20rpx;
+  transform: rotateZ(45deg);
+}
+
+.top::after {
+  bottom: 20rpx;
+}
+
+.animate {
+  animation: showToTop 1s linear forwards;
+}
+
+.animate-reverse {
+  animation: hideToTop 1s linear forwards;
+}
+
+@keyframes showToTop {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideToTop {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

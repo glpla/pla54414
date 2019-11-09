@@ -14,8 +14,7 @@
 
 .item {
   line-height: 50rpx;
-  border: 2rpx solid #a6c1cf;
-  border-radius: 10rpx;
+  border-bottom: 2rpx solid #a6c1cf;
   padding: 0 10rpx;
 }
 

@@ -1,0 +1,25 @@
+@import '../../../style/iconfont.wxss';
+
+.wrap {
+  height: 120rpx;
+  background: #69c3aa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.4rem;
+}
+
+.desc {
+  font-size: 0.8rem;
+}

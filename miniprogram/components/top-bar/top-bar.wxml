@@ -1,0 +1,18 @@
+<view class="header">
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+  <view style="background:{{darkColor}}"></view>
+  <view style="background:{{lightColor}}"></view>
+</view>

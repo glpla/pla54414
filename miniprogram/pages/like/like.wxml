@@ -1,3 +1,20 @@
-<view>
-  <sidebar likes='{{likes}}'></sidebar>
+<view class="wrap">
+  <top-bar darkColor='#69c3aa' lightColor='#479e84'></top-bar>
+  <view class="sub-header">
+    <view class="title">分类</view>
+    <view class="cur-title">{{curTitle}}</view>
+  </view>
+  <view class="cont">
+    <view class="left">
+      <view class="left-item {{curIndex==index?'cur':''}}" wx:for='{{likes}}' wx:key='id' bindtap="onSel" data-idx="{{index}}" data-title="{{item.title}}">{{item.title}}</view>
+    </view>
+    <view class="right">
+      <scroll-view class="scroll" scroll-y='true'>
+        <block wx:for='{{likes[curIndex].list}}' wx:key='id'>
+          <good good='{{item}}' bindsubtract='subtract' bindadd='add' data-item='{{item}}'></good>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <foot bindnav='nav'></foot>
 </view>

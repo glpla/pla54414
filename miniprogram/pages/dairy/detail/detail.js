@@ -6,6 +6,7 @@ Page({
     len: 10,
     idx: 0,
     isDone: false,
+    showToTop: false
   },
   previewImg(e) {
     let src = e.currentTarget.dataset.src;
@@ -73,5 +74,14 @@ Page({
       this.onQuery();
     })
     // console.log(this.data.len)
+  },
+  onPageScroll: function(e) {
+    let bool = false;
+    if (e.scrollTop > 100) {
+      bool = true
+    }
+    this.setData({
+      showToTop: bool
+    })
   }
 })

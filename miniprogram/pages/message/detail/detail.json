@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "历史留言",
   "navigationBarBackgroundColor": "#4f8ead",
-  "usingComponents": {}
+  "usingComponents": {
+    "to-top": "../../components/to-top/to-top"
+  }
 }

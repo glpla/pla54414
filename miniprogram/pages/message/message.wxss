@@ -70,7 +70,7 @@ input, textarea {
 
 textarea {
   height: 140rpx;
-  padding-top: 10rpx;
+  padding-top: 10rpx;  
 }
 
 .btn {
