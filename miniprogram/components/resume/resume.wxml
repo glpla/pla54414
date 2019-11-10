@@ -60,7 +60,7 @@
       <text class='left-desc'>{{info[3].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap' wx:for='{{info[3].cont}}' wx:key='{{item.id}}'>
+      <view class='title-wrap' wx:for='{{info[3].cont}}' wx:key='id'>
         <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>
@@ -73,7 +73,7 @@
       <text class='left-desc'>{{info[2].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap' wx:for='{{info[2].cont}}' wx:key='{{item.id}}'>
+      <view class='title-wrap' wx:for='{{info[2].cont}}' wx:key='id'>
         <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>
@@ -85,7 +85,7 @@
       <text class='left-desc'>{{info[4].title}}</text>
     </view>
     <view class='right'>
-      <view class='title-wrap' wx:for='{{info[4].cont}}' wx:key='{{item.id}}'>
+      <view class='title-wrap' wx:for='{{info[4].cont}}' wx:key='id'>
         <text>{{item.desc}}</text>-
         <text class='sub-title'>{{item.alias}}</text>
       </view>

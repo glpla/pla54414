@@ -13,6 +13,9 @@ Component({
       this.setData({
         num: e.detail.value
       })
+      this.triggerEvent('numInput', {
+        num: num
+      })
     },
     onSubtract() {
       let num = this.data.num;

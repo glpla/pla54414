@@ -1,6 +1,6 @@
 <view class="container">
   <scroll-view class="scroll" scroll-x scroll-into-view='nav{{cIndex}}' scroll-with-animation>
-    <view class='scroll-item {{cIndex==index?"cur":""}}' wx:for='{{list}}' wx:key='{{item.id}}' data-idx="{{index}}" bindtap="onSel" id='nav{{index}}'>{{item.title}}</view>
+    <view class='scroll-item {{cIndex==index?"cur":""}}' wx:for='{{list}}' wx:key='id' data-idx="{{index}}" bindtap="onSel" id='nav{{index}}'>{{item.title}}</view>
   </scroll-view>
   <swiper current="{{cIndex}}" bindchange="onChange">
     <swiper-item>

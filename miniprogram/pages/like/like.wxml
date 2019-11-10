@@ -5,16 +5,17 @@
     <view class="cur-title">{{curTitle}}</view>
   </view>
   <view class="cont">
-    <view class="left">
-      <view class="left-item {{curIndex==index?'cur':''}}" wx:for='{{likes}}' wx:key='id' bindtap="onSel" data-idx="{{index}}" data-title="{{item.title}}">{{item.title}}</view>
-    </view>
-    <view class="right">
-      <scroll-view class="scroll" scroll-y='true'>
-        <block wx:for='{{likes[curIndex].list}}' wx:key='id'>
-          <good good='{{item}}' bindsubtract='subtract' bindadd='add' data-item='{{item}}'></good>
+    <scroll-view class="left" scroll-y scroll-into-view='p{{curIndex}}' scroll-with-animation>
+      <view class="left-item {{curIndex==index?'cur':''}}" wx:for='{{goods}}' wx:key='uid' bindtap="onSel" data-idx="{{index}}" data-title="{{item.title}}">{{item.title}}</view>
+    </scroll-view>
+    <scroll-view class="right" scroll-y='true' scroll-into-view='p{{curIndex}}' scroll-with-animation>
+      <block wx:for='{{goods}}' wx:key='uid'>
+        <view id='p{{index}}'></view>
+        <block wx:for='{{item.list}}' wx:key='uid' wx:for-item='good'>
+          <good good='{{good}}' bindsubtract='subtract' bindadd='add' data-item='{{good}}'></good>
         </block>
-      </scroll-view>
-    </view>
+      </block>
+    </scroll-view>
   </view>
-  <foot bindnav='nav'></foot>
+  <foot bindnav='nav' len="{{orders.length}}"></foot>
 </view>

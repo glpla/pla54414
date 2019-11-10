@@ -6,7 +6,8 @@ Page({
     len: 10,
     idx: 0,
     isDone: false,
-    showToTop: false
+    showToTop: false,
+    tips: ''
   },
   previewImg(e) {
     let src = e.currentTarget.dataset.src;
@@ -35,8 +36,9 @@ Page({
     db.collection('pla54414-dairy').orderBy('createTime', 'desc').skip(num).limit(len).get()
       .then(res => {
         // console.log(res)
+        let tmp = this.data.records.concat(res.data);
         this.setData({
-          records: this.data.records.concat(res.data)
+          records: tmp
         })
       })
       .catch(err => {
@@ -44,6 +46,9 @@ Page({
       })
   },
   onLoad: function(options) {
+    wx.showToast({
+      title: '数据加载中',
+    })
     if (!this.data.total) {
       db.collection('pla54414-dairy').count().then(res => {
         this.setData({
@@ -52,7 +57,7 @@ Page({
         console.log(res.total)
       })
     }
-    this.onQuery()
+    this.onQuery();
   },
   onPullDownRefresh() {
     wx.showToast({

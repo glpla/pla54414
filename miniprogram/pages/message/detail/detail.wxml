@@ -1,7 +1,8 @@
+<wxs src="../../../wxs/sub.wxs" module='sub'></wxs>
 <view>
   <view class="title">最新20条记录</view>
-  <view class="msg-wrap" wx:for='{{records}}' wx:key='index'>
-    <view class="item">      
+  <view class="msg-wrap" wx:for='{{records}}' wx:key='_id'>
+    <view class="item">
       <text>{{item.msg}}</text>
     </view>
     <view class="desc">
@@ -15,7 +16,7 @@
       </view>
       <view>
         <text class="iconfont icontime"></text>
-        <text>{{item.time}}</text>
+        <text>{{sub.str(item.time)}}</text>
       </view>
     </view>
   </view>

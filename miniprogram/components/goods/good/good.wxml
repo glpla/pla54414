@@ -9,7 +9,7 @@
     </view>
     <view class="num-box">
       <view class="subtract {{num==0?'hidden':''}}" bindtap="onSubtract">-</view>
-      <input class="num" type="number" value='{{num}}' maxlength="2" bindinput="numUpdate"></input>
+      <input class="num" type="number" value='{{num}}' maxlength="2" bindinput="numUpdate" disabled></input>
       <view class="add" bindtap="onAdd">+</view>
     </view>
   </view>

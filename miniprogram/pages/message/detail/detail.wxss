@@ -7,14 +7,17 @@
 }
 
 .msg-wrap {
-  margin-top: 20rpx;
-  box-shadow: 0 10rpx 10rpx #c7c7c7;
+  width: 710rpx;
+  margin: 20rpx auto;
+  /* box-shadow: 0 10rpx 10rpx #c7c7c7; */
   padding: 10rpx;
+  border: 2rpx solid #a6c1cf;
+  border-radius: 20rpx;
 }
 
 .item {
   line-height: 50rpx;
-  border-bottom: 2rpx solid #a6c1cf;
+  border-bottom: 2rpx solid rgba(166, 193, 207, 0.4);
   padding: 0 10rpx;
 }
 
@@ -28,7 +31,7 @@
 }
 
 .desc view:nth-child(1) {
-  flex: 3;
+  flex: 4;
 }
 
 .desc view:nth-child(2) {
@@ -36,5 +39,5 @@
 }
 
 .desc view:nth-child(3) {
-  flex: 4;
+  flex: 3;
 }

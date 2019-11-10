@@ -1,12 +1,19 @@
 .info-box {
-  margin-top: 20rpx;
-  box-shadow: 0 10rpx 10rpx #c7c7c7;
+  width: 710rpx;
+  margin: 20rpx auto;
+  /* box-shadow: 0 10rpx 10rpx #c7c7c7; */
+  border: 2rpx solid #179cd1;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-time {
   font-size: 0.8rem;
   color: #aaa;
-  padding: 0 10rpx;
+  padding: 10rpx;
+  border-bottom: 2rpx solid rgba(23, 156, 209, 0.4);
 }
 
 .info-msg {

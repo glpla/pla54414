@@ -1,0 +1,4 @@
+  var str = function(val) {
+    return val.substring(0, 10);
+  }
+  module.exports.str = str;

@@ -1,0 +1,29 @@
+<view class="wrap">
+  <top-bar darkColor='#69c3aa' lightColor='#479e84'></top-bar>
+  <view class="empty" wx:if='{{orders.length==0}}'>
+    <text class="iconfont iconcaigou-xianxing icon"></text>
+    <text> 购物车为空哦</text>
+    <text> 赶紧买买买</text>
+  </view>
+  <view class="item-wrap" wx:else>
+    <view class="tips">购物清单</view>
+    <view class="caption">
+      <text class="sn">序号</text>
+      <text class="title">名称</text>
+      <text class="price">单价</text>
+      <text class="num">数量</text>
+      <text class="sum">总价</text>
+    </view>
+    <view class="caption" wx:for='{{orders}}' wx:key='uid'>
+      <text class="sn">{{index+1}}</text>
+      <text class="title left">{{item.title}}</text>
+      <text class="price left">¥{{item.price}}</text>
+      <text class="num">{{item.num}}</text>
+      <text class="sum left">¥{{item.num*item.price}}</text>
+    </view>
+    <view class="total">总价:
+      <text>¥{{sum}}</text>
+    </view>
+  </view>
+  <button class="btn">马上提交</button>
+</view>

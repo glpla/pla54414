@@ -1,8 +1,8 @@
 <view class=''>
-  <textarea placeholder="每天都元气满满的，加油！" bindinput="onChange" focus placeholder-class="phs"></textarea>
+  <textarea placeholder="每天都元气满满的，加油！" bindinput="onChange" focus placeholder-class="phs" wrap='hard' value="{{msg}}"></textarea>
   <view class='img-btn' bindtap="uploadImg">上传图片</view>
   <view class='img-box'>
-    <image wx:for='{{imgs}}' wx:key='' src="{{item}}" mode="widthFit" bindtap="previewImg" data-src='{{item}}'></image>
+    <image wx:for='{{imgs}}' wx:key='item' src="{{item}}" mode="widthFit" bindtap="previewImg" data-src='{{item}}'></image>
   </view>
   <view class='submit-btn' bindtap="onSubmit">提交</view>
   <view class='submit-btn' bindtap="onHistory">查看</view>

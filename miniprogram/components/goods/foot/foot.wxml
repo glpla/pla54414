@@ -1,14 +1,14 @@
 <view class="wrap">
   <view class="item" bindtap="onNav" data-idx="0">
-    <text class="iconfont iconyaopinshuju icon"></text>
+    <text class="iconfont icondianpu-xianxing icon"></text>
     <text class="desc">产品</text>
   </view>
-  <view class="item" bindtap="onNav" data-idx="1">
-    <text class="iconfont iconpharmacy icon"></text>
-    <text class="desc">结算</text>
+  <view class="item cart" bindtap="onNav" data-idx="1">
+    <text class="iconfont {{len>0?'iconcaigou':'iconcaigou-xianxing'}} icon"></text>
+    <text class="desc">购物车</text>
   </view>
-  <view class="item" bindtap="onNav" data-idx="2">
-    <text class="iconfont iconkefuyouxian icon"></text>
-    <text class="desc">我的</text>
+  <view class="item " bindtap="onNav " data-idx="2">
+    <text class="iconfont iconyonghu-xianxing icon "></text>
+    <text class="desc ">我的</text>
   </view>
 </view>
