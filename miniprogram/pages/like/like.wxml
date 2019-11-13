@@ -8,14 +8,14 @@
     <scroll-view class="left" scroll-y scroll-into-view='p{{curIndex}}' scroll-with-animation>
       <view class="left-item {{curIndex==index?'cur':''}}" wx:for='{{goods}}' wx:key='uid' bindtap="onSel" data-idx="{{index}}" data-title="{{item.title}}">{{item.title}}</view>
     </scroll-view>
-    <scroll-view class="right" scroll-y='true' scroll-into-view='p{{curIndex}}' scroll-with-animation>
+    <scroll-view id='cont' class="right" scroll-y='true' scroll-into-view='p{{curIndex}}' scroll-with-animation>
       <block wx:for='{{goods}}' wx:key='uid'>
-        <view id='p{{index}}'></view>
+        <view class="divider" id='p{{index}}'></view>
         <block wx:for='{{item.list}}' wx:key='uid' wx:for-item='good'>
           <good good='{{good}}' bindsubtract='subtract' bindadd='add' data-item='{{good}}'></good>
         </block>
       </block>
     </scroll-view>
   </view>
-  <foot bindnav='nav' len="{{orders.length}}"></foot>
+  <!-- <foot bindnav='nav' len="{{orders.length}}"></foot> -->
 </view>

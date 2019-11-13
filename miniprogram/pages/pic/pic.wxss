@@ -15,7 +15,6 @@
 .desc {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
   height: 50rpx;
   line-height: 50rpx;
 }
@@ -24,5 +23,4 @@
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
-  font-size: 0.8rem;
 }

@@ -1,10 +1,8 @@
-<view>
-  <swiper autoplay duration="500" interval="4000" circular indicator-dots indicator-color='rgba(255,255,255,0.6)' indicator-active-color='#fff'>
-    <swiper-item wx:for='{{imgs}}' wx:key='_id'>
-      <view class="img-wrap">
-        <image src="{{item.fileID}}"></image>
-        <text>{{item.desc}}...</text>
-      </view>
-    </swiper-item>
-  </swiper>
-</view>
+<swiper autoplay duration="500" interval="4000" circular indicator-dots indicator-color='rgba(255,255,255,0.6)' indicator-active-color='#fff'>
+  <swiper-item wx:for='{{imgs}}' wx:key='_id'>
+    <view class="img-wrap">
+      <image src="{{item.fileID}}" mode="widthFix"></image>
+      <text wx:if='{{item.desc}}'>{{item.desc}}...</text>
+    </view>
+  </swiper-item>
+</swiper>

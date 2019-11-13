@@ -1,0 +1,4 @@
+<view class='wrap'>
+  <top-bar darkColor='#FF69B4' lightColor='#fa84bf'></top-bar>
+  <view>请在收货地址里填写</view>
+</view>

@@ -1,8 +1,9 @@
+<wxs src="../../wxs/sub.wxs" module='sub'></wxs>
 <view class='wrap'>
   <view class='img-box' wx:for='{{imgs}}' wx:key='this'>
     <view class="desc">
       <view>{{index+1}}. {{item.desc}}</view>
-      <view>{{item.time}}</view>
+      <view>{{sub.str(item.time)}}</view>
     </view>
     <image src="{{item.fileID}}" mode="widthFix" bindtap="preImg" data-img="{{item.fileID}}"></image>
   </view>

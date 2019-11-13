@@ -1,0 +1,31 @@
+<view class='wrap'>
+  <top-bar darkColor='#FF69B4' lightColor='#fa84bf'></top-bar>
+  <view wx:if='{{!isAdded}}'>
+    <view>收货地址</view>
+    <button class="btn-add" bindtap="onAddress">新增地址</button>
+  </view>
+  <view wx:else>
+    <label></label>
+    <view class="item-wrap">
+      <view class="desc">姓名</view>
+      <input class="cont" type="text" placeholder="收货人姓名" placeholder-class='phc' maxlength="8"></input>
+    </view>
+    <view class="item-wrap">
+      <view class="desc">电话</view>
+      <input class="cont" type="number" placeholder="收货人手机号" placeholder-class='phc' maxlength="11"></input>
+    </view>
+    <view class="item-wrap">
+      <view class="desc">地区</view>
+      <picker class="cont {{isRegion?'normal':'phc'}}" mode="region" bindchange="bindRegionChange" value="{{region}}">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </picker>
+    </view>
+    <view class="item-wrap">
+      <view class="desc">地址</view>
+      <input class="cont" type="number" placeholder="收货人详细地址(街道-小区-楼层-房号)" placeholder-class='phc' maxlength="30"></input>
+    </view>
+    <button class="btn-edit" bindtap="onConfirm">确认</button>
+    <button class="btn-edit" bindtap="onCancel">取消</button>
+  </view>
+
+</view>

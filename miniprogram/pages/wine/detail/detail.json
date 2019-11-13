@@ -1,6 +1,6 @@
 {
   "navigationBarBackgroundColor": "#FF69B4",
-  "navigationBarTitleText": "红酒",
+  "navigationBarTitleText": "宝贝详情",
   "usingComponents": {
     "wine-swiper": "../../components/swiper/swiper",
     "to-top": "../../components/to-top/to-top"

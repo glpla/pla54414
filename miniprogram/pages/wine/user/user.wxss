@@ -1,0 +1,39 @@
+page {
+  background-color: #f0f0f0;
+}
+
+.user-box {
+  margin: 60rpx auto 60rpx;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 20rpx 0 40rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item-box {
+  margin: 10px auto 0rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-box view {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  color: #aaa;
+}

@@ -1,0 +1,38 @@
+<view class="">
+  <wine-swiper imgs='{{info.pics}}'></wine-swiper>
+  <view class="info">
+    <view class="desc">{{info.desc}}</view>
+    <view class="price">
+      <text class="new">¥{{info.price}}</text>
+      <text class="old">¥{{info['old-price']}}</text>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="oper-box">
+      <view class="buy" bindtap="onBuyCart">立即购买</view>
+      <view class="oper" bindtap="onSub">-</view>
+      <input class="input" value='{{num}}' bindinput="onNum"></input>
+      <view class="oper" bindtap="onAdd">+</view>
+      <view class="add" bindtap="onAddCart">加入购物车</view>
+    </view>
+    <view class="hot-box" wx:if='{{user}}'>
+      <button class="hot-line" open-type="contact">
+        <text class="iconfont iconkefu-tianchong"></text>
+      </button>
+      <button class="hot-line" bindtap='makeCall'>
+        <text class="iconfont iconkefurexian"></text>
+      </button>
+      <view class="cart" bindtap="onCart">
+        <text wx:if='{{num>0}}' class="iconfont iconcaigou"></text>
+        <text wx:else class="iconfont iconcaigou-xianxing"></text>
+      </view>
+      <button class="hot-line" open-type="share" data-price="{{info.price}}">
+        <text class="iconfont iconshare_fill"></text>
+      </button>
+      <button class="hot-line" bindtap='onLike'>
+        <text class="iconfont iconxin"></text>
+      </button>
+    </view>
+  </view>
+  <to-top color='#FF69B4' show='{{showToTop}}'></to-top>
+</view>

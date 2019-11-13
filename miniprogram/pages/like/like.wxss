@@ -60,3 +60,9 @@ page {
   margin-left: 10rpx;
   margin-right: 10rpx;
 }
+
+.divider {
+  height: 8rpx;
+  background: #69c3aa;
+  margin-bottom: 10rpx;
+}

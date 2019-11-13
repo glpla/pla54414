@@ -39,7 +39,7 @@ Page({
         imgs: this.data.imgs.concat(arr)
       })
       wx.hideToast();
-      console.log('imgs', this.data.imgs)
+      // console.log('imgs', this.data.imgs)
       for (let i = 0; i < arr.length; i++) {
         this.data.preImgs.push(arr[i].fileID)
       }

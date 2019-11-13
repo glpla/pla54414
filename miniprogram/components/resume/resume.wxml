@@ -2,8 +2,8 @@
   <view class='bar'>站主</view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconuser1 left-icon'></text>
-      <text class='left-desc'>个人信息</text>
+      <text class='iconfont iconuser1 icon'></text>
+      <text class='desc'>个人信息</text>
     </view>
     <view class='right'>
       <view class='title-wrap'>
@@ -40,8 +40,8 @@
   </view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconshujijiaocai left-icon'></text>
-      <text class='left-desc'>{{info[0].title}}</text>
+      <text class='iconfont iconshujijiaocai icon'></text>
+      <text class='desc'>{{info[0].title}}</text>
     </view>
     <view class='right'>
       <view class='title-wrap' wx:for='{{info[0].cont}}' wx:key='item'>
@@ -56,8 +56,8 @@
 
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont icongongwenbao left-icon'></text>
-      <text class='left-desc'>{{info[3].title}}</text>
+      <text class='iconfont icongongwenbao icon'></text>
+      <text class='desc'>{{info[3].title}}</text>
     </view>
     <view class='right'>
       <view class='title-wrap' wx:for='{{info[3].cont}}' wx:key='id'>
@@ -69,8 +69,8 @@
 
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont icongongsiquanbushengchandingdanguanli left-icon'></text>
-      <text class='left-desc'>{{info[2].title}}</text>
+      <text class='iconfont icongongsiquanbushengchandingdanguanli icon'></text>
+      <text class='desc'>{{info[2].title}}</text>
     </view>
     <view class='right'>
       <view class='title-wrap' wx:for='{{info[2].cont}}' wx:key='id'>
@@ -81,8 +81,8 @@
   </view>
   <view class='item-wrap'>
     <view class='left'>
-      <text class='iconfont iconFavorite left-icon'></text>
-      <text class='left-desc'>{{info[4].title}}</text>
+      <text class='iconfont iconFavorite icon'></text>
+      <text class='desc'>{{info[4].title}}</text>
     </view>
     <view class='right'>
       <view class='title-wrap' wx:for='{{info[4].cont}}' wx:key='id'>

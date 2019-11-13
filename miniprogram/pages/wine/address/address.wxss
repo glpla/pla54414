@@ -1,0 +1,56 @@
+page {
+  font-size: 0.8rem;
+}
+
+.btn-add {
+  position: fixed;
+  width: 100%;
+  border-radius: 0;
+  left: 0;
+  bottom: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #ff69b4;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.btn-edit {
+  width: 100%;
+  border-radius: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #ff69b4;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 10rpx auto 0;
+}
+
+.item-wrap {
+  padding: 0 10rpx;
+  display: flex;
+  height: 60rpx;
+  margin: 10rpx auto 0;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.desc {
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.cont {
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 0.8rem;
+}
+
+.phc {
+  color: #aaa;
+}
+
+.normal {
+  color: #666;
+}

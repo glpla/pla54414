@@ -7,8 +7,8 @@
     <text class="iconfont {{len>0?'iconcaigou':'iconcaigou-xianxing'}} icon"></text>
     <text class="desc">购物车</text>
   </view>
-  <view class="item " bindtap="onNav " data-idx="2">
+  <view class="item " bindtap="onNav" data-idx="2">
     <text class="iconfont iconyonghu-xianxing icon "></text>
-    <text class="desc ">我的</text>
+    <text class="desc">我的</text>
   </view>
 </view>

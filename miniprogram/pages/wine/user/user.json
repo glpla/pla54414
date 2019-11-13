@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户中心",
+  "navigationBarBackgroundColor": "#FF69B4",
+  "usingComponents": {
+    "top-bar": "../../components/top-bar/top-bar"
+  }
+}

@@ -307,6 +307,9 @@ Page({
         })
         break;
       case '2':
+        wx.navigateTo({
+          url: './user/user'
+        })
         break;
     }
   },
@@ -317,5 +320,43 @@ Page({
     })
     console.log(this.data.goods[this.data.curIndex])
   },
-  onLoad: function(options) {}
+  onLoad: function(options) {},
+  onPageScroll: function(e) {
+    console.log(e)
+  },
+  onReady: function(e) {
+    let query = wx.createSelectorQuery();
+    query.select('#cont').boundingClientRect(function(res) {
+      console.log(res);
+    }).exec();
+  },
+  scroll(e) {
+    console.log(e.detail.scrollTop)
+    let top = e.detail.scrollTop
+    if (top >= 0 && top < 65) {
+      this.setData({
+        curIndex: 0
+      })
+    } else if (top >= 65 && top < 2503) {
+      this.setData({
+        curIndex: 1
+      })
+    } else if (top >= 2503 && top < 3900) {
+      this.setData({
+        curIndex: 2
+      })
+    } else if (top >= 3900 && top < 5297) {
+      this.setData({
+        curIndex: 3
+      })
+    } else if (top >= 5297 && top < 6694) {
+      this.setData({
+        curIndex: 4
+      })
+    } else {
+      this.setData({
+        curIndex: 5
+      })
+    }
+  }
 })
