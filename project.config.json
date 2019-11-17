@@ -8,6 +8,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -16,8 +17,7 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"nodeModules": true
+		}
 	},
 	"appid": "wxf878bb2864a8f765",
 	"projectname": "pla54414",
@@ -84,13 +84,6 @@
 				},
 				{
 					"id": -1,
-					"name": "admin",
-					"pathName": "pages/admin/admin",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "office",
 					"pathName": "pages/office/office",
 					"query": "",
@@ -149,6 +142,13 @@
 					"id": 14,
 					"name": "user",
 					"pathName": "pages/wine/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "admin",
+					"pathName": "pages/wine/admin/admin",
 					"query": "",
 					"scene": null
 				}

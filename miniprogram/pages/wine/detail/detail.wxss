@@ -4,8 +4,13 @@
   margin: 20rpx auto;
 }
 
+.title {
+  color: #333;
+  font-size: 1rem;
+}
+
 .desc {
-  font-size: 1.05rem;
+  margin: 10rpx auto;
 }
 
 .price {
@@ -41,6 +46,8 @@
 }
 
 .hot-box .hot-line {
+  width: 60rpx;
+  height: 60rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,12 +100,12 @@
 }
 
 .cart text {
-  width: 120rpx;
-  height: 120rpx;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   color: #fff;
-  line-height: 120rpx;
   text-align: center;
   background: #fa84bf;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }

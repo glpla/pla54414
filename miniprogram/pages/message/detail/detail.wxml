@@ -1,8 +1,8 @@
 <wxs src="../../../wxs/sub.wxs" module='sub'></wxs>
 <view>
-  <view class="title">最新20条记录</view>
+  <view class="tips">最新20条记录</view>
   <view class="msg-wrap" wx:for='{{records}}' wx:key='_id'>
-    <view class="item">
+    <view class="cont">
       <text>{{item.msg}}</text>
     </view>
     <view class="desc">

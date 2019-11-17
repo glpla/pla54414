@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "管理平台",
+  "navigationBarBackgroundColor": "#1d96ff",
+  "usingComponents": {
+    "to-top": "../../components/to-top/to-top",
+    "good-item": "../../components/goods/good-item/good-item"
+  }
+}

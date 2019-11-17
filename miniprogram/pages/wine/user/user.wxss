@@ -37,3 +37,9 @@ page {
 .arrow {
   color: #aaa;
 }
+
+.hot-line {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: left;
+}

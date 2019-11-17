@@ -5,15 +5,32 @@ page, view, navitator, video, swiper, swiper-item, scroll-view, textarea, input 
 }
 
 page {
+  width: 100%;
+  height: 100%;
   color: #666;
   background: #f6f6f6;
   font-size: 14px;
   font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
 }
 
+button::after {
+  border: none;
+}
+
+button {
+  border-radius: 0;
+}
+
+button, input, textarea {
+  font-family: Arial, Helvetica, '微软雅黑', '宋体', sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
 .container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: 0 15rpx;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -25,10 +42,64 @@ page {
   text-overflow: ellipsis;
 }
 
-button::after {
-  border: none;
+.tips {
+  color: #aaa;
+  margin: 20rpx auto;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
-button {
-  border-radius: 0;
+.p10 {
+  padding: 10rpx;
+}
+
+/* office class */
+
+.office-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.office-box {
+  border-radius: 10rpx;
+  border: 2rpx solid #ddd;
+  margin-top: 20rpx;
+}
+
+.office-header {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  background: #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.office-cont {
+  line-height: 60rpx;
+  padding: 0 20rpx;
+}
+
+.office-staff {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.office-btn {
+  margin-top: 20rpx;
+  width: 100%;
+  background: #00bfff;
+  color: #fff;
+}
+
+.office-ta {
+  width: 100%;
+  padding: 10rpx;
+}
+
+.office-phc {
+  color: #aaa;
 }

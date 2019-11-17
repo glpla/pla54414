@@ -1,0 +1,40 @@
+.title {
+  margin-bottom: 10rpx;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.box .desc {
+  width: 100rpx;
+}
+
+.box .old {
+  margin: 0 10rpx;
+  width: 60rpx;
+}
+
+.box .input {
+  box-sizing: border-box;
+  border: 2rpx solid #ddd;
+  width: 120rpx;
+  height: 40rpx;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.edit {
+  justify-content: flex-end;
+}
+
+.edit .btn {
+  padding: 10rpx 20rpx;
+  background: #1d96ff;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 0.8rem;
+}

@@ -3,6 +3,7 @@ Page({
   data: {
     navIndex: 0,
     events: [],
+    focus: null,
     len: 15,
     page: 0,
     pages: 0,
@@ -214,5 +215,15 @@ Page({
         break;
     }
   },
-  onLoad: function(options) {}
+  onLoad: function(options) {},
+  onFocus(e) {
+    this.setData({
+      focus: e.currentTarget.dataset.idx
+    })
+  },
+  onBlur() {
+    this.setData({
+      focus: null
+    })
+  }
 })

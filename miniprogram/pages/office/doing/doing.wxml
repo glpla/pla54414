@@ -1,79 +1,79 @@
-<view class="wrap">
-  <view class="title">{{item.client}} 投诉 {{item.target}}</view>
-  <view class='res-box'>
-    <view class="res-title time">
+<view class="p10">
+  <view class="office-title">{{item.client}} 投诉 {{item.target}}</view>
+  <view class='office-box'>
+    <view class="office-header">
       <text>事项</text>
       <text>{{item.date}} {{item.time}}</text>
     </view>
-    <view class="res-cont">{{item.event}}</view>
+    <view class="office-cont">{{item.event}}</view>
   </view>
-  <view class="staff">经办人:{{item.staff}}</view>
+  <view class="office-staff">经办人:{{item.staff}}</view>
 
   <view wx:if='{{item.flag>=0}}'>
     <view wx:if='{{!item.res0.cont}}'>
-      <view class='res-box'>
-        <view class="res-title">部门主管</view>
-        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      <view class='office-box'>
+        <view class="office-header">部门主管</view>
+        <textarea class="office-ta" bindinput='onResInput' placeholder="您的意见" placeholder-class='office-phc' value="{{response}}"></textarea>
       </view>
-      <button bindtap="onRes" data-res="0">签收</button>
+      <button class="office-btn" bindtap="onRes" data-res="0">签收</button>
     </view>
-    <view class='res-box' wx:else>
-      <view class="res-title time">
+    <view class='office-box' wx:else>
+      <view class="office-header">
         <text>部门主管</text>
         <text>{{item.res0.time}}</text>
       </view>
-      <view class="res-cont">{{item.res0.cont}}</view>
+      <view class="office-cont">{{item.res0.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=1}}'>
     <view wx:if='{{!item.res1.cont}}'>
-      <view class='res-box'>
-        <view class="res-title">部门主任</view>
-        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      <view class='office-box'>
+        <view class="office-header">部门主任</view>
+        <textarea class="office-ta" bindinput='onResInput' placeholder="您的意见" placeholder-class='office-phc' value="{{response}}"></textarea>
       </view>
-      <button bindtap="onRes" data-res="1">签收</button>
+      <button class="office-btn" bindtap="onRes" data-res="1">签收</button>
     </view>
-    <view class='res-box' wx:else>
-      <view class="res-title time">
+    <view class='office-box' wx:else>
+      <view class="office-header">
         <text>部门主任</text>
         <text>{{item.res1.time}}</text>
       </view>
-      <view class="res-cont">{{item.res1.cont}}</view>
+      <view class="office-cont">{{item.res1.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=2}}'>
     <view wx:if='{{!item.res2.cont}}'>
-      <view class='res-box'>
-        <view class="res-title">中心主任</view>
-        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      <view class='office-box'>
+        <view class="office-header">中心主任</view>
+        <textarea class="office-ta" bindinput='onResInput' placeholder="您的意见" placeholder-class='office-phc' value="{{response}}"></textarea>
       </view>
-      <button bindtap="onRes" data-res="2">签收</button>
+      <button class="office-btn" bindtap="onRes" data-res="2">签收</button>
     </view>
-    <view class='res-box' wx:else>
-      <view class="res-title time">
+    <view class='office-box' wx:else>
+      <view class="office-header">
         <text>中心主任</text>
         <text>{{item.res2.time}}</text>
       </view>
-      <view class="res-cont">{{item.res2.cont}}</view>
+      <view class="office-cont">{{item.res2.cont}}</view>
     </view>
   </view>
 
   <view wx:if='{{item.flag>=3}}'>
     <view wx:if='{{!item.res3.cont}}'>
-      <view class='res-box'>
-        <view class="res-title">校长</view>
-        <textarea bindinput='onResInput' placeholder="您的意见" placeholder-class='phc' value="{{response}}"></textarea>
+      <view class='office-box'>
+        <view class="office-header">校长</view>
+        <textarea class="office-ta" bindinput='onResInput' placeholder="您的意见" placeholder-class='office-phc' value="{{response}}"></textarea>
       </view>
-      <button bindtap="onRes" data-res="3">签收</button>
+      <button class="office-btn" bindtap="onRes" data-res="3">签收</button>
     </view>
-    <view class='res-box' wx:else>
-      <view class="res-title">
+    <view class='office-box' wx:else>
+      <view class="office-header">
         <text>校长</text>
         <text>{{item.res3.time}}</text>
       </view>
-      <view class="res-cont">{{item.res3.cont}}</view>
+      <view class="office-cont">{{item.res3.cont}}</view>
     </view>
   </view>
 </view>

@@ -1,9 +1,6 @@
-<view class='wrap'>
-  <!-- <image src='../../images/logo.jpg' mode="widthFix"></image> -->
-  <!-- <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">进入大树的小站</button> -->
-  <!-- <view>本小程序仅供个人撸码使用</view> -->
+<view class='container'>
   <view class='loading'>
-    <view class='text'>
+    <view class='text container'>
       <view>持续更新</view>
       <view>仅供撸码</view>
       <view>点击进入</view>

@@ -1,0 +1,16 @@
+<view class='wrap'>
+  <view class="title">{{good.title}}</view>
+  <view class="box">
+    <view class="desc">数量</view>
+    <view class="old">{{good.num}}</view>
+    <input class="input" type="digit" value="{{newNum}}" maxlength="3" bindinput="onNum"></input>
+  </view>
+  <view class="box">
+    <view class="desc">单价</view>
+    <view class="old">{{good.price}}</view>
+    <input class="input" type="digit" value="{{newPrice}}" maxlength="3" bindinput="onPrice"></input>
+  </view>
+  <view class="box edit">
+    <view class="btn" bindtap="onConfirm" data-idx="{{good._id}}" data-num="{{good.num}}" data-price="{{good.price}}">确认</view>
+  </view>
+</view>

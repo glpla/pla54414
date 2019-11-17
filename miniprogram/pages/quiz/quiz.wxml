@@ -1,0 +1,17 @@
+<view class="wrap">
+  <view class="tips">每人只有一次机会,请认真填写哦</view>
+  <view class="box">
+    <view class="item" wx:for='{{quiz}}' wx:key='_id'>
+      <view class="desc">
+        <text decode>&lt;{{quiz.length}}-{{index+1}}&gt;</text>{{item.desc}}
+      </view>
+      <radio-group class="option-box" bindchange="onChange" data-ind='{{index}}'>
+        <block wx:for='{{item.options}}' wx:for-item='option' wx:for-index='idx' wx:key='option'>
+          <radio class='option' value="{{option.val}}" color='#00bfff'>{{option.option}}</radio>
+        </block>
+      </radio-group>
+    </view>
+  </view>
+  <button class='sub-btn' bindtap="res">提交</button>
+  <view class="tips">谢谢参与!任何需求,请致电13707735481</view>
+</view>

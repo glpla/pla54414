@@ -1,7 +1,7 @@
-<view class="calen">
+<view class="wrap">
   <view class="calen-header">
     <view class="left">
-      <image src="/images/cal{{indexUrl}}.png" mode="widthFix"></image>
+      <image src="../../images/cal{{indexUrl}}.png" mode="widthFix"></image>
     </view>
     <view class="right">
       <view class="month-box">
@@ -16,19 +16,13 @@
       </view>
     </view>
   </view>
-
-  <!-- <swiper current="{{indexMonth}}" bindchange='onSwiperChange'>
-    <swiper-item wx:for='{{monthArr}}' wx:key='{{item.en}}' item-id='{{index}}'>
-      <view class="month">{{item.ch}}-{{item.en}}</view>
-    </swiper-item>
-  </swiper> -->
-
   <view class="week">
-    <view wx:for='{{weekArr}}' wx:key='{{index}}'>{{item}}</view>
+    <view wx:for='{{weekArr}}' wx:key='index'>{{item}}</view>
   </view>
   <view class='day'>
-    <block wx:for='{{dayTotal+dayBegin}}' wx:key='{{index}}'>
+    <block wx:for='{{dayTotal+dayBegin}}' wx:key='index'>
       <view class="{{index<dayBegin?'positive':''}} {{curYear==indexYear&&curMonth==indexMonth&&curDate==index-dayBegin+1?'current-day':''}}" data-dayIndex='{{index - dayBegin}}' bindtap='onDay'>{{index - dayBegin + 1}}</view>
     </block>
   </view>
+  <view class="test" style="background-image:url(../../images/cal11.png)"></view>
 </view>

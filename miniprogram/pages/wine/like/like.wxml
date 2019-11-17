@@ -1,4 +1,5 @@
 <view class='wrap'>
   <top-bar darkColor='#FF69B4' lightColor='#fa84bf'></top-bar>
   <view>还没有订单记录哦</view>
+  <to-top color='#FF69B4' show='{{showToTop}}'></to-top>
 </view>

@@ -1,23 +1,50 @@
-<view class="container">
-  <view class="reg-wrap">
-    <view class="input-wrap">
-      <view class='img' bindtap="onPic" wx:if='{{!fp}}'>选择头像</view>
-      <view class='img' bindtap="onPic" wx:else>
-        <image src="{{fp}}"></image>
-      </view>
-    </view>
-    <view class="input-wrap">
-      <view class='desc'>用户名</view>
-      <input type="text" maxlength="8" placeholder="8位中文/字母/数字" placeholder-class="ph" bindinput="onName"></input>
-    </view>
-    <view class="input-wrap">
-      <view class='desc'>密码</view>
-      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph" bindinput="onPass"></input>
-    </view>
-    <view class="input-wrap">
-      <view class='desc'>确认密码</view>
-      <input type="text" maxlength="8" placeholder="8位字母/数字" placeholder-class="ph" bindinput="onConfirm"></input>
-    </view>
-    <view class="reg-btn" bindtap="onReg">注册</view>
+<view class="reg-wrap">
+  <view class='avatar' style="background-image:url({{user.avatarUrl}})">
+    <!-- <text wx:if='{{!fp}}'>选择头像</text> -->
   </view>
+  <view class="name">{{user.nickName}}</view>
+  <view class="tips">完善个人信息,获取更多服务和优惠</view>
+  <view class="input-wrap">
+    <view class='desc {{focus==0?"focus":""}} {{name!=""?"focus":""}}'>
+      <text class="iconfont iconkefuyouxian"></text>
+    </view>
+    <input class="input {{focus==0?'show':''}} {{name!=''?'show':''}}" type="text" maxlength="8" placeholder="用户名(字母/数字)" placeholder-class="office-phc" bindinput="onName" bindfocus="onFocus" data-idx="0" value="{{name}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==1?"focus":""}} {{pass!=""?"focus":""}}'>
+      <text class="iconfont iconlock"></text>
+    </view>
+    <input class="input {{focus==1?'show':''}} {{pass!=''?'show':''}}" type="password" maxlength="8" placeholder="密码(字母/数字)" placeholder-class="office-phc" bindinput="onPass" bindfocus="onFocus" data-idx="1" value="{{pass}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==2?"focus":""}} {{tempPass!=""?"focus":""}}'>
+      <text class="iconfont iconxxhdpiCombinedShape"></text>
+    </view>
+    <input class="input {{focus==2?'show':''}} {{tempPass!=''?'show':''}}" type="password" maxlength="8" placeholder="确认密码" placeholder-class="office-phc" bindinput="onConfirm" bindfocus="onFocus" data-idx="2" value="{{tempPass}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==3?"focus":""}} {{birth!=""?"focus":""}}'>
+      <text class="iconfont iconchangyongtubiao-mianxing-6"></text>
+    </view>
+    <input class="input {{focus==3?'show':''}} {{birth!=''?'show':''}}" type="digit" maxlength="11" placeholder="出生月日(08-22)" placeholder-class="office-phc" bindinput="onBirth" bindfocus="onFocus" data-idx="3" value="{{birth}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==4?"focus":""}} {{cell!=""?"focus":""}}'>
+      <text class="iconfont iconkefurexian"></text>
+    </view>
+    <input class="input {{focus==4?'show':''}} {{cell!=''?'show':''}}" type="digit" maxlength="11" placeholder="手机号" placeholder-class="office-phc" bindinput="onCell" bindfocus="onFocus" data-idx="4" value="{{cell}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==5?"focus":""}} {{addr!=""?"focus":""}}'>
+      <text class="iconfont iconchangyongtubiao-mianxing-1"></text>
+    </view>
+    <input class="input {{focus==5?'show':''}} {{addr!=''?'show':''}}" type="text" maxlength="30" placeholder="收货地址(省市区街道小区)" placeholder-class="office-phc" bindinput="onAddr" bindfocus="onFocus" data-idx="5" value="{{addr}}"></input>
+  </view>
+  <view class="input-wrap">
+    <view class='desc {{focus==6?"focus":""}} {{reco!=""?"focus":""}}'>
+      <text class="iconfont iconxin"></text>
+    </view>
+    <input class="input {{focus==6?'show':''}} {{reco!=''?'show':''}}" type="text" maxlength="8" placeholder="推荐人(可选)" placeholder-class="office-phc" bindinput="onReco" bindfocus="onFocus" data-idx="6" value="{{reco}}"></input>
+  </view>
+  <view class="reg-btn" bindtap="onReg">提交</view>
 </view>

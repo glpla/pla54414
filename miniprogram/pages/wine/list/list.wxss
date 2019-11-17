@@ -1,1 +1,81 @@
-/* pages/like/list/list.wxss */
+page {
+  height: 100%;
+}
+
+.wrap {
+  height: 100%;
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 4rem;
+}
+
+.tips {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.caption {
+  display: flex;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.caption text {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #aaa;
+}
+
+.item-wrap {
+  padding: 10rpx;
+}
+
+.item-wrap .left {
+  text-align: left;
+}
+
+.sn, .price, .num, .sum {
+  flex: 1;
+}
+
+.num {
+  flex: 2;
+}
+
+.title {
+  flex: 4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.btn {
+  /* width: 80%; */
+  height: 60rpx;
+  margin: 20rpx auto;
+  background: #fa84bf;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.total {
+  text-align: right;
+  margin: 10rpx auto;
+  padding: 0 10rpx;
+}
+
+.total text {
+  font-size: 1.2rem;
+  color: #fa84bf;
+}

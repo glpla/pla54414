@@ -1,0 +1,9 @@
+.title {
+  font-size: 1.2rem;
+  border-bottom: 2rpx solid #18a;
+  padding: 10rpx;
+}
+
+.sub-title {
+  padding: 4rpx;
+}

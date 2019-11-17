@@ -35,8 +35,8 @@
     <text class='iconfont iconcalendar nav-icon'></text>
     <text class='nav-desc'>日历</text>
   </view>
-  <view class='nav-item' bindtap="toAdmin">
-    <text class='iconfont iconmichi nav-icon'></text>
-    <text class='nav-desc'>管理</text>
+  <view class='nav-item' bindtap="toQuiz">
+    <text class='iconfont iconqianyuejilu nav-icon'></text>
+    <text class='nav-desc'>问卷</text>
   </view>
 </view>

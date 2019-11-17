@@ -1,0 +1,34 @@
+.wrap {
+  margin: 10rpx 0 0 10rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+image {
+  width: 100%;
+}
+
+.title-desc {
+  padding: 0 10rpx;
+  margin: 10rpx auto;
+}
+
+.title {
+  color: #333;
+  font-size: 1rem;
+}
+
+.price {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new {
+  color: #cf4289;
+}
+
+.old {
+  text-decoration: line-through;
+}

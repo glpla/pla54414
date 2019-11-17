@@ -1,0 +1,85 @@
+<view class="">
+  <to-top color='#1d96ff' show='{{showToTop}}'></to-top>
+  <view class='login-wrap' wx:if='{{!isOk}}'>
+    <input class="input {{isFocus?'input-focus':''}}" type='password' placeholder="your admin here" maxlength="8" bindinput="onPw" focus="true" bindblur="onBlur" bindfocus="onFocus"></input>
+    <button bindtap="onLogin">登陆</button>
+  </view>
+  <view class="admin-wrap" wx:else>
+    <view class="nav">
+      <view class="item {{navIndex==0?'active':''}}" bindtap="onNav" data-idx="0">order</view>
+      <view class="item {{navIndex==1?'active':''}}" bindtap="onNav" data-idx="1">swiper</view>
+      <view class="item {{navIndex==2?'active':''}}" bindtap="onNav" data-idx="2">user</view>
+    </view>
+    <view class='cont' wx:if='{{navIndex==0}}'>
+      <view class="sql-box">
+        <input class="sql-input" placeholder="your order sn" bindinput="onInput" value="ofaJG48q7c-brqz26R09kEnZ75Zs"></input>
+        <view class="sql-btn" bindtap="onSql">sql</view>
+      </view>
+      <view class="order" wx:for='{{order}}' wx:key='_id'>
+        <good-item good='{{item}}' bindupdate='onUpdate'></good-item>
+      </view>
+    </view>
+    <view class='cont' wx:if='{{navIndex==1}}'>
+      <view class="img-box">
+        <view class="btn" bindtap="chooseImg">选择图片</view>
+        <view class="img" style="background-image:url({{img}})"></view>
+      </view>
+      <input class="input {{isFocus?'input-focus':''}}" placeholder="说点啥吧" bindinput="onDesc" bindblur="onBlur" bindfocus="onFocus"></input>
+      <!-- <view class="img-wrap">
+        <view class='img-box' wx:for='{{imgs}}' wx:key=''>
+          <image src="{{item}}" mode="widthFix" bindtap="previewImg" data-src='{{item}}'></image>
+        </view>
+      </view> -->
+      <view class="btn-box">
+        <button bindtap="homeUpload">首页swiper</button>
+        <button bindtap="gymUpload">运动swiper</button>
+        <button bindtap="wineUpload">红酒swiper</button>
+      </view>
+    </view>
+    <view class="cont" wx:if='{{navIndex==2}}'>
+      <view class="tips">示例</view>
+      <view class="row border-bottom">
+        <view class="field">字段</view>
+        <view class="desc">说明</view>
+      </view>
+      <view class="row">
+        <view class="field">name</view>
+        <view class="desc">姓名</view>
+      </view>
+      <view class="row">
+        <view class="field">vip</view>
+        <view class="desc">等级</view>
+      </view>
+      <view class="row">
+        <view class="field">cell</view>
+        <view class="desc">电话</view>
+      </view>
+      <view class="row">
+        <view class="field">birth</view>
+        <view class="desc">生日</view>
+      </view>
+      <view class="row">
+        <view class="field">addr</view>
+        <view class="desc">地址</view>
+      </view>
+      <view class="row">
+        <view class="field">credit</view>
+        <view class="desc">积分</view>
+      </view>
+      <view class="row">
+        <view class="field">reco</view>
+        <view class="desc">推荐</view>
+      </view>
+      <view class="row">
+        <view class="field">flag</view>
+        <view class="desc">是否展示</view>
+      </view>
+      <view class="row border-bottom">
+        <view class="field">other</view>
+        <view class="desc">其它</view>
+      </view>
+      <view class="tips ">数据库中原有数据将被覆盖,请确保已备份</view>
+      <button bindtap="userUpload ">上传用户信息.xls</button>
+    </view>
+  </view>
+</view>

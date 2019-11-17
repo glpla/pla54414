@@ -1,43 +1,43 @@
-<view class="wrap">
-  <view class="title">{{item.client}} 投诉 {{item.target}}</view>
-  <view class='res-box'>
-    <view class="res-title time">
+<view class="p10">
+  <view class="office-title">{{item.client}} 投诉 {{item.target}}</view>
+  <view class='office-box'>
+    <view class="office-header">
       <text>事项</text>
       <text>{{item.date}} {{item.time}}</text>
     </view>
-    <view class="res-cont">{{item.event}}</view>
+    <view class="office-cont">{{item.event}}</view>
   </view>
-  <view class="staff">经办人:{{item.staff}}</view>
+  <view class="office-staff">经办人:{{item.staff}}</view>
 
-  <view class='res-box'>
-    <view class="res-title time">
-    <text>部门主管</text>
-    <text>{{item.res0.time}}</text>
+  <view class='office-box'>
+    <view class="office-header">
+      <text>部门主管</text>
+      <text>{{item.res0.time}}</text>
     </view>
-    <view class="res-cont">{{item.res0.cont}}</view>
+    <view class="office-cont">{{item.res0.cont}}</view>
   </view>
 
-  <view class='res-box'>
-    <view class="res-title time">
-    <text>部门主任</text>
-    <text>{{item.res1.time}}</text>
+  <view class='office-box'>
+    <view class="office-header">
+      <text>部门主任</text>
+      <text>{{item.res1.time}}</text>
     </view>
-    <view class="res-cont">{{item.res1.cont}}</view>
+    <view class="office-cont">{{item.res1.cont}}</view>
   </view>
 
-  <view class='res-box'>
-    <view class="res-title time">
+  <view class='office-box'>
+    <view class="office-header">
       <text>中心主任</text>
       <text>{{item.res2.time}}</text>
     </view>
-    <view class="res-cont">{{item.res2.cont}}</view>
+    <view class="office-cont">{{item.res2.cont}}</view>
   </view>
 
-  <view class='res-box'>
-    <view class="res-title time">
+  <view class='office-box'>
+    <view class="office-header">
       <text>校长</text>
       <text>{{item.res3.time}}</text>
     </view>
-    <view class="res-cont">{{item.res3.cont}}</view>
+    <view class="office-cont">{{item.res3.cont}}</view>
   </view>
 </view>

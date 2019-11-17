@@ -2,13 +2,31 @@ const app = getApp();
 const db = wx.cloud.database();
 Page({
   data: {
+    isFocus: false,
     imgs: [],
     idx: 700,
     product: [],
     isDone: false,
     len: 6,
     idx: 0,
-    showToTop: false
+    showToTop: false,
+    avatarUrl: './user-unlogin.png',
+    user: {}
+  },
+  onFocus() {
+    this.setData({
+      isFocus: true
+    })
+  },
+  onBlur() {
+    this.setData({
+      isFocus: false
+    })
+  },
+  onUser() {
+    wx.navigateTo({
+      url: './user/user',
+    })
   },
   onDetail(e) {
     wx.navigateTo({
@@ -47,6 +65,7 @@ Page({
     this.getTotal('pla54414-wine-product');
     this.loadImg('pla54414-wine-product');
     this.getPic10('pla54414-wine');
+    this.getUser();
   },
   getPic10(dbn) {
     db.collection(dbn).limit(10).get().then(res => {
@@ -84,11 +103,14 @@ Page({
     let len = this.data.len;
     let num = this.data.len * this.data.idx;
     db.collection(dbn).field({
+      title: true,
       desc: true,
       price: true,
+      flag: true,
+      'old-price': true,
       url: true
     }).skip(num).limit(len).get().then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       let arr = res.data;
       this.setData({
         product: this.data.product.concat(arr)
@@ -113,4 +135,24 @@ Page({
       }
     }
   },
+  onShow() {
+    this.getUser();
+  },
+  getUser() {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                user: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
+  }
 })

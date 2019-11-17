@@ -1,13 +1,14 @@
 <view class="">
   <wine-swiper imgs='{{info.pics}}'></wine-swiper>
   <view class="info">
+    <view class="title">{{info.title}}</view>
     <view class="desc">{{info.desc}}</view>
-    <view class="price">
+    <view class="price" wx:if='{{info.flag}}'>
       <text class="new">¥{{info.price}}</text>
       <text class="old">¥{{info['old-price']}}</text>
     </view>
   </view>
-  <view class="footer">
+  <view class="footer" wx:if='{{info.flag}}'>
     <view class="oper-box">
       <view class="buy" bindtap="onBuyCart">立即购买</view>
       <view class="oper" bindtap="onSub">-</view>
@@ -15,7 +16,7 @@
       <view class="oper" bindtap="onAdd">+</view>
       <view class="add" bindtap="onAddCart">加入购物车</view>
     </view>
-    <view class="hot-box" wx:if='{{user}}'>
+    <view class="hot-box" wx:if='{{user.nickName}}'>
       <button class="hot-line" open-type="contact">
         <text class="iconfont iconkefu-tianchong"></text>
       </button>

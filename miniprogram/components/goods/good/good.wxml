@@ -2,7 +2,7 @@
   <image class='img' src='{{good.pic}}' mode="widthFix"></image>
   <view class="title">{{good.title}}</view>
   <view class="desc">{{good.desc}}</view>
-  <view class="price-num">
+  <view wx:if='{{flag}}' class="price-num">
     <view class="price">
       <view class="new">¥{{good.newPrice}}</view>
       <view class="old">¥{{good.oldPrice}}</view>

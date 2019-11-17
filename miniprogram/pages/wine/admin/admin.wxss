@@ -1,0 +1,132 @@
+.login-wrap {
+  width: 100%;
+  margin: 400rpx auto;
+}
+
+.input {
+  margin-top: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #1d96ff;
+  text-align: center;
+  font-size: 0.8rem;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+}
+
+.input-focus {
+  border: 2rpx solid #1d96ff;
+}
+
+button {
+  margin-top: 10rpx;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #1d96ff;
+  border-radius: 10rpx;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #1d96ff;
+  color: #fff;
+}
+
+.nav .item {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 10rpx;
+  padding: 0 20rpx;
+}
+
+.nav .active {
+  background: #fff;
+  color: #1d96ff;
+  border-radius: 10rpx;
+}
+
+.cont {
+  padding: 10rpx;
+}
+
+/* order--------------------------------------- */
+
+.sql-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sql-input {
+  width: 600rpx;
+  border: 2rpx solid #ddd;
+  height: 60rpx;
+  border-bottom-left-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+}
+
+.sql-btn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #1d96ff;
+  color: #fff;
+  border-bottom-right-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.order {
+  padding: 10rpx;
+  border-bottom: 2rpx solid #ddd;
+  margin-bottom: 10rpx;
+}
+
+/* swiper-------------------------------------- */
+
+.img-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 360rpx;
+  height: 360rpx;
+  line-height: 360rpx;
+  border: 2rpx solid #aaa;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.img-box .img {
+  width: 360rpx;
+  height: 360rpx;
+  border-radius: 10rpx;
+  background: #ddd;
+  overflow: hidden;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* user------------------------------ */
+
+.row {
+  display: flex;
+}
+
+.field {
+  width: 120rpx;
+}
+
+.border-bottom {
+  border-bottom: 2rpx solid #ddd;
+}

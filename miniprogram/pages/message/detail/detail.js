@@ -6,6 +6,9 @@ Page({
     showToTop: false
   },
   onQuery() {
+    wx.showToast({
+      title: '数据加载中',
+    })
     db.collection('pla54414-msg').orderBy('time', 'desc').get().then(res => {
       // console.log(res.data)
       this.setData({

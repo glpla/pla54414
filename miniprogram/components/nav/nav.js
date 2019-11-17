@@ -48,9 +48,9 @@ Component({
         url: '../calendar/calendar',
       })
     },
-    toAdmin() {
+    toQuiz() {
       wx.navigateTo({
-        url: '../admin/admin',
+        url: '../quiz/quiz',
       })
     }
   },

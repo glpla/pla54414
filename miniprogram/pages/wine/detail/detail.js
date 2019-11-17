@@ -1,14 +1,15 @@
+const app = getApp();
 const db = wx.cloud.database();
 Page({
   data: {
+    showToTop: false,
     info: {},
     num: 0,
-    test: '',
-    user: ''
+    user: {},
+    openid: ''
   },
   onBuyCart() {
-    console.log('buy cart')
-    if (!this.data.user) {
+    if (!this.data.user.nickName) {
       wx.showModal({
         title: '提示',
         content: '您还没有登陆,现在登陆吗?',
@@ -23,11 +24,18 @@ Page({
           }
         }
       })
+    } else {
+      console.log('buy cart')
+      if (this.data.num == 0) {
+        wx.showToast({
+          title: '数量为零',
+        })
+        return;
+      }
     }
   },
   onAddCart() {
-    console.log('add cart')
-    if (!this.data.user) {
+    if (!this.data.user.nickName) {
       wx.showModal({
         title: '提示',
         content: '您还没有登陆,现在登陆吗?',
@@ -41,6 +49,28 @@ Page({
             console.log('用户点击取消')
           }
         }
+      })
+    } else {
+      if (this.data.num == 0) {
+        wx.showToast({
+          title: '数量为零',
+        })
+        return;
+      }
+      // console.log('add cart');
+      db.collection('pla54414-wine-order').add({
+        data: {
+          num: this.data.num,
+          title: this.data.info.title,
+          price: this.data.info.price,
+          createTime: db.serverDate(),
+          flag: false
+        }
+      }).then(res => {
+        console.log(res);
+        wx.showToast({
+          title: '成功加入购物车',
+        })
       })
     }
   },
@@ -67,25 +97,21 @@ Page({
   },
   onCart() {
     wx.navigateTo({
-      url: '../cart/cart'
+      url: '../cart/cart?openid=' + this.data.openid
     })
   },
   onLoad: function(options) {
-    console.log(options)
     this.loadItem(options.idx);
-    this.setData({
-      test: options.price
-    })
     this.getUser();
-  },
-  getUser() {
-    let user = wx.getStorageSync('user');
-    console.log('user', user)
-    if (user) {
-      this.setData({
-        user
-      })
-    }
+    wx.getStorage({
+      key: 'openid',
+      success: (res) => {
+        // console.log('openid', res.data)
+        this.setData({
+          openid: res.data
+        })
+      }
+    })
   },
   loadItem(idx) {
     db.collection('pla54414-wine-product').doc(idx).field({
@@ -105,6 +131,15 @@ Page({
   onUnload: function() {},
   onPullDownRefresh: function() {},
   onReachBottom: function() {},
+  onPageScroll: function(e) {
+    let bool = false;
+    if (e.scrollTop > 100) {
+      bool = true
+    }
+    this.setData({
+      showToTop: bool
+    })
+  },
   makeCall() {
     wx.makePhoneCall({
       phoneNumber: '13707735481'
@@ -137,5 +172,22 @@ Page({
   hideShareMenu() {
     wx.hideShareMenu();
     console.log("隐藏了当前页面的转发按钮");
+  },
+  getUser() {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                user: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
   }
 })

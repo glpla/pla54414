@@ -3,6 +3,7 @@
   "navigationBarTitleText": "红酒",
   "usingComponents": {
     "wine-swiper": "../../components/swiper/swiper",
+    "wine-item": "../../components/wine/wine-item/wine-item",
     "to-top": "../../components/to-top/to-top"
   },
   "enablePullDownRefresh": true

@@ -1,66 +1,51 @@
-// pages/like/list/list.js
+const db = wx.cloud.database();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    showToTop: false,
+    order: [],
+    sum: 0,
+    openid: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onBack() {
+    wx.navigateBack({
+      delta: 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad: function(options) {
+    wx.showToast({
+      title: '数据加载中',
+    })
+    db.collection('pla54414-wine-order').where({
+      _openid: options.openid,
+      flag: true,
+    }).get().then(res => {
+      console.log(res);
+      let order = res.data;
+      let p = 0;
+      for (let i = 0; i < order.length; i++) {
+        p += order[i].num * order[i].price;
+      }
+      this.setData({
+        openid: options.openid,
+        sum: p,
+        order
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onPageScroll: function(e) {
+    let bool = false;
+    if (e.scrollTop > 100) {
+      bool = true
+    }
+    this.setData({
+      showToTop: bool
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  onReady: function() {},
+  onShow: function() {},
+  onHide: function() {},
+  onUnload: function() {},
+  onPullDownRefresh: function() {},
+  onReachBottom: function() {},
+  onShareAppMessage: function() {}
 })

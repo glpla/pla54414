@@ -25,6 +25,29 @@ page {
   font-size: 1.2rem;
 }
 
+.sn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10rpx auto;
+}
+
+.sn-box .order-sn {
+  color: #a72d6a;
+  font-size: 0.8rem;
+}
+
+.sn-box .copy-btn {
+  width: 100rpx;
+  text-align: center;
+  border: 2rpx solid #a72d6a;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #a72d6a;
+  font-size: 0.6rem;
+  border-radius: 40rpx;
+}
+
 .caption {
   display: flex;
   border-bottom: 2rpx solid #ddd;
@@ -34,7 +57,7 @@ page {
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
-  color: #aaa;
+  /* color: #aaa; */
 }
 
 .item-wrap {
@@ -60,13 +83,12 @@ page {
   text-overflow: ellipsis;
 }
 
-.btn {
-  width: 80%;
-  height: 80rpx;
+.submit-btn {
+  height: 60rpx;
   margin: 20rpx auto;
-  background: #4ba189;
+  background: #fa84bf;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .total {
@@ -77,5 +99,5 @@ page {
 
 .total text {
   font-size: 1.2rem;
-  color: #4ba189;
+  color: #fa84bf;
 }

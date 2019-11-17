@@ -1,13 +1,65 @@
-page {
+.address-box {
+  padding: 10rpx;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.cap {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #fc93c7;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.detail {
+  flex: 1;
+  padding: 10rpx;
+}
+
+.name-cell {
+  display: flex;
+}
+
+.cell {
   font-size: 0.8rem;
+  color: #999;
+}
+
+.name {
+  margin-right: 20rpx;
+}
+
+.oper {
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 0.8rem;
+  color: #aaa;
+  padding-left: 10rpx;
+  border-left: 2rpx solid #aaa;
+  text-align: center;
+}
+
+.del {
+  width: 60rpx;
+}
+
+.edit {
+  width: 60rpx;
+  margin-right: 10rpx;
 }
 
 .btn-add {
-  position: fixed;
-  width: 100%;
   border-radius: 0;
-  left: 0;
-  bottom: 0;
   height: 60rpx;
   line-height: 60rpx;
   background: #ff69b4;

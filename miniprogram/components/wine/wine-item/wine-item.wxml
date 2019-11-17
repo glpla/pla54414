@@ -1,0 +1,11 @@
+<view class="wrap">
+  <image src='{{wine.url}}' mode="widthFix"></image>
+  <view class="title-desc">
+    <view class="title">{{wine.title}}</view>
+    <view class="desc">{{wine.desc}}</view>
+  </view>
+  <view class="price" wx:if='{{wine.flag}}'>
+    <view class="new">¥{{wine.price}}</view>
+    <view class="old">¥{{wine['old-price']}}</view>
+  </view>
+</view>

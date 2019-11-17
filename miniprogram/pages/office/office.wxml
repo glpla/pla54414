@@ -1,28 +1,28 @@
 <view>
   <view class="header-wrap">
     <view class="nav-item" bindtap="onCheck">
-      <view class='{{navIndex==0?"active":""}}'>登记</view>
-      <view>CheckIn</view>
+      <view class='title {{navIndex==0?"active":""}}'>登记</view>
+      <view class="desc">CheckIn</view>
     </view>
     <view class="nav-item" bindtap="onTodo">
-      <view class='{{navIndex==1?"active":""}}'>待办</view>
-      <view>Todo</view>
+      <view class='title {{navIndex==1?"active":""}}'>待办</view>
+      <view class="desc">Todo</view>
     </view>
     <view class="nav-item" bindtap="onDoing">
-      <view class='{{navIndex==2?"active":""}}'>处理中</view>
-      <view>Doing</view>
+      <view class='title {{navIndex==2?"active":""}}'>处理中</view>
+      <view class="desc">Doing</view>
     </view>
     <view class="nav-item" bindtap="onDone">
-      <view class='{{navIndex==3?"active":""}}'>完结</view>
-      <view>Done</view>
+      <view class='title {{navIndex==3?"active":""}}'>完结</view>
+      <view class="desc">Done</view>
     </view>
     <view class="nav-item" bindtap="onAll">
-      <view class='{{navIndex==4?"active":""}}'>所有</view>
-      <view>All</view>
+      <view class='title {{navIndex==4?"active":""}}'>所有</view>
+      <view class="desc">All</view>
     </view>
   </view>
   <!-- part0 -->
-  <view wx:if='{{navIndex==0}}' class='part0'>
+  <view wx:if='{{navIndex==0}}' class='p10'>
     <view class='date-time'>
       <picker mode="date" value="{{date}}" start="2019-01-01" end="2019-12-31" bindchange="bindDateChange">
         <view>
@@ -38,57 +38,46 @@
       </picker>
     </view>
     <view class="desc">客户Client</view>
-    <input maxlength="8" bindinput='onClient' placeholder="姓名" placeholder-class='phc' value="{{client}}"></input>
+    <input class='{{focus==0?"focus":""}}' maxlength="8" bindinput='onClient' placeholder="姓名" placeholder-class='office-phc' value="{{client}}" bindblur="onBlur" bindfocus="onFocus" data-idx="0"></input>
     <view class="desc">对象Target</view>
-    <input maxlength="8" bindinput='onTarget' placeholder="姓名" placeholder-class='phc' value="{{target}}"></input>
+    <input class='{{focus==1?"focus":""}}' maxlength="8" bindinput='onTarget' placeholder="姓名" placeholder-class='office-phc' value="{{target}}" bindblur="onBlur" bindfocus="onFocus" data-idx="1"></input>
     <view class="desc">事由Focus</view>
-    <textarea bindinput='onEvent' placeholder="事由概要" placeholder-class='phc' value="{{event}}"></textarea>
+    <textarea class='{{focus==2?"focus":""}}' bindinput='onEvent' placeholder="事由概要" placeholder-class='office-phc' value="{{event}}" bindblur="onBlur" bindfocus="onFocus" data-idx="2"></textarea>
     <view class="desc">经办人Staff</view>
-    <input maxlength="8" bindinput='onStaff' placeholder="客服人员" placeholder-class='phc' value="{{staff}}"></input>
-    <button bindtap="onSubmit">提交</button>
+    <input class='{{focus==3?"focus":""}}' maxlength="8" bindinput='onStaff' placeholder="客服人员" placeholder-class='office-phc' value="{{staff}}" bindblur="onBlur" bindfocus="onFocus" data-idx="3"></input>
+    <button class="office-btn" bindtap="onSubmit">提交</button>
   </view>
   <!-- part1 -->
-  <view wx:if='{{navIndex==1}}' class="part1">
+  <view wx:if='{{navIndex==1}}' class="p10">
     <view>共有记录:{{events.length}}条</view>
-    <view class="event-box">
-      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
-        <view class="event-sn">{{index+1}}</view>
-        <view class="event-abs">{{item.event}}</view>
-      </view>
+    <view class='event-item' wx:for='{{events}}' wx:key='_id' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs ellipsis">{{item.event}}</view>
     </view>
-    <!-- <view class='page-box'>
-      <view wx:for='{{pages}}' wx:key='{{index}}' class="page {{page==index?'cur-page':''}}" bindtap="onPage" data-ind="{{index}}">{{index+1}}</view>
-    </view> -->
   </view>
   <!-- part2 -->
-  <view wx:if='{{navIndex==2}}' class="part2">
+  <view wx:if='{{navIndex==2}}' class="p10">
     <view>共有记录:{{events.length}}条</view>
-    <view class="event-box">
-      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
-        <view class="event-sn">{{index+1}}</view>
-        <view class="event-abs">{{item.event}}</view>
-      </view>
+    <view class='event-item' wx:for='{{events}}' wx:key='_id' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs ellipsis">{{item.event}}</view>
     </view>
   </view>
   <!-- part3 -->
-  <view wx:if='{{navIndex==3}}' class="part3">
+  <view wx:if='{{navIndex==3}}' class="p10">
     <view>共有记录:{{events.length}}条</view>
-    <view class="event-box">
-      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
-        <view class="event-sn">{{index+1}}</view>
-        <view class="event-abs">{{item.event}}</view>
-      </view>
+    <view class='event-item' wx:for='{{events}}' wx:key='_id' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs ellipsis">{{item.event}}</view>
     </view>
   </view>
   <!-- part4 -->
-  <view wx:if='{{navIndex==4}}' class="part4">
+  <view wx:if='{{navIndex==4}}' class="p10">
     <view>共有记录:{{events.length}}条</view>
-    <view class="event-box">
-      <view class='event-item' wx:for='{{events}}' wx:key='{{item.time}}' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
-        <view class="event-sn">{{index+1}}</view>
-        <view class="event-abs">{{item.event}}</view>
-        <view class='event-flag'>{{flagArr[item.flag]}}</view>
-      </view>
+    <view class='event-item' wx:for='{{events}}' wx:key='_id' data-idx="{{item._id}}" data-flag="{{item.flag}}" bindtap="onDetail">
+      <view class="event-sn">{{index+1}}</view>
+      <view class="event-abs ellipsis">{{item.event}}</view>
+      <view class='event-flag'>{{flagArr[item.flag]}}</view>
     </view>
   </view>
 </view>

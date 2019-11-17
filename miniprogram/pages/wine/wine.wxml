@@ -1,13 +1,18 @@
 <view class="">
-  <wine-swiper imgs='{{imgs}}'></wine-swiper>
-  <view class="greeting">喜欢Ta就带Ta回家吧</view>
-  <view class="product-wrap">
-    <view class="product" wx:for='{{product}}' wx:key='_id' data-idx="{{item._id}}" bindtap="onDetail">
-      <image src='{{item.url}}' mode="widthFix"></image>
-      <view class="desc">{{item.desc}}</view>
-      <view class="price">¥{{item.price}}</view>
+  <view class="header-box">
+    <text class="logo">大树小酒</text>
+    <view class="search">
+      <input class="{{isFocus?'focus':''}}" placeholder="请输入查询的内容" maxlength="16" bindfocus='onFocus' bindblur='onBlur'></input>
+    </view>
+    <view class="user-box" bindtap="onUser">
+      <view class="user" style="background-image:url({{avatarUrl}});"></view>
     </view>
   </view>
-  <view class="done" wx:if='isDone'>没有更多宝贝了</view>
+  <wine-swiper imgs='{{imgs}}'></wine-swiper>
+  <view class="greeting">喜欢Ta就带Ta回家吧</view>
+  <view class="good-wrap">
+    <wine-item wx:for='{{product}}' wx:key='_id' wine='{{item}}' data-idx="{{item._id}}" bindtap="onDetail"></wine-item>
+  </view>
+  <view class="tips" wx:if='isDone'>没有更多宝贝了</view>
   <to-top color='#FF69B4' show='{{showToTop}}'></to-top>
 </view>

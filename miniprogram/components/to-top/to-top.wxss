@@ -30,11 +30,11 @@
 }
 
 .animate {
-  animation: showToTop 1s linear forwards;
+  animation: showToTop 0.4s linear forwards;
 }
 
 .animate-reverse {
-  animation: hideToTop 1s linear forwards;
+  animation: hideToTop 0.4s linear forwards;
 }
 
 @keyframes showToTop {

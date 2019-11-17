@@ -1,11 +1,3 @@
-.wrap {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .loading {
   position: relative;
   width: 300rpx;
@@ -42,11 +34,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  animation: r2 4s linear infinite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  animation: r2 4s linear infinite;  
 }
 
 .btn {
@@ -56,8 +44,6 @@
   bottom: 0;
   right: 0;
   background: transparent;
-  outline: none;
-  border: none;
 }
 
 @keyframes r1 {

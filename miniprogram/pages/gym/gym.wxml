@@ -5,7 +5,7 @@
       <view class="title">自己都不知道的真相</view>
       <view class="btn" bindtap="onStart">测试一下吧</view>
     </view>
-    <block wx:for='{{quiz}}' wx:key='{{index}}'>
+    <block wx:for='{{quiz}}' wx:key='index'>
       <view class="item-box" wx:if='{{cIndex==index}}'>
         <view class="item-cont">{{item.desc}}</view>
         <view class="item-option">
@@ -27,7 +27,7 @@
       <view class="option-btn" bindtap='onClose'>
         <text class="iconfont iconfanhui"></text>
       </view>
-      <view class="option-btn {{cIndex==index?'cur-btn':''}}" wx:for='{{quiz.length}}' wx:key='{{index}}' data-ind="{{index}}" bindtap="onIndex">{{index+1}}</view>
+      <view class="option-btn {{cIndex==index?'cur-btn':''}}" wx:for='{{quiz.length}}' wx:key='index' data-ind="{{index}}" bindtap="onIndex">{{index+1}}</view>
       <view class="option-btn" bindtap='onSubmit'>
         <text class="iconfont iconduihao"></text>
       </view>

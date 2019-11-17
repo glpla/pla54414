@@ -14,7 +14,7 @@
         </view>
       </view>
     </block>
-    <view class="done" wx:if='{{isDone}}'>到底啦,请松手!</view>
+    <view class="tips" wx:if='{{isDone}}'>到底啦,请松手!</view>
   </view>
   <to-top color='#179cd1' show='{{showToTop}}'></to-top>
 </view>

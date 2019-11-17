@@ -3,6 +3,10 @@ Component({
     good: {
       type: Object,
       value: {}
+    },
+    flag: {
+      type: Boolean,
+      value: false
     }
   },
   data: {

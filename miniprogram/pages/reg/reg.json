@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "用户注册",
+  "navigationBarBackgroundColor": "#FF69B4",
+  "navigationBarTitleText": "完善用户信息",
   "usingComponents": {}
 }

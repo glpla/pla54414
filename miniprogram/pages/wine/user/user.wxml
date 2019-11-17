@@ -1,36 +1,61 @@
 <view class="wrap">
   <top-bar darkColor='#FF69B4' lightColor='#fa84bf'></top-bar>
   <view class="user-box">
-    <button class="avatar" open-type='getUserInfo' bindgetuserinfo='getUserInfo' style="background-image:url({{avatarUrl}});"></button>
-    <view wx:if='{{!nickName}}'>点击获取用户头像昵称</view>
-    <view wx:else>{{nickName}}</view>
+    <button class="avatar" open-type='getUserInfo' bindgetuserinfo='onGetUserInfo' style="background-image:url({{avatarUrl}});"></button>
+    <view wx:if='{{!user.nickName}}'>点击获取用户头像昵称</view>
+    <view wx:else>{{user.nickName}}</view>
   </view>
-  <view class="item-box" bindtap="onLike">
-    <view>
-      <text class="iconfont iconxin"></text>
-      <text> 我的收藏</text>
+  <view class="" wx:if='{{logged}}'>
+    <view class="item-box" bindtap="onLike">
+      <view>
+        <text class="iconfont iconxin"></text>
+        <text> 我的收藏</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
     </view>
-    <text class="iconfont iconcaret-right arrow"></text>
-  </view>
-  <view class="item-box" bindtap="onList">
-    <view>
-      <text class="iconfont iconcreatetask_fill"></text>
-      <text> 我的订单</text>
+    <view class="item-box" bindtap="onCart">
+      <view>
+        <text class="iconfont iconcaigou"></text>
+        <text> 我的购物车</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
     </view>
-    <text class="iconfont iconcaret-right arrow"></text>
-  </view>
-  <view class="item-box" bindtap="onSetup">
     <view>
-      <text class="iconfont iconsetup_fill"></text>
-      <text> 个人设置</text>
+      <button class="item-box hot-line" open-type="contact">
+        <view>
+          <text class="iconfont iconkefu-tianchong"></text>
+          <text> 我的客服</text>
+        </view>
+        <text class="iconfont iconcaret-right arrow"></text>
+      </button>
     </view>
-    <text class="iconfont iconcaret-right arrow"></text>
-  </view>
-  <view class="item-box" bindtap="onAddress">
-    <view>
-      <text class="iconfont iconchangyongtubiao-mianxing-1"></text>
-      <text> 收货地址</text>
+    <view class="item-box" bindtap="onList">
+      <view>
+        <text class="iconfont iconcreatetask_fill"></text>
+        <text> 历史订单</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
     </view>
-    <text class="iconfont iconcaret-right arrow"></text>
+    <view class="item-box" bindtap="onSetup">
+      <view>
+        <text class="iconfont iconsetup_fill"></text>
+        <text> 个人设置</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
+    </view>
+    <view class="item-box" bindtap="onAddress">
+      <view>
+        <text class="iconfont iconchangyongtubiao-mianxing-1"></text>
+        <text> 收货地址</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
+    </view>
+    <view class="item-box" bindtap="onAdmin" wx:if='{{admin==openid}}'>
+      <view>
+        <text class="iconfont iconchangyongtubiao-mianxing-4"></text>
+        <text> 管理入口</text>
+      </view>
+      <text class="iconfont iconcaret-right arrow"></text>
+    </view>
   </view>
 </view>

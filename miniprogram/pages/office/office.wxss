@@ -11,13 +11,11 @@
   text-align: center;
 }
 
-.nav-item view:first-child {
+.nav-item .title {
   padding: 10rpx 20rpx;
 }
 
-.nav-item view:last-child {
-  margin-top: 6rpx;
-  font-size: 0.8rem;
+.nav-item .desc {
   color: #fff;
 }
 
@@ -27,69 +25,38 @@
   border-radius: 10rpx;
 }
 
-.part0 {
-  padding: 10rpx;
-}
-
-.part0 .date-time {
+.date-time {
   padding-bottom: 10rpx;
-  border-bottom: 2rpx solid #ddd;
-  font-size: 1rem;
 }
 
-.part0 .date-time view {
+.date-time view {
   height: 60rpx;
   line-height: 60rpx;
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 10rpx; */
 }
 
-.part0 .phc {
-  color: #aaa;
-}
-
-.part0 .desc {
+input {
   height: 60rpx;
-  line-height: 60rpx;
-  font-size: 0.8rem;
-}
-
-.part0 input {
-  height: 60rpx;
-  line-height: 60rpx;
   padding: 0 10rpx;
   border-radius: 10rpx;
   border: 2rpx solid #ddd;
-  font-size: 1rem;
 }
 
-.part0 textarea {
+textarea {
   width: 100%;
   line-height: 38rpx;
   border-radius: 10rpx;
   border: 2rpx solid #ddd;
-  font-size: 1rem;
-  color: #333;
   padding: 10rpx;
 }
 
-.part0 button {
-  width: 100%;
-  margin-top: 20rpx;
-  background: #00bfff;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.part1, .part2, .part3, .part4 {
-  padding: 10rpx;
+.focus {
+  border: 2rpx solid #17acdd;
 }
 
 .event-item {
   display: flex;
-  font-size: 1rem;
-  color: #666;
   height: 60rpx;
   line-height: 60rpx;
   border-bottom: 2rpx solid #ddd;
@@ -102,30 +69,9 @@
 
 .event-abs {
   flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .event-flag {
   width: 120rpx;
   text-align: center;
-}
-
-.page-box {
-  margin-top: 10rpx;
-  display: flex;
-  justify-content: center;
-}
-
-.page-box .page {
-  width: 60rpx;
-  height: 60rpx;
-  text-align: center;
-  line-height: 60rpx;
-}
-
-.page-box .cur-page {
-  color: #976aca;
-  font-weight: 700;
 }
